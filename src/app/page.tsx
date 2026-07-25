@@ -188,8 +188,13 @@ export default function Home() {
           <SlideMedia src="/slides/3-solution-hero.mp4" kind="video" alt="RAW in motion — the solution's hero video" />
           <div className="slide-body">
             <span className="kicker">Solution</span>
+            {/* The direct answer to slide 2's closing gap ("Nobody sells them the
+                device."). Customer quote below stays VERBATIM — it's evidence. */}
             <p className="line">
-              Our own devices,<br />where brainrot is not possible.
+              So we built the device.
+            </p>
+            <p className="line line--sub">
+              Our own phones &mdash; where brainrot isn&rsquo;t possible.
             </p>
             <blockquote className="quote">
               &ldquo;I would pay for a phone that doesn&rsquo;t have apps that will distract me, only
