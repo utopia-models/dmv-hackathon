@@ -164,11 +164,23 @@ export default function Home() {
         </section>
 
         {/* 2 · Problem */}
+        {/* PROBLEM — the merge (Tyler, 2026-07-25). Three former slides collapsed
+            into one: s2 "One device tries to be everything" (Problem) + s3
+            "It's not what you can do / it's what you can't" (Product) + s4 "The
+            shift already started" (Thesis). All three lines are KEPT so Tyler can
+            see the argument whole and cut on screen — this is a reorder, not a
+            rewrite. Kicker reads "Problem" per his instruction. */}
         <section id="s2" className="slide" style={tint(TINT.umber)}>
           <SlideMedia src="/slides/2.mp4" kind="video" alt="" />
           <div className="slide-body">
-            <span className="kicker">The problem</span>
+            <span className="kicker">Problem</span>
             <p className="line">One device tries to be everything.</p>
+            <p className="line line--sub">
+              It&rsquo;s not what you can do.<br />It&rsquo;s what you can&rsquo;t.
+            </p>
+            <p className="note note--merge">
+              The shift already started. Nobody built the device.
+            </p>
           </div>
         </section>
 
@@ -202,14 +214,7 @@ export default function Home() {
         </section>
 
         {/* 3 · Product */}
-        <section id="s3" className="slide" style={tint(TINT.cactus)}>
-          <SlideMedia src="/slides/3.png" alt="A RAW phone alone in negative space" />
-          <div className="slide-body">
-            <p className="line">It&rsquo;s not what you can do.<br />It&rsquo;s what you can&rsquo;t.</p>
-          </div>
-        </section>
-
-        {/* Metrics · willpower vs design (mms5377). AFTER the inversion slide —
+        {/* Metrics · willpower vs design (mms5377). Inside the PROBLEM block —
             it answers "just delete the apps" with the software-fix failure data.
             Same-unit bars only (long-term stick rate of software fixes). */}
         <section id="s-willpower" className="slide" style={tint(TINT.rodeo)}>
@@ -248,44 +253,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4 · Thesis */}
-        <section id="s4" className="slide" style={tint(TINT.tan)}>
-          <SlideMedia src="/slides/4.png" alt="" />
+        {/* SOLUTION (Tyler, 2026-07-25) — slide 3 of the five shown. His words,
+            placed verbatim, over the REAL launcher asset: the customer quote names
+            Claude, Messages and Phone, and the launcher shows exactly those. This
+            is the deleted Traction slide's evidence repurposed as the SOLUTION
+            rather than "look what I built". */}
+        <section id="s-solution" className="slide" style={tint(TINT.cactus)}>
+          <SlideMedia src="/slides/6.png" alt="The RAW launcher — ten apps, no browser, no store" />
           <div className="slide-body">
-            <span className="kicker">The thesis</span>
-            <p className="line">The shift already started.<br />Nobody built the device.</p>
-          </div>
-        </section>
-
-        {/* Metrics · causal proof (mms5377). AFTER the thesis slide — the
-            strongest evidence in the pack: remove the device, outcomes move.
-            Quasi-experimental (400 middle schools, Norway 2024), not correlation. */}
-        <section id="s-causal" className="slide" style={tint(TINT.cactus)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">Remove the device, and</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              Everything moves.
+            <span className="kicker">Solution</span>
+            <p className="line">
+              Our own devices,<br />where brainrot is not possible.
             </p>
-            <div className="mrow">
-              <div className="mstat">
-                <div className="mnum">&minus;43%</div>
-                <p className="mlabel">bullying, after middle schools separated kids from smartphones</p>
-                <span className="msrc">Norwegian ban study · NHH 2024</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">&minus;60%</div>
-                <p className="mlabel">mental-health referrals at the same schools</p>
-                <span className="msrc">quasi-experimental · 400 schools</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">GPA&nbsp;&uarr;</div>
-                <p className="mlabel">measurable grade gains, strongest for girls</p>
-                <span className="msrc">same study — causal, not correlation</span>
-              </div>
-            </div>
-            <p className="mfoot">
-              Not a survey. Schools changed the <b>environment</b> — and the outcomes followed.
-            </p>
+            <blockquote className="quote">
+              &ldquo;I would pay for a phone that doesn&rsquo;t have apps that will distract me, only
+              the apps that I need, like Claude, Messages and Phone and that&rsquo;s it.&rdquo;
+            </blockquote>
           </div>
         </section>
 
@@ -321,6 +304,152 @@ export default function Home() {
             </p>
           </div>
         </section>
+
+        {/* Solution · the architecture kill-shot (mms5377). AFTER traction —
+            why THIS model succeeds where every previous attempt failed. The
+            four-architecture compare from the research pack, distilled. */}
+        <section id="s-not-dumb" className="slide" style={tint(TINT.rodeo)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">Why this wins where the others died</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              All the utility. None of the vectors.
+            </p>
+            <div className="solgrid">
+              <div className="solcard">
+                <h4>Dumbphone</h4>
+                <p>Kills the feeds — and banking, 2FA, and maps with them. One missing essential sends the SIM back to the smartphone.</p>
+                <span className="verdict">returned</span>
+              </div>
+              <div className="solcard">
+                <h4>Smartphone</h4>
+                <p>Every tool you need, shelved next to every feed engineered against you. The default that produced 8h39m.</p>
+                <span className="verdict">the problem</span>
+              </div>
+              <div className="solcard">
+                <h4>Blocker apps</h4>
+                <p>The restriction lives on the same screen as the temptation — two taps to bypass at the weakest moment.</p>
+                <span className="verdict">17% stick</span>
+              </div>
+              <div className="solcard solcard--raw">
+                <h4>RAW</h4>
+                <p>The essentials stay, the feeds structurally don&rsquo;t exist. A managed device — the boundary finally holds.</p>
+                <span className="verdict">● utility, zero vectors</span>
+              </div>
+            </div>
+            <p className="mfoot">
+              The &ldquo;one essential app&rdquo; problem killed the minimalist phone.
+              <b> RAW keeps the essentials — so the boundary survives real life.</b>
+            </p>
+          </div>
+        </section>
+
+        {/* 7 · Market — the focused-phone lineup (typographic; the info IS the visual) */}
+        <section id="s7" className="slide" style={tint(TINT.sand)}>
+          <div className="slide-body slide-body--lineup">
+            <div className="lineup-head">
+              <span className="kicker">The market</span>
+              <p className="line">Every profession gets its own.</p>
+            </div>
+            <div className="lineup">
+              {DEVICES.map((d) => (
+                <div key={d.name} className={`device${d.real ? " device--real" : ""}`}>
+                  {d.media && (
+                    <DeviceMedia
+                      src={d.media.src}
+                      kind={d.media.kind}
+                      frame={d.media.frame}
+                      alt={d.media.alt}
+                    />
+                  )}
+                  <span className="device-tag">{d.real ? "● Real — shipping today" : "Roadmap"}</span>
+                  <h3 className="device-name">{d.name}</h3>
+                  <span className="device-for">for {d.for}</span>
+                  <span className="spec-k">Allowed</span>
+                  <ul className="spec-list">
+                    {d.allowed.map((a) => (
+                      <li key={a}>{a}</li>
+                    ))}
+                  </ul>
+                  <span className="spec-k">Removed</span>
+                  <p className="spec-v spec-v--removed">{d.removed}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 5 · How it's built — LIVE OCC embed (real proof, never a generated image).
+            The poster behind the iframe is a REAL screenshot of the same page (rip-engine
+            doctrine: real images only) — it shows while the embed loads, if venue wifi
+            dies, and on small screens where the responsive iframe collapses to soup. */}
+        <section id="s5" className="slide" style={tint(TINT.rodeo)}>
+          <div className="slide-body slide-body--occ">
+            <span className="kicker">How it&rsquo;s built</span>
+            <p
+              className="line"
+              style={{ fontSize: "clamp(1.6rem,5vw,3.4rem)", marginBottom: "clamp(1rem,3vh,2rem)" }}
+            >
+              A founder and an AI fleet. In public.
+            </p>
+            <div
+              className="occ-frame"
+              style={{
+                backgroundImage: "url(/slides/5-occ-poster.png)",
+                backgroundSize: "cover",
+                backgroundPosition: "top center",
+              }}
+            >
+              <iframe
+                className="occ-live"
+                src="https://www.utopiamodels.ai"
+                title="Utopia Models — the live fleet operations center"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                sandbox="allow-scripts allow-same-origin"
+              />
+            </div>
+            <p className="note">
+              live &middot;{" "}
+              <a href="https://www.utopiamodels.ai" target="_blank" rel="noreferrer">
+                utopiamodels.ai
+              </a>
+            </p>
+          </div>
+        </section>
+
+        {/* Metrics · causal proof (mms5377). The strongest evidence in the pack:
+            remove the device, outcomes move. Quasi-experimental (400 middle
+            schools, Norway 2024), not correlation. PARKED after the five shown —
+            Tyler decides whether it belongs inside Solution. */}
+        <section id="s-causal" className="slide" style={tint(TINT.cactus)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">Remove the device, and</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Everything moves.
+            </p>
+            <div className="mrow">
+              <div className="mstat">
+                <div className="mnum">&minus;43%</div>
+                <p className="mlabel">bullying, after middle schools separated kids from smartphones</p>
+                <span className="msrc">Norwegian ban study · NHH 2024</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">&minus;60%</div>
+                <p className="mlabel">mental-health referrals at the same schools</p>
+                <span className="msrc">quasi-experimental · 400 schools</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">GPA&nbsp;&uarr;</div>
+                <p className="mlabel">measurable grade gains, strongest for girls</p>
+                <span className="msrc">same study — causal, not correlation</span>
+              </div>
+            </div>
+            <p className="mfoot">
+              Not a survey. Schools changed the <b>environment</b> — and the outcomes followed.
+            </p>
+          </div>
+        </section>
+
 
         {/* The marketing is me (knowledge#2562) — placed IMMEDIATELY BEFORE the
             fleet slide (s5). The order is the argument: here is the person →
@@ -376,93 +505,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5 · How it's built — LIVE OCC embed (real proof, never a generated image).
-            The poster behind the iframe is a REAL screenshot of the same page (rip-engine
-            doctrine: real images only) — it shows while the embed loads, if venue wifi
-            dies, and on small screens where the responsive iframe collapses to soup. */}
-        <section id="s5" className="slide" style={tint(TINT.rodeo)}>
-          <div className="slide-body slide-body--occ">
-            <span className="kicker">How it&rsquo;s built</span>
-            <p
-              className="line"
-              style={{ fontSize: "clamp(1.6rem,5vw,3.4rem)", marginBottom: "clamp(1rem,3vh,2rem)" }}
-            >
-              A founder and an AI fleet. In public.
-            </p>
-            <div
-              className="occ-frame"
-              style={{
-                backgroundImage: "url(/slides/5-occ-poster.png)",
-                backgroundSize: "cover",
-                backgroundPosition: "top center",
-              }}
-            >
-              <iframe
-                className="occ-live"
-                src="https://www.utopiamodels.ai"
-                title="Utopia Models — the live fleet operations center"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-                sandbox="allow-scripts allow-same-origin"
-              />
-            </div>
-            <p className="note">
-              live &middot;{" "}
-              <a href="https://www.utopiamodels.ai" target="_blank" rel="noreferrer">
-                utopiamodels.ai
-              </a>
-            </p>
-          </div>
-        </section>
 
         {/* 6 · Traction */}
-        <section id="s6" className="slide" style={tint(TINT.cactus)}>
-          <SlideMedia src="/slides/6.png" alt="" />
-          <div className="slide-body">
-            <span className="kicker">v0 &mdash; built for one engineer</span>
-            <p className="line">Ten apps. Built for one engineer.</p>
-          </div>
-        </section>
-
         {/* Metrics · demand receipts (mms5377). BEFORE the market slide —
             proof the shift is policy, law, and revenue before we show the line. */}
-        {/* Solution · the architecture kill-shot (mms5377). AFTER traction —
-            why THIS model succeeds where every previous attempt failed. The
-            four-architecture compare from the research pack, distilled. */}
-        <section id="s-not-dumb" className="slide" style={tint(TINT.rodeo)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">Why this wins where the others died</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              All the utility. None of the vectors.
-            </p>
-            <div className="solgrid">
-              <div className="solcard">
-                <h4>Dumbphone</h4>
-                <p>Kills the feeds — and banking, 2FA, and maps with them. One missing essential sends the SIM back to the smartphone.</p>
-                <span className="verdict">returned</span>
-              </div>
-              <div className="solcard">
-                <h4>Smartphone</h4>
-                <p>Every tool you need, shelved next to every feed engineered against you. The default that produced 8h39m.</p>
-                <span className="verdict">the problem</span>
-              </div>
-              <div className="solcard">
-                <h4>Blocker apps</h4>
-                <p>The restriction lives on the same screen as the temptation — two taps to bypass at the weakest moment.</p>
-                <span className="verdict">17% stick</span>
-              </div>
-              <div className="solcard solcard--raw">
-                <h4>RAW</h4>
-                <p>The essentials stay, the feeds structurally don&rsquo;t exist. A managed device — the boundary finally holds.</p>
-                <span className="verdict">● utility, zero vectors</span>
-              </div>
-            </div>
-            <p className="mfoot">
-              The &ldquo;one essential app&rdquo; problem killed the minimalist phone.
-              <b> RAW keeps the essentials — so the boundary survives real life.</b>
-            </p>
-          </div>
-        </section>
 
         <section id="s-receipts" className="slide" style={tint(TINT.sand)}>
           <div className="slide-body slide-body--metrics">
@@ -498,50 +544,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 7 · Market — the focused-phone lineup (typographic; the info IS the visual) */}
-        <section id="s7" className="slide" style={tint(TINT.sand)}>
-          <div className="slide-body slide-body--lineup">
-            <div className="lineup-head">
-              <span className="kicker">The market</span>
-              <p className="line">Every profession gets its own.</p>
-            </div>
-            <div className="lineup">
-              {DEVICES.map((d) => (
-                <div key={d.name} className={`device${d.real ? " device--real" : ""}`}>
-                  {d.media && (
-                    <DeviceMedia
-                      src={d.media.src}
-                      kind={d.media.kind}
-                      frame={d.media.frame}
-                      alt={d.media.alt}
-                    />
-                  )}
-                  <span className="device-tag">{d.real ? "● Real — shipping today" : "Roadmap"}</span>
-                  <h3 className="device-name">{d.name}</h3>
-                  <span className="device-for">for {d.for}</span>
-                  <span className="spec-k">Allowed</span>
-                  <ul className="spec-list">
-                    {d.allowed.map((a) => (
-                      <li key={a}>{a}</li>
-                    ))}
-                  </ul>
-                  <span className="spec-k">Removed</span>
-                  <p className="spec-v spec-v--removed">{d.removed}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* 8 · Ask (closing) */}
-        <section id="s8" className="slide" style={tint(TINT.rodeo)}>
-          <SlideMedia src="/slides/8.png" alt="" />
-          <div className="slide-body">
-            <h2 className="wordmark wordmark--sand">RAW</h2>
-            <p className="line" style={{marginTop:"1.2rem"}}>Building is cool.</p>
-            <p className="note">a rebrand of the Nothing phone &middot; rip &rarr; repurpose, in the open</p>
-          </div>
-        </section>
       </main>
     </>
   );

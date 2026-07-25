@@ -136,6 +136,34 @@ body {
 .note a { color: var(--sand); text-decoration: none; border-bottom: 1px solid rgba(196,170,130,0.35); }
 .note a:hover { border-bottom-color: var(--sand); }
 
+/* ── the merged Problem slide (Tyler, 2026-07-25) ──────────────────────────
+   Three former slides collapsed into one. The lead line keeps full weight; the
+   inversion sits under it at ~55%; the thesis line trails as a note. All three
+   are KEPT deliberately so Tyler can see the whole argument and cut on screen. */
+.line--sub {
+  font-size: clamp(1.3rem, 4.6vw, 3.4rem);
+  color: var(--text);
+  margin-top: clamp(0.7rem, 2.4vh, 1.6rem);
+}
+.note--merge {
+  color: var(--sand);
+  opacity: 0.85;
+}
+
+/* ── the Solution slide's customer quote ──────────────────────────────────
+   Tyler's words verbatim. Reads as a real person talking, not deck copy. */
+.quote {
+  margin: clamp(1.1rem, 3.4vh, 2.2rem) 0 0;
+  padding-left: clamp(0.8rem, 2vw, 1.2rem);
+  border-left: 2px solid rgba(196,170,130,0.45);
+  max-width: 46ch;
+  font-size: clamp(0.95rem, 2.1vw, 1.35rem);
+  line-height: 1.45;
+  font-weight: 300;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
 /* ── slide 7 — the focused-phone lineup (typographic; info IS the visual) ── */
 .slide-body--lineup {
   max-width: 72rem;
