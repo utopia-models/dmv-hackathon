@@ -304,43 +304,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5 · How it's built — LIVE OCC embed (real proof, never a generated image).
-            The poster behind the iframe is a REAL screenshot of the same page (rip-engine
-            doctrine: real images only) — it shows while the embed loads, if venue wifi
-            dies, and on small screens where the responsive iframe collapses to soup. */}
-        <section id="s-receipts" className="slide" style={tint(TINT.sand)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">The shift has receipts</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              Policy, law, and revenue agree.
-            </p>
-            <div className="mrow">
-              <div className="mstat">
-                <div className="mnum">45+</div>
-                <p className="mlabel">U.S. states restricting phones in schools by 2025</p>
-                <span className="msrc">incl. CA AB 3216 · VA EO 33</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">U-16</div>
-                <p className="mlabel">Australia&rsquo;s federal social-media ban for under-16s, 2025</p>
-                <span className="msrc">first national law of its kind</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">$10M</div>
-                <p className="mlabel">ARR for one app blocker — 11 employees, 10M users paying for focus</p>
-                <span className="msrc">Opal, 2025</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">69%</div>
-                <p className="mlabel">of U.S. adults 18&ndash;29 say they want less screen time</p>
-                <span className="msrc">Pew Research, 2024</span>
-              </div>
-            </div>
-            <p className="mfoot">
-              People are paying for focus on hardware built against it. <b>Nobody sells them the device.</b>
-            </p>
-          </div>
-        </section>
 
         {/* 5 · FOUNDER (Tyler, 2026-07-25) — the whole founder argument in one
             slide. Merged in from the former s-me: the creatives wall + Instagram
@@ -418,6 +381,44 @@ export default function Home() {
 
         {/* 3 · Product */}
 
+
+        {/* 5 · How it's built — LIVE OCC embed (real proof, never a generated image).
+            The poster behind the iframe is a REAL screenshot of the same page (rip-engine
+            doctrine: real images only) — it shows while the embed loads, if venue wifi
+            dies, and on small screens where the responsive iframe collapses to soup. */}
+        <section id="s-receipts" className="slide" style={tint(TINT.sand)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">The shift has receipts</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Policy, law, and revenue agree.
+            </p>
+            <div className="mrow">
+              <div className="mstat">
+                <div className="mnum">45+</div>
+                <p className="mlabel">U.S. states restricting phones in schools by 2025</p>
+                <span className="msrc">incl. CA AB 3216 · VA EO 33</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">U-16</div>
+                <p className="mlabel">Australia&rsquo;s federal social-media ban for under-16s, 2025</p>
+                <span className="msrc">first national law of its kind</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">$10M</div>
+                <p className="mlabel">ARR for one app blocker — 11 employees, 10M users paying for focus</p>
+                <span className="msrc">Opal, 2025</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">69%</div>
+                <p className="mlabel">of U.S. adults 18&ndash;29 say they want less screen time</p>
+                <span className="msrc">Pew Research, 2024</span>
+              </div>
+            </div>
+            <p className="mfoot">
+              People are paying for focus on hardware built against it. <b>Nobody sells them the device.</b>
+            </p>
+          </div>
+        </section>
 
         {/* Solution · the architecture kill-shot (mms5377). AFTER traction —
             why THIS model succeeds where every previous attempt failed. The

@@ -34,8 +34,8 @@ export const SLIDES: Slide[] = [
   { id: "s-solution", label: "3. Solution — devices where brainrot isn't possible" },
   { id: "s-proof", label: "3b. Proof — three failures, one fix" },
   { id: "s7", label: "4. Market — every profession gets its own" },
-  { id: "s-receipts", label: "4b. Metrics — the shift has receipts" },
   { id: "s5", label: "5. Founder — how it's built, the fleet, live" },
+  { id: "s-receipts", label: "5b. Metrics — the shift has receipts" },
 
   // ── REFERENCE (everything after; material to pull INTO the five) ─────────
   { id: "s-not-dumb", label: "ref · Solution — why this wins where others died" },
