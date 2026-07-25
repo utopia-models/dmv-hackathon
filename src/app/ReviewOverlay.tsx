@@ -17,8 +17,21 @@
 
 import { useEffect, useState } from "react";
 
+/*
+ * ⚠ BEATS are keyed by SECTION ID (`sid`), not by a number parsed out of the id.
+ *
+ * The old scheme did `parseInt(id.replace("s",""))`, which meant:
+ *   - non-numeric ids ("s-solution", "s-proof") → NaN → the panel silently kept
+ *     showing the PREVIOUS slide's script while you scrolled past them, and
+ *   - after the 2026-07-25 re-cut, the Market slide (still id `s7`) displayed
+ *     "SLIDE 7 / 8" on a 9-section deck, while beats 3/4/6/8 pointed at sections
+ *     that had been merged or deleted and were unreachable.
+ *
+ * Keying on the id makes every slide addressable and the counter honest —
+ * it now reports POSITION in the deck, derived at runtime from the DOM.
+ */
 type Beat = {
-  n: number;
+  sid: string;
   onScreen: string;
   purpose: string;
   say: string;
@@ -31,7 +44,7 @@ type Beat = {
 
 const BEATS: Beat[] = [
   {
-    n: 1,
+    sid: "s1",
     onScreen: "This is RAW.",
     purpose:
       "Show the thesis being lived before arguing it — real person, real place, phone held still.",
@@ -43,7 +56,7 @@ const BEATS: Beat[] = [
     weakest: "\"Is that your phone?\" — No. It's the rebrand running the launcher I wrote.",
   },
   {
-    n: 2,
+    sid: "s2",
     onScreen: "One device tries to be everything.",
     purpose: "Name the design failure. Not willpower — architecture.",
     say: "We stopped noticing that's weird. One device tries to be everything, and that generality is what rots your attention. It's not that phones got worse. It's that they got general.",
@@ -52,27 +65,7 @@ const BEATS: Beat[] = [
     weakest: "\"Isn't that just self-control?\" — Deletion is a decision you remake daily.",
   },
   {
-    n: 3,
-    onScreen: "It's not what you can do. It's what you can't.",
-    purpose:
-      "The inversion. Every phone ad competes on capability; this one competes on refusal.",
-    say: "Nobody thinks it's strange to own more than one pair of shoes. The phone is the last thing we still expect to be everything at once.",
-    value: "Subtraction as the product — the opposite of every spec sheet.",
-    benefit: "Focus becomes a feature you buy, not a discipline you maintain.",
-    weakest: "\"Why not just delete the apps?\" — A separate device is a decision you make ONCE.",
-  },
-  {
-    n: 4,
-    onScreen: "The shift already started. Nobody built the device.",
-    purpose:
-      "Cultural proof — dumbphones, screen-time apps, grayscale mode all exist because people are solving this WITHOUT the right hardware.",
-    say: "People are already trying to fix this. Grayscale mode. App blockers. Dumbphones. They're all workarounds for a device that was never designed for focus. The demand is here. The hardware isn't.",
-    value: "Answers an existing movement rather than inventing a need.",
-    benefit: "The buyer already wants this and is currently improvising.",
-    weakest: "\"How big is that market?\" — Honest answer: the workarounds prove demand; the size is unproven.",
-  },
-  {
-    n: 5,
+    sid: "s5",
     onScreen: "A founder and an AI fleet. In public.",
     purpose:
       "Answer 'how does one person build a phone company?' before the judge asks it. The iframe is LIVE — that's the actual operations center, not a screenshot.",
@@ -85,19 +78,7 @@ const BEATS: Beat[] = [
       "\"Isn't this just one guy?\" — Yes. That's the point: the fleet is the leverage that makes a device-per-profession affordable.",
   },
   {
-    n: 6,
-    onScreen: "Ten apps. Built for one engineer.",
-    purpose:
-      "THE CREDIBILITY SPINE. The launcher that actually runs, on a real device, today.",
-    say: "That's not a slide — it's a device-owner Android app I wrote, and the app list is eleven lines of Java. I removed Chrome from my own phone five days ago and I've carried it to my engineering job every day since. I'm not projecting adoption. I'm the adoption.",
-    warn:
-      "Say MANAGED, never 'locked down'. It's a managed work phone, not a kiosk — a judge who swipes finds normal Android underneath. 'The launcher shows ten apps' is TRUE and checkable.",
-    value: "Turns the pitch from concept to demonstration.",
-    benefit: "Founder is user #1 — real adoption, not projected.",
-    weakest: "\"What did you build today?\" — The launcher, the deck, and the brand. Not silicon.",
-  },
-  {
-    n: 7,
+    sid: "s7",
     onScreen: "Every profession gets its own.",
     purpose: "The platform thesis — one phone becomes a line.",
     say: "Version one is for me because I'm the engineer. But the UX is the point: designed around one person's actual work. Next is the doctor. The lawyer. The kid who needs to learn and not get farmed.",
@@ -105,21 +86,13 @@ const BEATS: Beat[] = [
     benefit: "Every profession gets a device that fits how they actually work.",
     weakest: "\"Who builds all those?\" — Same launcher, different allowlist. The system is the product.",
   },
-  {
-    n: 8,
-    onScreen: "Building is cool.",
-    purpose: "The closer — land on identity, not a product claim.",
-    say: "RAW is for builders. The hungry, the taste-driven. Against big-tech boredom, brainrot, and bloat. Building is cool. And the world is yours.",
-    warn:
-      "\"The world is yours\" appears ONCE, here, as a sign-off. Never mid-pitch as a slogan.",
-    profit:
-      "Device margin + the curated store. The store is the real business: one device, one mode, one store — we own the shelf. Every new focused device is another store.",
-  },
 ];
 
 export default function ReviewOverlay() {
   const [on, setOn] = useState(false);
-  const [cur, setCur] = useState(1);
+  const [cur, setCur] = useState("s1");
+  const [pos, setPos] = useState(1);
+  const [total, setTotal] = useState(0);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -136,12 +109,15 @@ export default function ReviewOverlay() {
   useEffect(() => {
     if (!on) return;
     const secs = Array.from(document.querySelectorAll("section[id^='s']"));
+    // Position is derived from the DOM, so the counter can never go stale
+    // against a re-cut deck the way a hardcoded BEATS.length did.
+    setTotal(secs.length);
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const n = parseInt(e.target.id.replace("s", ""), 10);
-            if (!Number.isNaN(n)) setCur(n);
+          if (e.isIntersecting && e.target.id) {
+            setCur(e.target.id);
+            setPos(secs.findIndex((s) => s.id === e.target.id) + 1);
           }
         });
       },
@@ -152,7 +128,11 @@ export default function ReviewOverlay() {
   }, [on]);
 
   if (!on) return null;
-  const b = BEATS.find((x) => x.n === cur) ?? BEATS[0];
+  // A slide with no beat yet (s-solution, s-proof, …) shows nothing rather than
+  // silently displaying some other slide's script — that failure put the wrong
+  // words in front of Tyler.
+  const b = BEATS.find((x) => x.sid === cur);
+  if (!b) return null;
 
   return (
     <>
@@ -184,7 +164,7 @@ export default function ReviewOverlay() {
             style={{ display: "block", flexShrink: 0, opacity: 0.92 }}
           />
           <div style={{ color: "#9C805C", letterSpacing: ".14em", fontSize: 11 }}>
-            SLIDE {b.n} / {BEATS.length} &nbsp;·&nbsp; click for full script
+            SLIDE {pos} / {total} &nbsp;·&nbsp; click for full script
           </div>
         </div>
         <div style={{ marginTop: 10, color: "#9C805C", fontSize: 10, letterSpacing: ".16em" }}>
@@ -229,7 +209,7 @@ export default function ReviewOverlay() {
             }}
           >
             <div style={{ color: "#9C805C", letterSpacing: ".14em", fontSize: 11 }}>
-              SLIDE {b.n} &nbsp;·&nbsp; {b.onScreen}
+              SLIDE {pos} &nbsp;·&nbsp; {b.onScreen}
             </div>
             {[
               ["PURPOSE", b.purpose],
