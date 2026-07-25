@@ -90,11 +90,11 @@ const DEVICES: {
     ],
     removed: "browser · store · feeds",
     real: true,
-    // REAL launcher footage back on the card (Izzu, 2026-07-25 evening) so the
-    // Market slide stands alone with all four cards carrying video — the same
-    // file slide 5 plays; no new asset. (Reverses Tyler's brief text-only call
-    // from when the footage was promoted to s5 — flagged in the commit.)
-    media: { src: "/slides/lineup-v0.mp4", kind: "video", frame: "phone", alt: "The RAW launcher on Tyler's real Pixel 10" },
+    // Tyler, 2026-07-25 evening: v0 gets a 16:9 LANDSCAPE card matching the other
+    // three, so the lineup reads as one row of four. The portrait phone frame
+    // (used briefly here) broke that alignment — the real launcher recording
+    // still plays on slide 5, where a device-shaped frame belongs.
+    media: { src: "/slides/lineup-v0-market.mp4", kind: "video", frame: "wide", alt: "RAW — the engineering phone" },
   },
   {
     name: "Doctor",

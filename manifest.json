@@ -49,10 +49,21 @@
       "content": "Market — the focused-phone lineup (DEVICES.map in page.tsx). Per-card media via DeviceMedia: v0 is REAL/shipping (portrait phone frame); the three concepts are 16:9 landscape slots that render NOTHING until knowledge#2553's environment videos drop at the paths below — no code change needed.",
       "lineup": {
         "v0": {
+          "asset": "public/slides/lineup-v0-market.mp4",
+          "kind": "video",
+          "frame": "wide",
+          "content": "v0 Engineering — 16:9 landscape card matching the other three, so the lineup reads as one row of four (Tyler, 2026-07-25). The REAL Pixel 10 launcher recording plays on slide 5, where a device-shaped frame belongs.",
+          "drive": {
+            "id": "17E5jYL5qj3jfuCyS7jJe1z4zpeG6SdWW",
+            "dims": "1280x720",
+            "dur": "10.0s"
+          }
+        },
+        "_v0-real-launcher": {
           "asset": "public/slides/lineup-v0.mp4",
           "kind": "video",
           "frame": "phone",
-          "content": "REAL RAW-launcher footage from Tyler's Pixel 10 (adb 2026-07-25) — never a generated substitute",
+          "content": "The REAL Pixel 10 launcher recording (adb capture 2026-07-25) — never a generated substitute. Plays on SLIDE 5 (the founder slide) inside .proof-phone, not on the Market lineup. Listed here so verify:manifest sees it.",
           "drive": {
             "id": "1P0dTJw-URDVqhsAmngSsu-Tpk5mONCJm",
             "name": "raw-launcher-v0-engineering.mp4",
