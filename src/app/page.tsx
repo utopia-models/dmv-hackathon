@@ -339,7 +339,7 @@ export default function Home() {
                       playsInline
                       preload="metadata"
                     >
-                      <source src={c.src} />
+                      <source src={c.src} type={c.src.endsWith(".webm") ? "video/webm" : "video/mp4"} />
                     </video>
                   ) : (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -384,7 +384,7 @@ export default function Home() {
                   preload="metadata"
                   aria-label="The RAW launcher on Tyler's real Pixel 10"
                 >
-                  <source src="/slides/lineup-v0.mp4" />
+                  <source src="/slides/lineup-v0.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
