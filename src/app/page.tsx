@@ -50,6 +50,12 @@ const DEVICES: {
   removed: string;
   real?: boolean;
   media?: { src: string; kind: "image" | "video"; frame: "phone" | "wide"; alt: string };
+  /* `phone` is a SECOND, separate slot from `media` (Tyler, 2026-07-25): the
+     environment video stays on top, this transparent device PNG sits BELOW the
+     text. Kept as its own field rather than extending `media` so the existing
+     video slot is untouched. Rendered after the "Removed" line, so each column's
+     phone starts at its own y — the cards have different text heights. */
+  phone?: { src: string; alt: string };
 }[] = [
   {
     name: "v0 · Engineering",
@@ -66,6 +72,7 @@ const DEVICES: {
     // (used briefly here) broke that alignment — the real launcher recording
     // still plays on slide 5, where a device-shaped frame belongs.
     media: { src: "/slides/lineup-v0-market.mp4", kind: "video", frame: "wide", alt: "RAW — the engineering phone" },
+    phone: { src: "/slides/phone-v0.png", alt: "The RAW v0 Engineering device" },
   },
   {
     name: "Doctor",
@@ -80,6 +87,7 @@ const DEVICES: {
     ],
     removed: "social · feeds · browser — if it buzzes, it's a page",
     media: { src: "/slides/lineup-doctor.mp4", kind: "video", frame: "wide", alt: "A clinic environment" },
+    phone: { src: "/slides/phone-doctor.png", alt: "The RAW device, configured for clinicians" },
   },
   {
     name: "Lawyer",
@@ -95,6 +103,7 @@ const DEVICES: {
     ],
     removed: "social · feeds · browser — every minute is billable",
     media: { src: "/slides/lineup-lawyer.mp4", kind: "video", frame: "wide", alt: "A law-firm environment" },
+    phone: { src: "/slides/phone-lawyer.png", alt: "The RAW device, configured for attorneys" },
   },
   {
     name: "Kid",
@@ -113,6 +122,7 @@ const DEVICES: {
     removed:
       "feeds · store · browser · stranger DMs · unapproved photo apps — the only algorithm on it works for them",
     media: { src: "/slides/lineup-kid.mp4", kind: "video", frame: "wide", alt: "A classroom environment" },
+    phone: { src: "/slides/phone-kid.png", alt: "The RAW device, configured for kids" },
   },
 ];
 
@@ -269,6 +279,11 @@ export default function Home() {
                   </ul>
                   <span className="spec-k">Removed</span>
                   <p className="spec-v spec-v--removed">{d.removed}</p>
+                  {d.phone && (
+                    <div className="device-phone">
+                      <DeviceMedia src={d.phone.src} kind="image" frame="phone" alt={d.phone.alt} />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

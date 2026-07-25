@@ -246,6 +246,43 @@ body {
   object-fit: cover;
 }
 
+/* The per-column DEVICE PHOTO (Tyler, 2026-07-25) — sits BELOW the card text,
+   after "Removed", so each column's phone starts at its own y (the cards have
+   different text heights; that stagger is intended, not a bug).
+
+   These are TRANSPARENT PNGs: the frame chrome inherited from .device-frame
+   (dark fill, border, radius, shadow) is explicitly stripped — the cutout
+   floating on the warm ground IS the effect. object-fit:contain, never cover,
+   so no phone is ever cropped. All four sources were pre-cropped to their alpha
+   bounds and normalised to 900px tall, so a single max-height balances the row
+   despite the originals being 16:9 (v0/kid) and square (doctor/lawyer). */
+.device-phone {
+  /* NOT margin-top:auto — the phone sits DIRECTLY under its own column's text
+     (Tyler, 2026-07-25), so the four phones deliberately start at different
+     y's. Pushing them to a common baseline overflowed the tall Kid card. */
+  padding-top: clamp(0.7rem, 1.8vh, 1.1rem);
+  display: flex;
+  justify-content: center;
+}
+.device-phone .device-frame {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  margin-bottom: 0;
+  width: auto;
+  /* Sized so even the TALLEST card (Kid — 9 allowed bullets) keeps its phone
+     inside the 100vh slide. Verified at 1440×1000 and 390×844. */
+  height: clamp(96px, 13vh, 168px);
+  aspect-ratio: auto;
+}
+.device-phone .device-media {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
 .device-tag {
   display: block;
   font-family: var(--font-geist-mono), ui-monospace, monospace;

@@ -100,6 +100,46 @@
             "id": "1zGjQuHTU_Wq__ikTDaiiuENF2vQsFRJX",
             "name": "slide7-kid-classroom.mp4"
           }
+        },
+        "v0-phone": {
+          "asset": "public/slides/phone-v0.png",
+          "kind": "image",
+          "frame": "phone",
+          "content": "v0 Engineering — the REAL Nothing device, background removed to transparent. Sits BELOW the card text (Tyler, 2026-07-25); the environment video stays above.",
+          "drive": {
+            "id": "1fMrW7cIqcJK0PAOZs5g16zxSx_tDX4LJ",
+            "name": "phone-00-nothing-original-transparent.png"
+          }
+        },
+        "doctor-phone": {
+          "asset": "public/slides/phone-doctor.png",
+          "kind": "image",
+          "frame": "phone",
+          "content": "Doctor concept — clinical white, mint accent, vertical camera column. Transparent PNG below the card text.",
+          "drive": {
+            "id": "1G43Pq-cNTNsdI6ZB5kCW0urttxhDG4zg",
+            "name": "phone-var-doctor-01.png"
+          }
+        },
+        "lawyer-phone": {
+          "asset": "public/slides/phone-lawyer.png",
+          "kind": "image",
+          "frame": "phone",
+          "content": "Lawyer concept — espresso brown, antique brass rails. Transparent PNG below the card text.",
+          "drive": {
+            "id": "1tEQcfKBvAvntwwV-Oswnz3V0PiK8zvhZ",
+            "name": "phone-var-lawyer-05.png"
+          }
+        },
+        "kid-phone": {
+          "asset": "public/slides/phone-kid.png",
+          "kind": "image",
+          "frame": "phone",
+          "content": "Kid concept — sky blue rubberised bumper, lime accent. Tyler's pick (kids-02), REGENERATED because the original was cropped at the canvas edge, then sized to match v0. Transparent PNG below the card text.",
+          "drive": {
+            "id": "1thys3FnGRnSWXwd1EFpXfWdCLuhJqnU5",
+            "name": "phone-kid-FINAL-sized.png"
+          }
         }
       }
     },
