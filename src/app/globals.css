@@ -272,9 +272,11 @@ body {
   overflow: visible;
   margin-bottom: 0;
   width: auto;
-  /* Sized so even the TALLEST card (Kid — 9 allowed bullets) keeps its phone
-     inside the 100vh slide. Verified at 1440×1000 and 390×844. */
-  height: clamp(96px, 13vh, 168px);
+  /* Deliberately SMALLER than the environment video above it (Tyler,
+     2026-07-25): the video is clamp(76px,10vh,132px), so the phone sits a step
+     under that at every viewport. It does not need to fill the column's
+     x-axis — a small device reads as a product chip, not a second hero. */
+  height: clamp(68px, 8vh, 112px);
   aspect-ratio: auto;
 }
 .device-phone .device-media {
