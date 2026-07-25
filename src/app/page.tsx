@@ -70,9 +70,16 @@ const DEVICES: {
   },
   {
     name: "Kid",
-    for: "students",
-    allowed: ["Learning apps & homework", "Calls & messages home", "Camera"],
-    removed: "feeds · store · browser — nothing farms their attention",
+    for: "kids — bought by parents",
+    allowed: [
+      "Tutor AI — explains, never answers for them",
+      "Reading, homework & school planner",
+      "Create — draw, write, music, code",
+      "Calls & messages, parent-approved contacts",
+      "Camera",
+      "Location share with home",
+    ],
+    removed: "feeds · store · browser · stranger DMs — nothing farms their attention",
   },
 ];
 
