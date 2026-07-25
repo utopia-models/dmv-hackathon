@@ -946,12 +946,17 @@ html.review-on .slide-body--me { padding-top: clamp(1.5rem, 34vh, 20rem); }
    otherwise dark frame — same centre-vs-text conflict as s-solution, but here
    the text spans nearly the full width. Near-uniform dark wash: the device
    reads as an ambient glint, the stats stay authoritative. */
+/* Faded to MATCH the Founder slide (Tyler, 2026-07-25). The fade there is two
+   things, not one: the scrim gradient AND `opacity` on the media itself. s-proof
+   previously had only the scrim, so its video sat at the global 0.9 and read far
+   hotter than s5. Both values are now copied from #s5 verbatim — if s5's fade
+   changes, change this with it. */
+#s-proof .slide-media { opacity: 0.28; }
 #s-proof .slide-scrim {
   background: linear-gradient(
     180deg,
-    rgba(13, 13, 15, 0.74) 0%,
-    rgba(13, 13, 15, 0.87) 28%,
-    rgba(13, 13, 15, 0.87) 76%,
-    rgba(13, 13, 15, 0.72) 100%
+    rgba(13, 13, 15, 0.72) 0%,
+    rgba(13, 13, 15, 0.82) 50%,
+    rgba(13, 13, 15, 0.9) 100%
   );
 }
