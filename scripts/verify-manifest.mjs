@@ -29,7 +29,12 @@ try {
 }
 
 // --- 1. every manifest asset resolves on disk --------------------------------
-const entries = [...(manifest.slides ?? []), ...(manifest.unused ?? [])];
+// Collect nested slide-7 lineup assets too (knowledge#2582) — they are real
+// /slides/* paths referenced by page.tsx and must pass both checks like any other.
+const lineupEntries = (manifest.slides ?? [])
+  .filter((s) => s.lineup)
+  .flatMap((s) => Object.values(s.lineup));
+const entries = [...(manifest.slides ?? []), ...lineupEntries, ...(manifest.unused ?? [])];
 const manifestAssets = new Set();
 for (const e of entries) {
   if (!e.asset) continue; // slides 5 & 7 have no media asset — that is valid

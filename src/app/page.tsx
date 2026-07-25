@@ -171,7 +171,9 @@ export default function Home() {
             see the argument whole and cut on screen — this is a reorder, not a
             rewrite. Kicker reads "Problem" per his instruction. */}
         <section id="s2" className="slide" style={tint(TINT.umber)}>
-          <SlideMedia src="/slides/2.mp4" kind="video" alt="" />
+          {/* NO background — Tyler's call (knowledge#2582): three stacked lines on
+              the warm ground; the quiet Problem slide makes the rich Solution pop.
+              Its former video is now slide 3's hero. Do not substitute an asset. */}
           <div className="slide-body">
             <span className="kicker">Problem</span>
             <p className="line">One device tries to be everything.</p>
@@ -187,12 +189,12 @@ export default function Home() {
 
 
         {/* SOLUTION (Tyler, 2026-07-25) — slide 3 of the five shown. His words,
-            placed verbatim, over the REAL launcher asset: the customer quote names
-            Claude, Messages and Phone, and the launcher shows exactly those. This
-            is the deleted Traction slide's evidence repurposed as the SOLUTION
-            rather than "look what I built". */}
+            placed verbatim, over the video hero promoted from slide 2 per
+            knowledge#2582 (Drive: slide-3-solution/slide-3-solution-hero.mp4,
+            repo: 3-solution-hero.mp4). kind="video" is REQUIRED — SlideMedia
+            defaults to image probing and would silently render nothing. */}
         <section id="s-solution" className="slide" style={tint(TINT.cactus)}>
-          <SlideMedia src="/slides/6.png" alt="The RAW launcher — ten apps, no browser, no store" />
+          <SlideMedia src="/slides/3-solution-hero.mp4" kind="video" alt="RAW in motion — the solution's hero video" />
           <div className="slide-body">
             <span className="kicker">Solution</span>
             <p className="line">
