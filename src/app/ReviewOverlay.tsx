@@ -174,8 +174,18 @@ export default function ReviewOverlay() {
           backdropFilter: "blur(6px)",
         }}
       >
-        <div style={{ color: "#9C805C", letterSpacing: ".14em", fontSize: 11 }}>
-          SLIDE {b.n} / {BEATS.length} &nbsp;·&nbsp; click for full script
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/raw-mark.png"
+            alt="RAW"
+            width={34}
+            height={18}
+            style={{ display: "block", flexShrink: 0, opacity: 0.92 }}
+          />
+          <div style={{ color: "#9C805C", letterSpacing: ".14em", fontSize: 11 }}>
+            SLIDE {b.n} / {BEATS.length} &nbsp;·&nbsp; click for full script
+          </div>
         </div>
         <div style={{ marginTop: 10, color: "#9C805C", fontSize: 10, letterSpacing: ".16em" }}>
           PURPOSE
