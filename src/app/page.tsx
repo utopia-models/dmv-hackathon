@@ -38,7 +38,7 @@ const DEVICES: {
     name: "Doctor",
     for: "clinicians",
     allowed:
-      "Epic EHR · UpToDate · MDCalc · TigerConnect paging · Doximity dialer · on-call schedule",
+      "Epic EHR · OpenEvidence clinical AI (HIPAA) · UpToDate · MDCalc · TigerConnect paging · Doximity dialer · on-call schedule",
     removed: "social · feeds · browser — if it buzzes, it's a page",
   },
   {
