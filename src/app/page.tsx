@@ -127,7 +127,7 @@ const DEVICES: {
       "Camera · encrypted photo library · location share with home",
     ],
     removed:
-      "feeds · store · browser · stranger DMs · photo apps parents haven't approved — the only algorithm on it works for them",
+      "feeds · store · browser · stranger DMs · unapproved photo apps — the only algorithm on it works for them",
   },
 ];
 
