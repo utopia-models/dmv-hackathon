@@ -30,9 +30,10 @@ export default function Home() {
       <main className="deck">
         {/* 1 · Hero */}
         <section id="s1" className="slide" style={tint(TINT.rodeo)}>
-          <SlideMedia src="/slides/1.png" alt="RAW hero" />
+          <SlideMedia src="/slides/1.mp4" kind="video" alt="The RAW phone in use" />
           <div className="slide-body">
-            <h1 className="wordmark wordmark--sand">RAW</h1>
+            <span className="kicker">The product</span>
+            <p className="line">This is RAW.</p>
           </div>
         </section>
 
