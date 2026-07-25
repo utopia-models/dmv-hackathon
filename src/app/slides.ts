@@ -19,6 +19,13 @@ export const SLIDES: Slide[] = [
   { id: "s2", label: "Problem — one device tries to be everything" },
   { id: "s3", label: "Product — what you can't" },
   { id: "s4", label: "Thesis — the shift already started" },
+  // The marketing is me (knowledge#2562) — inserted BEFORE the fleet slide.
+  // Non-numeric id ON PURPOSE: ReviewOverlay.tsx (owned by mms5377, knowledge#2542)
+  // keys its BEATS on parseInt(id.replace("s","")); "s-me" -> NaN -> it is
+  // ignored, so inserting here forces NO renumbering of s5..s8 and needs no
+  // edit to ReviewOverlay. The dots + the DeckControls popup read THIS array,
+  // so they pick the slide up by position.
+  { id: "s-me", label: "The marketing is me — founder, fleet, the work" },
   { id: "s5", label: "How it's built — the fleet, live" },
   { id: "s6", label: "Traction — ten apps, one engineer" },
   { id: "s7", label: "Market — every profession gets its own" },

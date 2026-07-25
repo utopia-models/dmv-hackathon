@@ -26,6 +26,7 @@ manifest owns slide → ASSET. They do not duplicate each other.
 | 2 Problem | `2.mp4` | video |
 | 3 Product | `3.png` | the RAW phone |
 | 4 Thesis | `4.png` | |
+| — The marketing is me | montage | `id="s-me"` (knowledge#2562) — glob of `/public/creatives/`, not a single asset; see `public/creatives/README.md`. Sits immediately before the fleet slide. |
 | 5 How it's built | `5-occ-poster.png` | poster behind the LIVE OCC iframe — Izzu's slide (knowledge#2542) |
 | 6 Traction | `6.png` | |
 | 7 Market | — | typographic lineup (`DEVICES.map`), no media |
