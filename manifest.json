@@ -16,6 +16,11 @@
     { "n": 7, "asset": null, "kind": "typographic", "content": "Market — the focused-phone lineup (DEVICES.map in page.tsx); no media asset", "drive": null },
     { "n": 8, "asset": "public/slides/8.png", "kind": "image", "content": "Ask — RAW, building is cool (closing)", "drive": { "id": "1of89jwcIS7xolrik6ZX47ZbxJeW4Zo9r", "name": "slide-8.png", "was": "angleA-desert-dawn-hero-v1.png" } }
   ],
+  "creatives": {
+    "_note": "The 'The marketing is me' slide (id s-me, knowledge#2562) is a MONTAGE, not a single asset — so it is NOT in the `slides` array above. Its tiles are a BUILD-TIME GLOB of public/creatives/ (server component in page.tsx): adding a file there adds a tile, no manifest entry needed. Empty folder → honest empty state. The Drive `slide-x/` folder (sliderxFolder above) is the human curation surface; chosen files are placed in public/creatives/. See public/creatives/README.md.",
+    "folder": "public/creatives",
+    "seeded": ["raw-phone-in-hand.png (real orphan 5.png)", "raw-motion-01.mp4 (real orphan 7.mp4)", "raw-motion-02.mp4 (real orphan 9.mp4)"]
+  },
   "unused": [
     { "asset": "public/slides/1.png", "content": "orphan — byte-identical (md5) to 8.png's source; slide 1 uses 1.mp4", "drive": { "id": "1of89jwcIS7xolrik6ZX47ZbxJeW4Zo9r", "name": "slide-8.png", "note": "same Drive source as slide 8" } },
     { "asset": "public/slides/5.png", "content": "orphan — a phone-in-hand still; slide 5 uses 5-occ-poster.png (the iframe poster), not this", "drive": { "id": "1mfHUSPC0u0RBZb4QFMPPKY4IPUYnhLJi", "name": "B-running-device-inhand-v1.png", "note": "NOT renamed — not in the deck" } },

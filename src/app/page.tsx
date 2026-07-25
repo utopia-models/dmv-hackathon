@@ -1,7 +1,51 @@
 import type { CSSProperties } from "react";
+import fs from "node:fs";
+import path from "node:path";
 import ReviewOverlay from "./ReviewOverlay";
 import SlideMedia from "./SlideMedia";
 import DeckControls from "./DeckControls";
+
+/* ── "The marketing is me" (knowledge#2562) ──────────────────────────────
+   The creatives wall globs /public/creatives at BUILD TIME (this is a server
+   component). Adding a file to that folder adds a tile; removing one removes a
+   tile — no code edit, no manifest entry. Empty folder → honest empty state
+   (never placeholder tiles). See public/creatives/README.md. */
+const IMG_EXT = new Set([".png", ".jpg", ".jpeg", ".webp", ".gif"]);
+const VID_EXT = new Set([".mp4", ".webm"]);
+
+function readCreatives(): { src: string; kind: "image" | "video" }[] {
+  const dir = path.join(process.cwd(), "public", "creatives");
+  let names: string[] = [];
+  try {
+    names = fs.readdirSync(dir);
+  } catch {
+    return []; // folder absent → honest empty state
+  }
+  return names
+    .filter((n) => !n.startsWith("."))
+    .map((n) => ({ n, ext: path.extname(n).toLowerCase() }))
+    .filter(({ ext }) => IMG_EXT.has(ext) || VID_EXT.has(ext))
+    .sort((a, b) => a.n.localeCompare(b.n))
+    .map(({ n, ext }) => ({
+      src: `/creatives/${n}`,
+      kind: VID_EXT.has(ext) ? ("video" as const) : ("image" as const),
+    }));
+}
+
+/* Tyler's Instagram — a single constant so it changes in ONE place.
+   ⚠ knowledge#2562: brand handle default; Tyler confirms/corrects on the issue.
+   No follower COUNT is shown — the live count needs the Instagram Graph API key
+   the fleet does not hold, so per the DoD we ship the official profile CTA with
+   an honest ABSENCE of a number rather than an invented one. */
+const INSTAGRAM_HANDLE = "utopiamodels";
+
+const InstagramGlyph = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden focusable="false">
+    <rect x="2.5" y="2.5" width="19" height="19" rx="5.4" stroke="currentColor" strokeWidth="1.8" />
+    <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8" />
+    <circle cx="17.4" cy="6.6" r="1.25" fill="currentColor" />
+  </svg>
+);
 
 /*
  * RAW — 8-slide scroll-snap pitch deck (DMV Hackathon Track 04).
@@ -88,6 +132,7 @@ const DEVICES: {
 ];
 
 export default function Home() {
+  const creatives = readCreatives();
   return (
     <>
       {/* Right-edge progress dots + the top-right review controls (#2547).
@@ -129,6 +174,60 @@ export default function Home() {
           <div className="slide-body">
             <span className="kicker">The thesis</span>
             <p className="line">The shift already started.<br />Nobody built the device.</p>
+          </div>
+        </section>
+
+        {/* The marketing is me (knowledge#2562) — placed IMMEDIATELY BEFORE the
+            fleet slide (s5). The order is the argument: here is the person →
+            here is the machine that makes him able to ship. id="s-me" is
+            non-numeric on purpose (see slides.ts) so it forces no renumbering
+            and needs no edit to ReviewOverlay.tsx (mms5377 / knowledge#2542). */}
+        <section id="s-me" className="slide" style={tint(TINT.tan)}>
+          <div className="slide-body slide-body--me">
+            <div className="me-head">
+              <span className="kicker">The founder</span>
+              <p className="line">The marketing is me.</p>
+              <p className="me-sub">
+                The proof isn&rsquo;t a pitch. It&rsquo;s a person building in
+                public &mdash; on the device, with the fleet, making the work.
+              </p>
+            </div>
+
+            {creatives.length > 0 ? (
+              <div className="cwall" aria-label="Creatives made this hackathon">
+                {creatives.map((c) =>
+                  c.kind === "video" ? (
+                    <video
+                      key={c.src}
+                      className="cwall-tile"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                    >
+                      <source src={c.src} />
+                    </video>
+                  ) : (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img key={c.src} className="cwall-tile" src={c.src} alt="" draggable={false} />
+                  )
+                )}
+              </div>
+            ) : (
+              <p className="cwall-empty">the work, curated live &mdash; utopia</p>
+            )}
+
+            <a
+              className="ig-cta"
+              href={`https://instagram.com/${INSTAGRAM_HANDLE}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <InstagramGlyph />
+              <span>Follow the build</span>
+              <span className="ig-handle">@{INSTAGRAM_HANDLE}</span>
+            </a>
           </div>
         </section>
 
