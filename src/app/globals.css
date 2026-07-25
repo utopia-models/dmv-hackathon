@@ -164,6 +164,36 @@ body {
 }
 .device:first-child { border-left: 0; padding-left: 0; }
 
+/* per-card media (DeviceMedia) — absent until the asset lands, then it appears.
+   The honest asymmetry: v0 is a portrait PHONE (a real device screen); the
+   coming concepts are 16:9 landscape ENVIRONMENTS. */
+.device-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(13, 13, 15, 0.6);
+  border: 1px solid rgba(196, 170, 130, 0.14);
+  margin-bottom: clamp(0.85rem, 2vh, 1.2rem);
+}
+.device-frame--phone {
+  /* real phone screen (1080×2424) — small, unmistakably a device */
+  width: clamp(4.75rem, 8vw, 7rem);
+  aspect-ratio: 1080 / 2424;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(0, 0, 0, 0.55);
+}
+.device-frame--wide {
+  /* concept environment — landscape card, full card width */
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.device-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .device-tag {
   display: block;
   font-family: var(--font-geist-mono), ui-monospace, monospace;
