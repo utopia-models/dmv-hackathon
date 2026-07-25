@@ -9,6 +9,11 @@ import { ExplainMonthRequestSchema } from "@/lib/llm/schemas";
 
 const PLACEHOLDER = /\{\{figure:([a-zA-Z0-9_.-]+)\}\}/g;
 
+/** Drop assistant-style lead-ins ("Here is the monthly close note:") before the real prose. */
+function stripPreamble(text: string): string {
+  return text.replace(/^[^{]{0,80}:\s*\n+/, "").trim();
+}
+
 /** Valid prose: every placeholder key exists in figures, and there are no raw digits outside placeholders. */
 function validateProse(prose: string, figures: Record<string, number>): boolean {
   const keys = [...prose.matchAll(PLACEHOLDER)].map((m) => m[1]);
@@ -79,8 +84,9 @@ export async function POST(req: Request) {
             ],
     });
     if (prose === null) break;
-    if (validateProse(prose, figures)) {
-      return NextResponse.json({ month, prose, source: "llm" });
+    const clean = stripPreamble(prose);
+    if (validateProse(clean, figures)) {
+      return NextResponse.json({ month, prose: clean, source: "llm" });
     }
   }
 
