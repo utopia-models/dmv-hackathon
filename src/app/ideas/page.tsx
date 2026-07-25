@@ -393,7 +393,10 @@ function AngleCard({ a }: { a: Angle }) {
     <article className="angle" style={{ "--tint": a.tint } as CSSProperties}>
       <figure className="shot">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={a.image} alt={a.imageAlt} loading="lazy" draggable={false} />
+        {/* eager, not lazy: only 6 pitch visuals — lazy left the bottom cards
+            (nova's E/F) never triggering the intersection observer, so their
+            real generated visuals rendered as empty 0x0 slots (#2523). */}
+        <img src={a.image} alt={a.imageAlt} loading="eager" draggable={false} />
         <figcaption>{a.caption}</figcaption>
       </figure>
 
