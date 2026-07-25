@@ -80,9 +80,10 @@ const DEVICES: {
       "Age-safe by design — search & DNS filtered at the network",
       "Sentry mode — safety alerts straight home",
       "Calls & messages, parent-approved contacts",
-      "Camera · location share with home",
+      "Camera · encrypted photo library · location share with home",
     ],
-    removed: "feeds · store · browser · stranger DMs — the only algorithm on it works for them",
+    removed:
+      "feeds · store · browser · stranger DMs · photo apps parents haven't approved — the only algorithm on it works for them",
   },
 ];
 
