@@ -73,13 +73,16 @@ const DEVICES: {
     for: "kids — bought by parents",
     allowed: [
       "Tutor AI — explains, never answers for them",
+      "An algorithm that learns their strengths — and grows them toward work they'll love",
+      "Wakes them with encouragement, not notifications",
       "Reading, homework & school planner",
       "Create — draw, write, music, code",
+      "Age-safe by design — search & DNS filtered at the network",
+      "Sentry mode — safety alerts straight home",
       "Calls & messages, parent-approved contacts",
-      "Camera",
-      "Location share with home",
+      "Camera · location share with home",
     ],
-    removed: "feeds · store · browser · stranger DMs — nothing farms their attention",
+    removed: "feeds · store · browser · stranger DMs — the only algorithm on it works for them",
   },
 ];
 
