@@ -45,7 +45,7 @@ const DEVICES: {
     name: "Lawyer",
     for: "litigators",
     allowed:
-      "Westlaw · CoCounsel legal AI · Clio matters & deadlines · NetDocuments · DocuSign · Signal (privileged comms)",
+      "Westlaw · CoCounsel legal AI (research + document drafting) · Clio with AI scheduling · AI call screener that turns missed calls into consultation docs · practice-area law brief · ads & post autopilot (it posts — you never feed) · NetDocuments · DocuSign · Signal (privileged comms)",
     removed: "social · feeds · browser — every minute on it is billable",
   },
   {
