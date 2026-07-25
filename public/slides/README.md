@@ -20,20 +20,59 @@ manifest owns slide → ASSET. They do not duplicate each other.
 
 ## Current mapping (source of truth is `/manifest.json`)
 
-| slide | file | note |
-|---|---|---|
-| 1 Hero | `1.mp4` | video (autoplay muted loop) |
-| 2 Problem | `2.mp4` | video |
-| 3 Product | `3.png` | the RAW phone |
-| 4 Thesis | `4.png` | |
-| — The marketing is me | montage | `id="s-me"` (knowledge#2562) — glob of `/public/creatives/`, not a single asset; see `public/creatives/README.md`. Sits immediately before the fleet slide. |
-| 5 How it's built | `5-occ-poster.png` | poster behind the LIVE OCC iframe — Izzu's slide (knowledge#2542) |
-| 6 Traction | `6.png` | |
-| 7 Market | — | typographic lineup (`DEVICES.map`), no media |
-| 8 Ask | `8.png` | |
+The deck was re-cut to Tyler's 5-slide structure on 2026-07-25. **Section ids are
+now semantic, not ordinal** — `n` in the manifest is the ORIGINAL 8-slide
+numbering and is NOT the current slide position. Do not read it as one.
 
-Orphans (present but wired to nothing): `1.png`, `5.png`, `7.mp4`, `9.mp4` —
-recorded under `unused` in the manifest, not deleted.
+| # | section id | renders |
+|---|---|---|
+| 1 Hero | `s1` | `1.mp4` (video) |
+| 2 Problem | `s2` | `2.mp4` (video) |
+| 3 Solution | `s-solution` | `6.png` — the launcher still |
+| 4 Market | `s7` | per-card `DeviceMedia` only; `lineup-{doctor,lawyer,kid}.mp4` are referenced but NOT YET in the repo (knowledge#2553) |
+| 5 Founder | `s5` | `5-occ-poster.png` (behind the LIVE iframe) · `lineup-v0.mp4` (the real Pixel 10 capture) · the `/public/creatives/` glob (3 tiles) |
+
+Everything else in the registry is prefixed `ref ·` — still in the deck, still
+togglable, not part of the five.
+
+Orphans (present but wired to nothing): `1.png`, `3.png`, `4.png`, `5.png`,
+`7.mp4`, `8.png`, `9.mp4`. Note `1.png` and `8.png` are byte-identical
+duplicates of each other, and both are dead.
+
+## ⚠ The Drive folders MIRROR the slides — and nothing enforces it
+
+`00_inputs/DECK-ready/` holds five folders — `slide-1-hero`, `slide-2-problem`,
+`slide-3-solution`, `slide-4-market`, `slide-5-founder`.
+
+**The rule (Tyler, 2026-07-25): each folder contains exactly what that slide
+renders — no more.** Open `slide-5-founder` and you see slide 5's assets. That is
+what makes the deck auditable from Drive without opening the site.
+
+**There is NO automation.** Drive → site is entirely manual:
+
+```
+drive-download → place in public/ → update manifest.json
+               → pnpm verify:manifest → commit → push → Vercel
+```
+
+Consequences, both of which have already bitten:
+
+1. **Moving a file in Drive changes nothing on the site.** The site serves
+   committed bytes under `public/`; Drive is a human-facing library. They are
+   connected only by a human keeping `manifest.json` honest.
+2. **Editing a slide changes nothing in Drive.** The folders silently go stale
+   the moment a slide is re-cut. On 2026-07-25 all five drifted this way — they
+   had been populated under the deck's OLD numbering, then the deck was merged
+   and reordered underneath them.
+
+**So: if you change what a slide renders, update its Drive folder in the same
+pass.** And when reconciling, **match by md5, never by filename** — the filenames
+are assigned by hand and were exactly what disguised the drift.
+
+Tooling is `~/.claude/scripts/google-workspace.sh` (`drive-list`, `drive-upload`,
+`drive-rm`, `drive-move`, `drive-mkdir`). It has **no copy and no rename verb** —
+both need a raw Drive v3 call. Prefer server-side copy (`files/<id>/copy`) over
+re-uploading; most deck assets already exist somewhere in Drive.
 
 ## Formats
 
