@@ -164,12 +164,9 @@ export default function Home() {
         <section id="s2" className="slide" style={tint(TINT.umber)}>
           <div className="slide-body">
             <span className="kicker">Problem</span>
-            <p className="line">Brainrot is a design decision.</p>
-            <p className="line line--sub">
-              The largest tech companies made it for you.
-            </p>
-            <p className="note note--merge">
-              The shift already started. Nobody built the device.
+            <p className="line">
+              People are paying for focus on hardware built against it.<br />
+              Nobody sells them the device.
             </p>
           </div>
         </section>
