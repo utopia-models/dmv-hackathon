@@ -164,9 +164,13 @@ export default function Home() {
         <section id="s2" className="slide" style={tint(TINT.umber)}>
           <div className="slide-body">
             <span className="kicker">Problem</span>
-            <p className="line">
-              People are paying for focus on hardware built against it.<br />
-              Nobody sells them the device.
+            {/* Hierarchy (Izzu): the setup breathes small, the five-word gap lands
+                huge. Same order a voice would say it. */}
+            <p className="line line--sub" style={{ marginTop: 0, maxWidth: "34ch", marginLeft: "auto", marginRight: "auto" }}>
+              People are paying for focus on hardware built against it.
+            </p>
+            <p className="line" style={{ marginTop: "clamp(0.9rem, 3vh, 2rem)" }}>
+              Nobody sells them<br />the device.
             </p>
           </div>
         </section>
