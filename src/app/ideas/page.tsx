@@ -3,10 +3,13 @@
 /*
  * /ideas — RAW pitch ideation surface (DMV Hackathon Track 04).
  *
- * TWO competing 2-minute shark-tank angles for Tyler to pick the winner.
- * Each: title · full word-for-word spoken script with timing markers ·
+ * Competing 2-minute shark-tank angles for Tyler to pick the winner. Each:
+ * title · full word-for-word spoken script with timing markers ·
  * value-add / user-benefit / profitability · a REAL generated visual ·
  * the one judge question it is weakest against + the honest answer.
+ *
+ * This is a SHARED board — masters ADD their angles, never clobber another's.
+ * Angles A–D by prior masters (cloud + win); angles E–F added by nova (#2523).
  *
  * This is the IDEATION surface — NOT the live submission. The root `/`
  * is the submission deck and is untouched by this route.
@@ -250,6 +253,124 @@ const ANGLES: Angle[] = [
     weakest: {
       q: "You're reselling someone else's phone — what stops Nothing, or Apple, from shipping a focus mode and killing you overnight?",
       a: "A focus mode is a setting on the everything-device — it's the delete-the-apps problem again: remade every day and defaulted off. Our moat was never the silicon. It's the rip-and-rebrand method, the curated store, and the managed layer — the culture and the catalog, not the hardware. We own the rip out loud: it's the method, not a shortcut.",
+    },
+  },
+
+  // ── nova · Angle E — the culture shift (emotional / generational) ─────────
+  {
+    key: "E",
+    tint: "rgba(41,30,22,0.6)",
+    eyebrow: "Angle E · nova · the culture shift",
+    title: "A Decision You Make Once",
+    premise:
+      "The emotional, generational register — a culture shift, not a spec sheet. Generality rots attention; the fix is a device you choose once, not a willpower battle you re-fight every morning.",
+    image: "/ideas/angle-a-hero.webp",
+    imageAlt:
+      "The RAW phone — a transparent-back device with its glyph interface glowing — floating over a warm amber desert horizon.",
+    caption:
+      "The phone over a warm amber horizon, the glyph glowing. Generated (Nano Banana Pro), subject-locked to the real transparent-back device.",
+    script: [
+      {
+        t: "[00:00–00:20]",
+        text:
+          "Everyone thinks they have a willpower problem. They don't — they have a design problem. You pick up your phone to do one thing, and an hour later you're somewhere you never chose to go. That's not you failing. That's a device built to be everything, doing exactly what it was designed to do.",
+      },
+      {
+        t: "[00:20–00:40]",
+        text:
+          "One device tried to become your whole life — your work, your friends, your bank, your feed, your kids' homework. And when one thing tries to be everything, it can't be good at the things that actually matter. Attention is the price. We've all been paying it for fifteen years.",
+      },
+      {
+        t: "[00:40–01:00]",
+        text:
+          "RAW is a bet that the future is plural. Not one glass rectangle that does everything — but focused devices, each with one mode of being. A phone for building. A phone for learning. A phone for being present. One device, one intention. The world stops happening to you, and starts being yours again.",
+      },
+      {
+        t: "[01:00–01:20]",
+        text:
+          "This isn't a productivity hack — it's a culture shift. We want kids who actually learn instead of getting brain-rotted. We want builders who build. The message is simple: the world is yours, go make something. Building is cool again.",
+      },
+      {
+        t: "[01:20–01:40]",
+        text:
+          "And I'm not projecting adoption — I am the adoption. Five days ago I took Chrome off my own phone. I carry a managed RAW phone to my engineering job every single day. The home screen shows ten apps — the ten that move my life forward. Everything else is gone. Not by willpower. By design.",
+      },
+      {
+        t: "[01:40–02:00]",
+        text:
+          "People ask: why not just delete the apps? Because deletion is a decision you remake every single morning — and you lose. A separate device is a decision you make once. That's the whole idea. RAW isn't a phone company — it's permission to choose your life on purpose. The world is yours.",
+      },
+    ],
+    vbp: {
+      value:
+        "RAW turns a commodity Android into a focused, managed device with a brand and a philosophy. The durable asset is the rip system — the repeatable method for rebranding any phone into a curated, single-mode device.",
+      benefit:
+        "Your attention back by design, not willpower. A device that matches one intention instead of fighting for all of them. For parents: a phone their kids learn on, not rot on.",
+      profit:
+        "Sell the device plus the managed software layer; each mode — focus, learn, build — is its own curated app store, the recurring, durable revenue. Rebranding existing hardware keeps COGS low and margin in software. Wedge markets: parents, students, knowledge workers, and B2B managed work phones (Android Enterprise is already a multi-billion-dollar market).",
+    },
+    weakest: {
+      q: "Isn't this just self-restraint dressed up as a product — why would anyone pay for a phone that does less?",
+      a: "Because deletion is a fight you remake daily and lose, and people already pay for the outcome — dumb phones, the Light Phone, screen-time coaches, parents managing kids' devices. RAW delivers that outcome without giving up the ten apps you actually need, and wraps it in a brand people want to belong to. The willingness-to-pay exists today; RAW gives it a name.",
+    },
+  },
+
+  // ── nova · Angle F — the two-minute walkthrough (demo-flow) ───────────────
+  {
+    key: "F",
+    tint: "rgba(74,54,38,0.5)",
+    eyebrow: "Angle F · nova · the two-minute walkthrough",
+    title: "Ten Apps, One Decision",
+    premise:
+      "Demo-flow — how to walk the judge through the whole idea in two minutes, on a real phone: count the ten apps, try to break it, handle the counter live, then the business.",
+    image: "/ideas/angle-b-hero.webp",
+    imageAlt:
+      "The RAW phone laid flat on a warm sand surface in bright daylight — a considered, minimal device that does less on purpose.",
+    caption:
+      "The phone as a considered object in bright daylight — does less, on purpose. Generated (Nano Banana Pro), subject-locked to the real device.",
+    script: [
+      {
+        t: "[00:00–00:20]",
+        text:
+          "Let me show you the whole idea in two minutes — on a real phone, in your hand. (hand the judge the phone) This is my daily phone. Swipe up. Count the apps. Ten. Phone, Messages, Gmail, Drive, Claude, WhatsApp, Telegram — the ten that move my life forward. No Chrome. No app store. No feed to fall into.",
+      },
+      {
+        t: "[00:20–00:40]",
+        text:
+          "Now — try to break it. Swipe around. It's normal Android underneath: this is a managed phone, not a locked box. Everything still works. I just decided, once, which ten things get to be on the home screen — and that decision holds every morning without me thinking about it.",
+      },
+      {
+        t: "[00:40–01:00]",
+        text:
+          "Here's the thought that started it. The problem was never phones — it's that one device tries to be everything, and generality rots attention. So instead of fighting the device with willpower, I changed the device. One phone, one mode. This one is for work and building.",
+      },
+      {
+        t: "[01:00–01:20]",
+        text:
+          "You're already thinking it — why not just delete the apps? Watch: I could reinstall anything in thirty seconds. That's exactly the point. Deletion is a decision you remake every single day, and you lose. This (hold up the phone) is a decision I made once. A separate device beats a daily fight.",
+      },
+      {
+        t: "[01:20–01:40]",
+        text:
+          "Here's why it's a company, not a hobby. Today RAW is a rip — we rebrand an existing Android and lay a managed layer on top. Low cost to make, real margin in the software. Each mode — focus, learn, build — is its own curated app store. That's the recurring revenue. Parents want a phone their kids learn on; companies already pay to manage work phones. We give them a brand and a philosophy instead of an IT tool.",
+      },
+      {
+        t: "[01:40–02:00]",
+        text:
+          "So the demo is the pitch. Not a slide — a phone that already exists, in my pocket, every day. RAW is the shift from a device that happens to you, to a device that's yours. Ten apps. One decision. Made once. Want to hold it?",
+      },
+    ],
+    vbp: {
+      value:
+        "A live, working managed device — the device-owner app is compiled and running on a real phone today. Execution over mockup, and the rip system is the repeatable method behind it.",
+      benefit:
+        "The ten apps that matter, decided once. Normal Android underneath — managed, never caged: reinstall anything in seconds. Freedom by design, not restriction.",
+      profit:
+        "Rebranding an existing Android means low COGS; the margin lives in the managed software layer, and the per-mode curated stores are the recurring revenue. Two live markets: parents and students (B2C) and managed work phones (B2B) — sold as a brand and a belief, not an enterprise IT console.",
+    },
+    weakest: {
+      q: "If it's just normal Android with a managed launcher, what stops Google or Nothing from shipping this tomorrow — or a user doing it for free?",
+      a: "Nothing stops a tinkerer from hacking their own — the same way nothing stops you from self-hosting email, and almost nobody does. The product is the curated, maintained, branded experience and the one-decision setup. And the platforms won't build it: their whole business is maximizing engagement. A phone designed to be used less is anti-thetical to their model — which is precisely why a focused brand can own it.",
     },
   },
 ];
