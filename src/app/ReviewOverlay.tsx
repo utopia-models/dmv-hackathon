@@ -73,11 +73,16 @@ const BEATS: Beat[] = [
   },
   {
     n: 5,
-    onScreen: "Ten apps. No browser. No feed.",
-    purpose: "The concrete spec — what subtraction actually means.",
-    say: "Version one is the Engineering phone. It runs ten apps. Phone, Messages, Gmail, Drive, Claude, WhatsApp, Telegram, Tailscale, Termux, GitHub. No browser. No feed. No store to wander into.",
-    value: "Makes the abstraction checkable.",
-    benefit: "The user knows exactly what they are and aren't getting.",
+    onScreen: "A founder and an AI fleet. In public.",
+    purpose:
+      "Answer 'how does one person build a phone company?' before the judge asks it. The iframe is LIVE — that's the actual operations center, not a screenshot.",
+    say: "This is how it gets built. One founder and a fleet of AI agents, running in public — that's the live board, right now. It's how a phone brand ships at this size.",
+    warn:
+      "The iframe is a REAL live embed of utopiamodels.ai. If the network is bad it may render slow or blank — say 'that's the live board' and keep moving; never wait on it or apologize for it.",
+    value: "The company itself is the proof that the operating model works.",
+    benefit: "A judge sees the machine that makes plural devices economically possible.",
+    weakest:
+      "\"Isn't this just one guy?\" — Yes. That's the point: the fleet is the leverage that makes a device-per-profession affordable.",
   },
   {
     n: 6,
