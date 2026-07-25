@@ -30,7 +30,7 @@ export default function Home() {
       <main className="deck">
         {/* 1 · Hero */}
         <section id="s1" className="slide" style={tint(TINT.rodeo)}>
-          <SlideMedia src="/slides/1.webp" alt="RAW hero" />
+          <SlideMedia src="/slides/1.png" alt="RAW hero" />
           <div className="slide-body">
             <h1 className="wordmark wordmark--sand">RAW</h1>
           </div>
@@ -38,7 +38,7 @@ export default function Home() {
 
         {/* 2 · Problem */}
         <section id="s2" className="slide" style={tint(TINT.umber)}>
-          <SlideMedia src="/slides/2.webp" alt="" />
+          <SlideMedia src="/slides/2.mp4" kind="video" alt="" />
           <div className="slide-body">
             <span className="kicker">The problem</span>
             <p className="line">Phones stopped being designed.</p>
@@ -47,7 +47,7 @@ export default function Home() {
 
         {/* 3 · Product */}
         <section id="s3" className="slide" style={tint(TINT.cactus)}>
-          <SlideMedia src="/slides/3.webp" alt="The RAW phone" />
+          <SlideMedia src="/slides/3.mp4" kind="video" alt="The RAW phone" />
           <div className="slide-body">
             <span className="kicker">The product</span>
             <p className="line">This is RAW.</p>
@@ -56,7 +56,7 @@ export default function Home() {
 
         {/* 4 · Thesis */}
         <section id="s4" className="slide" style={tint(TINT.tan)}>
-          <SlideMedia src="/slides/4.webp" alt="" />
+          <SlideMedia src="/slides/4.png" alt="" />
           <div className="slide-body">
             <span className="kicker">The thesis</span>
             <p className="line">Rip &rarr; repurpose.</p>
@@ -93,7 +93,7 @@ export default function Home() {
 
         {/* 6 · Traction */}
         <section id="s6" className="slide" style={tint(TINT.cactus)}>
-          <SlideMedia src="/slides/6.webp" alt="" />
+          <SlideMedia src="/slides/6.png" alt="" />
           <div className="slide-body">
             <span className="kicker">Traction</span>
             <p className="line">Live at raw.utopiamodels.ai</p>
@@ -107,7 +107,7 @@ export default function Home() {
 
         {/* 7 · Market */}
         <section id="s7" className="slide" style={tint(TINT.sand)}>
-          <SlideMedia src="/slides/7.webp" alt="" />
+          <SlideMedia src="/slides/7.mp4" kind="video" alt="" />
           <div className="slide-body">
             <span className="kicker">The market</span>
             <p className="line">Design-first hardware.</p>
@@ -116,7 +116,7 @@ export default function Home() {
 
         {/* 8 · Ask (closing) */}
         <section id="s8" className="slide" style={tint(TINT.rodeo)}>
-          <SlideMedia src="/slides/8.webp" alt="" />
+          <SlideMedia src="/slides/8.png" alt="" />
           <div className="slide-body">
             <h2 className="wordmark wordmark--sand">RAW</h2>
             <p className="note">a rebrand of the Nothing phone &middot; rip &rarr; repurpose, in the open</p>
