@@ -1,0 +1,25 @@
+{
+  "_readme": "SINGLE SOURCE OF TRUTH for slide -> deck asset. THE RULE (every master follows it): never hardcode an asset path in a slide component; the mapping lives here. A slide reorder or asset swap is a ONE-LINE edit in this file, so Drive and the code cannot silently drift apart. `content` records what the asset actually shows, so when a slide moves a human can confirm the move is correct. Boundary with knowledge#2547: the slide REGISTRY owns slide ORDER and identity; this manifest owns slide -> ASSET only — do not duplicate order here.",
+  "drive": {
+    "deckReadyFolder": "1_b3b3doZeeZjD0M2cXBxIs1F-BCb7O9r",
+    "path": "RAW / projects / site-assets-raw1 / 00_inputs / DECK-ready",
+    "sliderxFolder": "1DNqixwFsU7umDvpxkvipiWEfjOTvIWEJ",
+    "note": "Deck source assets are renamed slide-N in DECK-ready so Drive reads at-a-glance which ones are shown. Drive ids were matched to the committed repo assets by byte-exact size + type. Candidate versions Tyler is still choosing among (slide4-antibrainrot-v2..v4, extra hero angles, extra hf_ videos) are intentionally left un-renamed. Slide 5's poster is Izzu's (knowledge#2542) and is not in this folder."
+  },
+  "slides": [
+    { "n": 1, "asset": "public/slides/1.mp4", "kind": "video", "content": "Hero — the RAW phone in use (\"This is RAW.\")", "drive": { "id": "16hMQ42uVsaue0goX-_0pMv4rg1Wb4mx2", "name": "slide-1.mp4", "was": "hf_20260725_145412_b7a31fbf-....mp4" } },
+    { "n": 2, "asset": "public/slides/2.mp4", "kind": "video", "content": "Problem — one device tries to be everything", "drive": { "id": "1RunauW3o3kQCNGZJdEDj7meiUCYHQlXZ", "name": "slide-2.mp4", "was": "hf_20260725_143910_12c51c58-....mp4" } },
+    { "n": 3, "asset": "public/slides/3.png", "kind": "image", "content": "Product — a RAW phone alone in negative space", "drive": { "id": "1KPFEgPmcMSL8GfRT28QeLF6MFCzTftTF", "name": "slide-3.png", "was": "angle-b-hero-v1.png" } },
+    { "n": 4, "asset": "public/slides/4.png", "kind": "image", "content": "Thesis — the shift already started, nobody built the device", "drive": { "id": "1Kaei6shiEgMY8yHXBlemOi0IJexVB_PF", "name": "slide-4.png", "was": "slide4-antibrainrot-v1.png" } },
+    { "n": 5, "asset": "public/slides/5-occ-poster.png", "kind": "poster", "content": "How it's built — real screenshot poster behind the LIVE OCC iframe (utopiamodels.ai). Izzu's slide (knowledge#2542); do not rename/move its poster without commenting there first.", "drive": null },
+    { "n": 6, "asset": "public/slides/6.png", "kind": "image", "content": "Traction — ten apps, built for one engineer", "drive": { "id": "10pA_1fzP-6Z8ilLyZ8WSZTdgdVMuM6mZ", "name": "slide-6.png", "was": "A-managed-launcher-v1.png" } },
+    { "n": 7, "asset": null, "kind": "typographic", "content": "Market — the focused-phone lineup (DEVICES.map in page.tsx); no media asset", "drive": null },
+    { "n": 8, "asset": "public/slides/8.png", "kind": "image", "content": "Ask — RAW, building is cool (closing)", "drive": { "id": "1of89jwcIS7xolrik6ZX47ZbxJeW4Zo9r", "name": "slide-8.png", "was": "angleA-desert-dawn-hero-v1.png" } }
+  ],
+  "unused": [
+    { "asset": "public/slides/1.png", "content": "orphan — byte-identical (md5) to 8.png's source; slide 1 uses 1.mp4", "drive": { "id": "1of89jwcIS7xolrik6ZX47ZbxJeW4Zo9r", "name": "slide-8.png", "note": "same Drive source as slide 8" } },
+    { "asset": "public/slides/5.png", "content": "orphan — a phone-in-hand still; slide 5 uses 5-occ-poster.png (the iframe poster), not this", "drive": { "id": "1mfHUSPC0u0RBZb4QFMPPKY4IPUYnhLJi", "name": "B-running-device-inhand-v1.png", "note": "NOT renamed — not in the deck" } },
+    { "asset": "public/slides/7.mp4", "content": "orphan — slide 7 is the typographic lineup; a video generated, never wired", "drive": { "id": "1ES8VaksjK1mz3ZFVyYj_uT7YGzSv_dht", "name": "hf_20260725_150832_2258dacf-....mp4", "note": "NOT renamed — not in the deck" } },
+    { "asset": "public/slides/9.mp4", "content": "orphan — a 9th video was generated but the deck is 8 slides; never wired", "drive": { "id": "17E5jYL5qj3jfuCyS7jJe1z4zpeG6SdWW", "name": "hf_20260725_154130_58f98a0f-....mp4", "note": "NOT renamed — not in the deck" } }
+  ]
+}
