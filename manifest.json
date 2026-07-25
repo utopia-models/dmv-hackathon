@@ -102,6 +102,17 @@
           }
         }
       }
+    },
+    {
+      "n": "3b",
+      "asset": "public/slides/3b-proof.mp4",
+      "kind": "video",
+      "content": "Proof (s-proof) — ambient hero: the RAW device rotating on a near-black ground behind the three problem→solution rows. Was orphan 7.mp4.",
+      "drive": {
+        "id": "1ES8VaksjK1mz3ZFVyYj_uT7YGzSv_dht",
+        "name": "slide-3b-proof.mp4",
+        "was": "hf_20260725_150832_2258dacf-....mp4"
+      }
     }
   ],
   "creatives": {
@@ -129,15 +140,6 @@
       "drive": {
         "id": "1mfHUSPC0u0RBZb4QFMPPKY4IPUYnhLJi",
         "name": "B-running-device-inhand-v1.png",
-        "note": "NOT renamed — not in the deck"
-      }
-    },
-    {
-      "asset": "public/slides/7.mp4",
-      "content": "orphan — slide 7 is the typographic lineup; a video generated, never wired",
-      "drive": {
-        "id": "1ES8VaksjK1mz3ZFVyYj_uT7YGzSv_dht",
-        "name": "hf_20260725_150832_2258dacf-....mp4",
         "note": "NOT renamed — not in the deck"
       }
     },

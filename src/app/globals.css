@@ -889,3 +889,17 @@ html.review-on .slide-body--me { padding-top: clamp(1.5rem, 34vh, 20rem); }
   .ps-arrow { display: none; }
   .ps-fix { padding-bottom: 0.5rem; border-bottom: 1px solid rgba(196,170,130,0.12); }
 }
+
+/* s-proof (3b): the rotating-device video is BRIGHT dead-centre under an
+   otherwise dark frame — same centre-vs-text conflict as s-solution, but here
+   the text spans nearly the full width. Near-uniform dark wash: the device
+   reads as an ambient glint, the stats stay authoritative. */
+#s-proof .slide-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 15, 0.74) 0%,
+    rgba(13, 13, 15, 0.87) 28%,
+    rgba(13, 13, 15, 0.87) 76%,
+    rgba(13, 13, 15, 0.72) 100%
+  );
+}

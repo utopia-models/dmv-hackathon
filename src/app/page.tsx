@@ -217,6 +217,10 @@ export default function Home() {
             ref slides (git history keeps them). Sits right after Tyler's
             Solution slide: he states the solution, this slide proves it maps. */}
         <section id="s-proof" className="slide" style={tint(TINT.tan)}>
+          {/* Ambient hero (Izzu, 2026-07-25 evening): the RAW device slowly rotating
+              on a near-black ground — the three failures resolve into the device.
+              Heavy #s-proof wash below keeps it subordinate to the stat rows. */}
+          <SlideMedia src="/slides/3b-proof.mp4" kind="video" alt="The RAW device rotating in the dark" />
           <div className="slide-body slide-body--metrics">
             <span className="kicker">The proof</span>
             <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
