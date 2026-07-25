@@ -42,16 +42,15 @@ export default function Home() {
           <SlideMedia src="/slides/2.mp4" kind="video" alt="" />
           <div className="slide-body">
             <span className="kicker">The problem</span>
-            <p className="line">Phones stopped being designed.</p>
+            <p className="line">One device tries to be everything.</p>
           </div>
         </section>
 
         {/* 3 · Product */}
         <section id="s3" className="slide" style={tint(TINT.cactus)}>
-          <SlideMedia src="/slides/3.mp4" kind="video" alt="The RAW phone" />
+          <SlideMedia src="/slides/3.png" alt="A RAW phone alone in negative space" />
           <div className="slide-body">
-            <span className="kicker">The product</span>
-            <p className="line">This is RAW.</p>
+            <p className="line">It&rsquo;s not what you can do.<br />It&rsquo;s what you can&rsquo;t.</p>
           </div>
         </section>
 
@@ -60,7 +59,7 @@ export default function Home() {
           <SlideMedia src="/slides/4.png" alt="" />
           <div className="slide-body">
             <span className="kicker">The thesis</span>
-            <p className="line">Rip &rarr; repurpose.</p>
+            <p className="line">The shift already started.<br />Nobody built the device.</p>
           </div>
         </section>
 
@@ -96,13 +95,8 @@ export default function Home() {
         <section id="s6" className="slide" style={tint(TINT.cactus)}>
           <SlideMedia src="/slides/6.png" alt="" />
           <div className="slide-body">
-            <span className="kicker">Traction</span>
-            <p className="line">Live at raw.utopiamodels.ai</p>
-            <p className="note">
-              <a href="https://raw.utopiamodels.ai" target="_blank" rel="noreferrer">
-                raw.utopiamodels.ai
-              </a>
-            </p>
+            <span className="kicker">v0 &mdash; built for one engineer</span>
+            <p className="line">Ten apps. Built for one engineer.</p>
           </div>
         </section>
 
@@ -111,7 +105,7 @@ export default function Home() {
           <SlideMedia src="/slides/7.mp4" kind="video" alt="" />
           <div className="slide-body">
             <span className="kicker">The market</span>
-            <p className="line">Design-first hardware.</p>
+            <p className="line">Every profession gets its own.</p>
           </div>
         </section>
 
@@ -120,6 +114,7 @@ export default function Home() {
           <SlideMedia src="/slides/8.png" alt="" />
           <div className="slide-body">
             <h2 className="wordmark wordmark--sand">RAW</h2>
+            <p className="line" style={{marginTop:"1.2rem"}}>Building is cool.</p>
             <p className="note">a rebrand of the Nothing phone &middot; rip &rarr; repurpose, in the open</p>
           </div>
         </section>
