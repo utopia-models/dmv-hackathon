@@ -7,6 +7,11 @@ body:has(.fb) { background: #f6f7f5; }
   body:has(.fb) { background: #121714; }
 }
 
+/* The deck's h-full on html/body caps document scrollHeight at the viewport —
+   on FairBooks routes that made the page UNSCROLLABLE (measured live: scrollHeight
+   900 = innerHeight, scrollTo no-op). Scope height back to auto here only. */
+html:has(.fb), body:has(.fb) { height: auto; }
+
 .fb {
   --bg: #f6f7f5;
   --surface: #ffffff;
