@@ -11,7 +11,8 @@
  * Click the panel for the full payload (value / benefit / profitability +
  * the weakest judge question).
  *
- * GATED ON ?review=1 — a judge must never see this. Off by default.
+ * ON BY DEFAULT — Tyler reviews this all day. Add ?clean=1 to hide it
+ * for the judge / the Devpost submission link.
  */
 
 import { useEffect, useState } from "react";
@@ -118,7 +119,8 @@ export default function ReviewOverlay() {
 
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
-    setOn(p.get("review") === "1");
+    // ON by default — Tyler uses this all day. ?clean=1 hides it for the judge.
+    setOn(p.get("clean") !== "1");
   }, []);
 
   useEffect(() => {
