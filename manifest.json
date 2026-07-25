@@ -164,6 +164,18 @@
         "dims": "1280x720",
         "dur": "10.0s"
       }
+    },
+    {
+      "n": "2-bg",
+      "asset": "public/slides/2-brainrot-hero.mp4",
+      "kind": "video",
+      "content": "Slide 2 background hero — the infinite-scroll brainrot concept. Tyler picked it from the candidates the masters generated into DECK-ready (knowledge#2594).",
+      "drive": {
+        "id": "1h74utYoXQB5lUikdSNFTfwKMNsoPKh8C",
+        "name": "brainrot-hero-infinite-scroll-1.mp4",
+        "dims": "1920x1080",
+        "dur": "6.0s"
+      }
     }
   ],
   "creatives": {

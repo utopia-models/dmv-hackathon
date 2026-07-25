@@ -162,6 +162,7 @@ export default function Home() {
             goes in HERE. It cannot be pre-wired: verify:manifest requires the file
             to exist on disk, so an empty reserved slot fails the build gate. */}
         <section id="s2" className="slide" style={tint(TINT.umber)}>
+          <SlideMedia src="/slides/2-brainrot-hero.mp4" kind="video" alt="" />
           <div className="slide-body">
             <span className="kicker">Problem</span>
             {/* Hierarchy (Izzu): the setup breathes small, the five-word gap lands
