@@ -160,11 +160,79 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Metrics · the scale (mms5377 — research pack, all Solid-rated).
+            Placed AFTER the problem slide: name the failure, then size it.
+            Non-numeric id per the s-me pattern: no renumbering, no BEATS edit. */}
+        <section id="s-scale" className="slide" style={tint(TINT.umber)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">The scale</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Nearly half their waking hours.
+            </p>
+            <div className="mrow">
+              <div className="mstat">
+                <div className="mnum">8<small>h</small> 39<small>m</small></div>
+                <p className="mlabel">a U.S. teen&rsquo;s daily screen time outside school — 43% of waking hours</p>
+                <span className="msrc">Common Sense Media census</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">237</div>
+                <p className="mlabel">median notifications received per day by an adolescent</p>
+                <span className="msrc">CSM · Univ. of Michigan, 2023</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">110</div>
+                <p className="mlabel">times a day the phone gets picked up and glanced at</p>
+                <span className="msrc">device telemetry, 2023</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 3 · Product */}
         <section id="s3" className="slide" style={tint(TINT.cactus)}>
           <SlideMedia src="/slides/3.png" alt="A RAW phone alone in negative space" />
           <div className="slide-body">
             <p className="line">It&rsquo;s not what you can do.<br />It&rsquo;s what you can&rsquo;t.</p>
+          </div>
+        </section>
+
+        {/* Metrics · willpower vs design (mms5377). AFTER the inversion slide —
+            it answers "just delete the apps" with the software-fix failure data.
+            Same-unit bars only (long-term stick rate of software fixes). */}
+        <section id="s-willpower" className="slide" style={tint(TINT.rodeo)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">Why willpower loses</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Software fixes don&rsquo;t stick.
+            </p>
+            <div className="mbars" role="img" aria-label="Long-term stick rates of software screen fixes: app blockers 17%, native screen-time tools 13%, grayscale mode 12%">
+              <div className="mbar-row">
+                <span className="mbar-name">App blockers</span>
+                <div className="mbar-track"><div className="mbar-fill" style={{ width: "17%" }} /></div>
+                <span className="mbar-val">17%</span>
+              </div>
+              <div className="mbar-row">
+                <span className="mbar-name">Built-in screen-time tools</span>
+                <div className="mbar-track"><div className="mbar-fill" style={{ width: "13%" }} /></div>
+                <span className="mbar-val">13%</span>
+              </div>
+              <div className="mbar-row">
+                <span className="mbar-name">Grayscale mode</span>
+                <div className="mbar-track"><div className="mbar-fill" style={{ width: "12%" }} /></div>
+                <span className="mbar-val">12%</span>
+              </div>
+            </div>
+            <p className="mlabel" style={{ marginTop: "0.9rem" }}>
+              share of users for whom each software fix works long-term
+              <br />
+              <span className="msrc">J. Medical Internet Research 2022 · grayscale adoption surveys</span>
+            </p>
+            <p className="mfoot">
+              The restriction lives on the same screen as the temptation.
+              <br />
+              <b>Deletion is a decision you remake every day. A separate device is a decision you make once.</b>
+            </p>
           </div>
         </section>
 
@@ -174,6 +242,38 @@ export default function Home() {
           <div className="slide-body">
             <span className="kicker">The thesis</span>
             <p className="line">The shift already started.<br />Nobody built the device.</p>
+          </div>
+        </section>
+
+        {/* Metrics · causal proof (mms5377). AFTER the thesis slide — the
+            strongest evidence in the pack: remove the device, outcomes move.
+            Quasi-experimental (400 middle schools, Norway 2024), not correlation. */}
+        <section id="s-causal" className="slide" style={tint(TINT.cactus)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">Remove the device, and</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Everything moves.
+            </p>
+            <div className="mrow">
+              <div className="mstat">
+                <div className="mnum">&minus;43%</div>
+                <p className="mlabel">bullying, after middle schools separated kids from smartphones</p>
+                <span className="msrc">Norwegian ban study · NHH 2024</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">&minus;60%</div>
+                <p className="mlabel">mental-health referrals at the same schools</p>
+                <span className="msrc">quasi-experimental · 400 schools</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">GPA&nbsp;&uarr;</div>
+                <p className="mlabel">measurable grade gains, strongest for girls</p>
+                <span className="msrc">same study — causal, not correlation</span>
+              </div>
+            </div>
+            <p className="mfoot">
+              Not a survey. Schools changed the <b>environment</b> — and the outcomes followed.
+            </p>
           </div>
         </section>
 
@@ -276,6 +376,42 @@ export default function Home() {
           <div className="slide-body">
             <span className="kicker">v0 &mdash; built for one engineer</span>
             <p className="line">Ten apps. Built for one engineer.</p>
+          </div>
+        </section>
+
+        {/* Metrics · demand receipts (mms5377). BEFORE the market slide —
+            proof the shift is policy, law, and revenue before we show the line. */}
+        <section id="s-receipts" className="slide" style={tint(TINT.sand)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">The shift has receipts</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Policy, law, and revenue agree.
+            </p>
+            <div className="mrow">
+              <div className="mstat">
+                <div className="mnum">45+</div>
+                <p className="mlabel">U.S. states restricting phones in schools by 2025</p>
+                <span className="msrc">incl. CA AB 3216 · VA EO 33</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">U-16</div>
+                <p className="mlabel">Australia&rsquo;s federal social-media ban for under-16s, 2025</p>
+                <span className="msrc">first national law of its kind</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">$10M</div>
+                <p className="mlabel">ARR for one app blocker — 11 employees, 10M users paying for focus</p>
+                <span className="msrc">Opal, 2025</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">69%</div>
+                <p className="mlabel">of U.S. adults 18&ndash;29 say they want less screen time</p>
+                <span className="msrc">Pew Research, 2024</span>
+              </div>
+            </div>
+            <p className="mfoot">
+              People are paying for focus on hardware built against it. <b>Nobody sells them the device.</b>
+            </p>
           </div>
         </section>
 
