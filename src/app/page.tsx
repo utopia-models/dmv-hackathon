@@ -207,6 +207,61 @@ export default function Home() {
 
 
 
+        {/* PROOF (mms5377 — Izzu's merge, 2026-07-25 evening). The three biggest
+            problem stats from the research pack, each paired with RAW's direct
+            answer. Absorbs and replaces the former s-scale + s-willpower + s-fix
+            ref slides (git history keeps them). Sits right after Tyler's
+            Solution slide: he states the solution, this slide proves it maps. */}
+        <section id="s-proof" className="slide" style={tint(TINT.tan)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">The proof</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Three failures. One fix.
+            </p>
+            <div className="probsol">
+              <div className="ps-row">
+                <div className="ps-stat mstat">
+                  <div className="mnum">8<small>h</small> 39<small>m</small></div>
+                  <p className="mlabel">a teen&rsquo;s day on screens — 43% of waking hours</p>
+                  <span className="msrc">Common Sense Media census</span>
+                </div>
+                <span className="ps-arrow" aria-hidden>&rarr;</span>
+                <div className="ps-fix">
+                  <h4>The feed isn&rsquo;t there.</h4>
+                  <p>No infinite anything on the device. The phone ends when the task does — the hours come back by architecture, not discipline.</p>
+                </div>
+              </div>
+              <div className="ps-row">
+                <div className="ps-stat mstat">
+                  <div className="mnum">237</div>
+                  <p className="mlabel">notifications a day, median, per adolescent</p>
+                  <span className="msrc">CSM · Univ. of Michigan 2023</span>
+                </div>
+                <span className="ps-arrow" aria-hidden>&rarr;</span>
+                <div className="ps-fix">
+                  <h4>If it buzzes, it&rsquo;s a human.</h4>
+                  <p>Zero engagement pings — nothing on the device is engineered to interrupt. Calls, messages, and pages still land instantly.</p>
+                </div>
+              </div>
+              <div className="ps-row">
+                <div className="ps-stat mstat">
+                  <div className="mnum">17%</div>
+                  <p className="mlabel">of software fixes stick long-term — blockers, screen-time tools, grayscale</p>
+                  <span className="msrc">J. Medical Internet Research 2022</span>
+                </div>
+                <span className="ps-arrow" aria-hidden>&rarr;</span>
+                <div className="ps-fix">
+                  <h4>One decision, made once.</h4>
+                  <p>The restriction doesn&rsquo;t live on the same screen as the temptation — it&rsquo;s a separate managed device. Nothing to bypass at 1am.</p>
+                </div>
+              </div>
+            </div>
+            <p className="mfoot">
+              Deletion is a decision you remake every day. <b>A separate device is a decision you make once.</b>
+            </p>
+          </div>
+        </section>
+
         {/* 7 · Market — the focused-phone lineup (typographic; the info IS the visual) */}
         <section id="s7" className="slide" style={tint(TINT.sand)}>
           <div className="slide-body slide-body--lineup">
@@ -281,107 +336,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Metrics · the scale (mms5377 — research pack, all Solid-rated).
-            Placed AFTER the problem slide: name the failure, then size it.
-            Non-numeric id per the s-me pattern: no renumbering, no BEATS edit. */}
-        <section id="s-scale" className="slide" style={tint(TINT.umber)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">The scale</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              Nearly half their waking hours.
-            </p>
-            <div className="mrow">
-              <div className="mstat">
-                <div className="mnum">8<small>h</small> 39<small>m</small></div>
-                <p className="mlabel">a U.S. teen&rsquo;s daily screen time outside school — 43% of waking hours</p>
-                <span className="msrc">Common Sense Media census</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">237</div>
-                <p className="mlabel">median notifications received per day by an adolescent</p>
-                <span className="msrc">CSM · Univ. of Michigan, 2023</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">110</div>
-                <p className="mlabel">times a day the phone gets picked up and glanced at</p>
-                <span className="msrc">device telemetry, 2023</span>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* 3 · Product */}
-        {/* Metrics · willpower vs design (mms5377). Inside the PROBLEM block —
-            it answers "just delete the apps" with the software-fix failure data.
-            Same-unit bars only (long-term stick rate of software fixes). */}
-        <section id="s-willpower" className="slide" style={tint(TINT.rodeo)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">Why willpower loses</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              Software fixes don&rsquo;t stick.
-            </p>
-            <div className="mbars" role="img" aria-label="Long-term stick rates of software screen fixes: app blockers 17%, native screen-time tools 13%, grayscale mode 12%">
-              <div className="mbar-row">
-                <span className="mbar-name">App blockers</span>
-                <div className="mbar-track"><div className="mbar-fill" style={{ width: "17%" }} /></div>
-                <span className="mbar-val">17%</span>
-              </div>
-              <div className="mbar-row">
-                <span className="mbar-name">Built-in screen-time tools</span>
-                <div className="mbar-track"><div className="mbar-fill" style={{ width: "13%" }} /></div>
-                <span className="mbar-val">13%</span>
-              </div>
-              <div className="mbar-row">
-                <span className="mbar-name">Grayscale mode</span>
-                <div className="mbar-track"><div className="mbar-fill" style={{ width: "12%" }} /></div>
-                <span className="mbar-val">12%</span>
-              </div>
-            </div>
-            <p className="mlabel" style={{ marginTop: "0.9rem" }}>
-              share of users for whom each software fix works long-term
-              <br />
-              <span className="msrc">J. Medical Internet Research 2022 · grayscale adoption surveys</span>
-            </p>
-            <p className="mfoot">
-              The restriction lives on the same screen as the temptation.
-              <br />
-              <b>Deletion is a decision you remake every day. A separate device is a decision you make once.</b>
-            </p>
-          </div>
-        </section>
 
-        {/* Solution · the mechanism (mms5377). AFTER the causal slide — schools
-            proved environment change works; this is that change, productized.
-            Mirrors the three problem stats one-for-one. Register: MANAGED. */}
-        <section id="s-fix" className="slide" style={tint(TINT.tan)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">The fix</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              Remove the vector. Keep the tool.
-            </p>
-            <div className="mrow">
-              <div className="mstat">
-                <div className="mnum">0</div>
-                <p className="mlabel">feeds, stores, or engagement pings on the device — if it buzzes, it&rsquo;s a human</p>
-                <span className="msrc">answers: 237 notifications/day</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">10</div>
-                <p className="mlabel">essential tools stay — banking, maps, 2FA, work chat. The phone still does its job</p>
-                <span className="msrc">answers: the one-essential-app trap</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">1&times;</div>
-                <p className="mlabel">decision, made at the device level — nothing to bypass at 1am, nothing to re-decide</p>
-                <span className="msrc">answers: 17% blocker stick rate</span>
-              </div>
-            </div>
-            <p className="mfoot">
-              Not an app fighting the phone. A <b>managed phone</b> — normal Android underneath,
-              the feed simply isn&rsquo;t there.
-            </p>
-          </div>
-        </section>
 
         {/* Solution · the architecture kill-shot (mms5377). AFTER traction —
             why THIS model succeeds where every previous attempt failed. The

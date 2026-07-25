@@ -32,13 +32,11 @@ export const SLIDES: Slide[] = [
   { id: "s1", label: "1. Hero — This is RAW." },
   { id: "s2", label: "2. Problem — one device tries to be everything" },
   { id: "s-solution", label: "3. Solution — devices where brainrot isn't possible" },
+  { id: "s-proof", label: "3b. Proof — three failures, one fix" },
   { id: "s7", label: "4. Market — every profession gets its own" },
   { id: "s5", label: "5. Founder — how it's built, the fleet, live" },
 
   // ── REFERENCE (everything after; material to pull INTO the five) ─────────
-  { id: "s-scale", label: "ref · Metrics — the scale (8h39m · 237 pings)" },
-  { id: "s-willpower", label: "ref · Metrics — software fixes don't stick" },
-  { id: "s-fix", label: "ref · Solution — remove the vector, keep the tool" },
   { id: "s-not-dumb", label: "ref · Solution — why this wins where others died" },
   { id: "s-causal", label: "ref · Metrics — remove the device, everything moves" },
   { id: "s-me", label: "ref · The marketing is me — founder, fleet, the work" },
