@@ -158,8 +158,7 @@ export default function Home() {
               Its former video is now slide 3's hero. Do not substitute an asset. */}
           <div className="slide-body">
             <span className="kicker">Problem</span>
-            <p className="line">One device tries to be everything.</p>
-            <p className="line line--sub">
+            <p className="line">
               People are paying for focus on hardware built against it.<br />
               Nobody sells them the device.
             </p>
