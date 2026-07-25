@@ -31,10 +31,10 @@ export const SLIDES: Slide[] = [
   // Plain 1..5. All the pitch work happens on these.
   { id: "s1", label: "1. Hero — This is RAW." },
   { id: "s2", label: "2. Problem — paying for focus on hardware built against it" },
-  { id: "s-receipts", label: "2b. Metrics — policy, law & revenue agree" },
   { id: "s-solution", label: "3. Solution — devices where brainrot isn't possible" },
   { id: "s-proof", label: "3b. Proof — three failures, one fix" },
   { id: "s7", label: "4. Market — every profession gets its own" },
+  { id: "s-receipts", label: "4b. Metrics — the shift has receipts" },
   { id: "s5", label: "5. Founder — how it's built, the fleet, live" },
 
   // ── REFERENCE (everything after; material to pull INTO the five) ─────────
