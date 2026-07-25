@@ -39,6 +39,7 @@ export const SLIDES: Slide[] = [
   // ── REFERENCE (everything after; material to pull INTO the five) ─────────
   { id: "s-not-dumb", label: "ref · Solution — why this wins where others died" },
   { id: "s-causal", label: "ref · Metrics — remove the device, everything moves" },
-  { id: "s-me", label: "ref · The marketing is me — founder, fleet, the work" },
+  // s-me was MERGED INTO s5 (the founder slide) 2026-07-25 — its creatives wall
+  // and Instagram CTA now live there, so the section no longer exists.
   { id: "s-receipts", label: "ref · Metrics — policy, law & revenue agree" },
 ];

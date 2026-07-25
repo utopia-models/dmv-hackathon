@@ -90,9 +90,9 @@ const DEVICES: {
     ],
     removed: "browser · store · feeds",
     real: true,
-    // REAL footage from Tyler's Pixel 10 (adb capture 2026-07-25). Its
-    // authenticity is the slide's whole argument — never a generated substitute.
-    media: { src: "/slides/lineup-v0.mp4", kind: "video", frame: "phone", alt: "The RAW launcher on Tyler's real Pixel 10" },
+    // v0's REAL phone recording MOVED to slide 5 (the founder slide) 2026-07-25 —
+    // Tyler's call. This card stays TEXT-ONLY for now; the slide may be cut.
+    // The three concept slots below keep their reserved paths (knowledge#2553).
   },
   {
     name: "Doctor",
@@ -301,38 +301,103 @@ export default function Home() {
             The poster behind the iframe is a REAL screenshot of the same page (rip-engine
             doctrine: real images only) — it shows while the embed loads, if venue wifi
             dies, and on small screens where the responsive iframe collapses to soup. */}
+        {/* 5 · FOUNDER (Tyler, 2026-07-25) — the whole founder argument in one
+            slide. Merged in from the former s-me: the creatives wall + Instagram
+            CTA. Pulled in from slide 4's lineup: the REAL v0 phone recording.
+            Hierarchy is Tyler's call — founder LEADS, fleet + phone are the proof
+            beneath it. The argument: here is the person → here is the machine and
+            the device that let him ship. */}
         <section id="s5" className="slide" style={tint(TINT.rodeo)}>
-          <div className="slide-body slide-body--occ">
-            <span className="kicker">How it&rsquo;s built</span>
-            <p
-              className="line"
-              style={{ fontSize: "clamp(1.6rem,5vw,3.4rem)", marginBottom: "clamp(1rem,3vh,2rem)" }}
-            >
-              A founder and an AI fleet. In public.
-            </p>
-            <div
-              className="occ-frame"
-              style={{
-                backgroundImage: "url(/slides/5-occ-poster.png)",
-                backgroundSize: "cover",
-                backgroundPosition: "top center",
-              }}
-            >
-              <iframe
-                className="occ-live"
-                src="https://www.utopiamodels.ai"
-                title="Utopia Models — the live fleet operations center"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-                sandbox="allow-scripts allow-same-origin"
-              />
+          <div className="slide-body slide-body--founder">
+            <div className="me-head">
+              <span className="kicker">The founder</span>
+              <p className="line">The marketing is me.</p>
+              <p className="me-sub">
+                The proof isn&rsquo;t a pitch. It&rsquo;s a person building in
+                public &mdash; on the device, with the fleet, making the work.
+              </p>
             </div>
+
+            {creatives.length > 0 ? (
+              <div className="cwall" aria-label="Creatives made this hackathon">
+                {creatives.map((c) =>
+                  c.kind === "video" ? (
+                    <video
+                      key={c.src}
+                      className="cwall-tile"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                    >
+                      <source src={c.src} />
+                    </video>
+                  ) : (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img key={c.src} className="cwall-tile" src={c.src} alt="" draggable={false} />
+                  )
+                )}
+              </div>
+            ) : (
+              <p className="cwall-empty">the work, curated live &mdash; utopia</p>
+            )}
+
+            <p className="fleet-line">A founder and an AI fleet. In public.</p>
+
+            {/* The two pieces of proof, side by side: the machine (live OCC) and
+                the device (real Pixel 10 capture, 2026-07-25). Stacks < 820px. */}
+            <div className="proof-row">
+              <div
+                className="occ-frame"
+                style={{
+                  backgroundImage: "url(/slides/5-occ-poster.png)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "top center",
+                }}
+              >
+                <iframe
+                  className="occ-live"
+                  src="https://www.utopiamodels.ai"
+                  title="Utopia Models — the live fleet operations center"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  sandbox="allow-scripts allow-same-origin"
+                />
+              </div>
+
+              <div className="device-frame device-frame--phone proof-phone">
+                <video
+                  className="device-media"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="The RAW launcher on Tyler's real Pixel 10"
+                >
+                  <source src="/slides/lineup-v0.mp4" />
+                </video>
+              </div>
+            </div>
+
             <p className="note">
               live &middot;{" "}
               <a href="https://www.utopiamodels.ai" target="_blank" rel="noreferrer">
                 utopiamodels.ai
               </a>
             </p>
+
+            <a
+              className="ig-cta"
+              href={`https://instagram.com/${INSTAGRAM_HANDLE}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <InstagramGlyph />
+              <span>Follow the build</span>
+              <span className="ig-handle">@{INSTAGRAM_HANDLE}</span>
+            </a>
           </div>
         </section>
 
@@ -412,59 +477,6 @@ export default function Home() {
         </section>
 
 
-        {/* The marketing is me (knowledge#2562) — placed IMMEDIATELY BEFORE the
-            fleet slide (s5). The order is the argument: here is the person →
-            here is the machine that makes him able to ship. id="s-me" is
-            non-numeric on purpose (see slides.ts) so it forces no renumbering
-            and needs no edit to ReviewOverlay.tsx (mms5377 / knowledge#2542). */}
-        <section id="s-me" className="slide" style={tint(TINT.tan)}>
-          <div className="slide-body slide-body--me">
-            <div className="me-head">
-              <span className="kicker">The founder</span>
-              <p className="line">The marketing is me.</p>
-              <p className="me-sub">
-                The proof isn&rsquo;t a pitch. It&rsquo;s a person building in
-                public &mdash; on the device, with the fleet, making the work.
-              </p>
-            </div>
-
-            {creatives.length > 0 ? (
-              <div className="cwall" aria-label="Creatives made this hackathon">
-                {creatives.map((c) =>
-                  c.kind === "video" ? (
-                    <video
-                      key={c.src}
-                      className="cwall-tile"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                    >
-                      <source src={c.src} />
-                    </video>
-                  ) : (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img key={c.src} className="cwall-tile" src={c.src} alt="" draggable={false} />
-                  )
-                )}
-              </div>
-            ) : (
-              <p className="cwall-empty">the work, curated live &mdash; utopia</p>
-            )}
-
-            <a
-              className="ig-cta"
-              href={`https://instagram.com/${INSTAGRAM_HANDLE}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <InstagramGlyph />
-              <span>Follow the build</span>
-              <span className="ig-handle">@{INSTAGRAM_HANDLE}</span>
-            </a>
-          </div>
-        </section>
 
 
         {/* 6 · Traction */}
