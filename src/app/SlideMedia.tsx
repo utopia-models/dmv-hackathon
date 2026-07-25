@@ -45,7 +45,7 @@ export default function SlideMedia({ src, kind = "image", alt = "" }: Props) {
     return (
       <>
         <video className="slide-media" autoPlay muted loop playsInline preload="metadata">
-          <source src={src} />
+          <source src={src} type={src.endsWith(".webm") ? "video/webm" : "video/mp4"} />
         </video>
         <div className="slide-scrim" />
       </>

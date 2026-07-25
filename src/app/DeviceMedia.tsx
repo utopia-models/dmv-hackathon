@@ -54,7 +54,7 @@ export default function DeviceMedia({ src, kind = "video", frame = "wide", alt =
     <div className={`device-frame device-frame--${frame}`}>
       {kind === "video" ? (
         <video className="device-media" autoPlay muted loop playsInline preload="metadata">
-          <source src={src} />
+          <source src={src} type={src.endsWith(".webm") ? "video/webm" : "video/mp4"} />
         </video>
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
