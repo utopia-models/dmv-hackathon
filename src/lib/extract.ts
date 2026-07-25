@@ -6,8 +6,10 @@ import type { ExtractedClaim } from "@/lib/overrule-types";
 const CARC_RE = /\b(CO|PR|OA|PI)[\s-]?(\d{1,3}|B\d{1,2})\b/gi;
 // RARC: N###, M##, MA### — require digits to avoid matching ordinary words
 const RARC_RE = /\b(MA\d{2,3}|N\d{2,3}|M\d{2,3})\b/g;
-// CPT: exactly 5 digits, commonly wrapped in parens in letters
-const CPT_RE = /\b(\d{5})\b/g;
+// CPT: exactly 5 digits, commonly wrapped in parens in letters.
+// Lookarounds reject digits glued to hyphens/digits — else claim-number segments
+// like "2026-183-55021" leak in as phantom CPTs (caught in live QA).
+const CPT_RE = /(?<![-\d])(\d{5})(?![-\d])/g;
 // ICD-10-CM: letter + 2 digits, optional dot + up to 4 alphanumerics (e.g., M54.16, E11.9)
 const ICD10_RE = /\b([A-TV-Z]\d{2}(?:\.[A-Z0-9]{1,4})?)\b/g;
 const MONEY_RE = /\$\s?([\d,]+(?:\.\d{2})?)/g;
