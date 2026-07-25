@@ -37,8 +37,9 @@ const DEVICES: {
   {
     name: "Doctor",
     for: "clinicians",
-    allowed: "EHR · reference · secure messaging · scheduling",
-    removed: "social · browser · games",
+    allowed:
+      "Epic EHR · UpToDate · MDCalc · TigerConnect paging · Doximity dialer · on-call schedule",
+    removed: "social · feeds · browser — if it buzzes, it's a page",
   },
   {
     name: "Lawyer",
