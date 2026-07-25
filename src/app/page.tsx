@@ -1,37 +1,8 @@
 import type { CSSProperties } from "react";
-import fs from "node:fs";
-import path from "node:path";
 import ReviewOverlay from "./ReviewOverlay";
 import SlideMedia from "./SlideMedia";
 import DeviceMedia from "./DeviceMedia";
 import DeckControls from "./DeckControls";
-
-/* ── "The marketing is me" (knowledge#2562) ──────────────────────────────
-   The creatives wall globs /public/creatives at BUILD TIME (this is a server
-   component). Adding a file to that folder adds a tile; removing one removes a
-   tile — no code edit, no manifest entry. Empty folder → honest empty state
-   (never placeholder tiles). See public/creatives/README.md. */
-const IMG_EXT = new Set([".png", ".jpg", ".jpeg", ".webp", ".gif"]);
-const VID_EXT = new Set([".mp4", ".webm"]);
-
-function readCreatives(): { src: string; kind: "image" | "video" }[] {
-  const dir = path.join(process.cwd(), "public", "creatives");
-  let names: string[] = [];
-  try {
-    names = fs.readdirSync(dir);
-  } catch {
-    return []; // folder absent → honest empty state
-  }
-  return names
-    .filter((n) => !n.startsWith("."))
-    .map((n) => ({ n, ext: path.extname(n).toLowerCase() }))
-    .filter(({ ext }) => IMG_EXT.has(ext) || VID_EXT.has(ext))
-    .sort((a, b) => a.n.localeCompare(b.n))
-    .map(({ n, ext }) => ({
-      src: `/creatives/${n}`,
-      kind: VID_EXT.has(ext) ? ("video" as const) : ("image" as const),
-    }));
-}
 
 /* Tyler's Instagram — a single constant so it changes in ONE place.
    ⚠ knowledge#2562: brand handle default; Tyler confirms/corrects on the issue.
@@ -146,7 +117,6 @@ const DEVICES: {
 ];
 
 export default function Home() {
-  const creatives = readCreatives();
   return (
     <>
       {/* Right-edge progress dots + the top-right review controls (#2547).
@@ -318,40 +288,9 @@ export default function Home() {
         <section id="s5" className="slide" style={tint(TINT.rodeo)}>
           <div className="slide-body slide-body--founder">
             <div className="me-head">
-              <span className="kicker">The founder</span>
-              <p className="line">The marketing is me.</p>
-              <p className="me-sub">
-                The proof isn&rsquo;t a pitch. It&rsquo;s a person building in
-                public &mdash; on the device, with the fleet, making the work.
-              </p>
+              <span className="kicker">v0 &middot; Engineering</span>
+              <p className="me-sub">The Phone I Carry, The Fleet It Controls</p>
             </div>
-
-            {creatives.length > 0 ? (
-              <div className="cwall" aria-label="Creatives made this hackathon">
-                {creatives.map((c) =>
-                  c.kind === "video" ? (
-                    <video
-                      key={c.src}
-                      className="cwall-tile"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                    >
-                      <source src={c.src} type={c.src.endsWith(".webm") ? "video/webm" : "video/mp4"} />
-                    </video>
-                  ) : (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img key={c.src} className="cwall-tile" src={c.src} alt="" draggable={false} />
-                  )
-                )}
-              </div>
-            ) : (
-              <p className="cwall-empty">the work, curated live &mdash; utopia</p>
-            )}
-
-            <p className="fleet-line">A founder and an AI fleet. In public.</p>
 
             {/* The two pieces of proof, side by side: the machine (live OCC) and
                 the device (real Pixel 10 capture, 2026-07-25). Stacks < 820px. */}
@@ -388,6 +327,20 @@ export default function Home() {
                 </video>
               </div>
             </div>
+
+            {/* Tyler, 2026-07-25: the one kept creative, below the two proof
+                pieces. The other two (raw-motion-01, raw-phone-in-hand) were cut. */}
+            <video
+              className="founder-reel"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="RAW in motion"
+            >
+              <source src="/creatives/raw-motion-02.mp4" type="video/mp4" />
+            </video>
 
             <p className="note">
               live &middot;{" "}
