@@ -620,6 +620,16 @@ html.review-on .proof-phone { max-height: 28vh; }
 }
 .slide-body--founder::-webkit-scrollbar { display: none; }
 
+/* On the founder slide the creatives wall is SUPPORTING evidence, not the
+   subject — it must not push the proof row below the fold. Cap its height and
+   let the tiles crop rather than dictate the slide's vertical budget. */
+.slide-body--founder .cwall { max-height: 22vh; }
+.slide-body--founder .cwall-tile {
+  aspect-ratio: auto;
+  height: 22vh;
+  object-fit: cover;
+}
+
 /* the fleet line — introduces the proof row; secondary to "The marketing is me" */
 .fleet-line {
   margin: clamp(0.4rem, 1.4vh, 0.9rem) 0 0;
