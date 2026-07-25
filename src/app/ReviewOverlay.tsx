@@ -27,8 +27,9 @@ import { useEffect, useState } from "react";
  *     "SLIDE 7 / 8" on a 9-section deck, while beats 3/4/6/8 pointed at sections
  *     that had been merged or deleted and were unreachable.
  *
- * Keying on the id makes every slide addressable and the counter honest —
- * it now reports POSITION in the deck, derived at runtime from the DOM.
+ * Keying on the id makes every slide addressable. The slide NUMBER is not shown
+ * at all (Tyler, 2026-07-25) — it drifted against every re-cut and confused more
+ * than it helped. The panel shows the script, nothing else.
  */
 type Beat = {
   sid: string;
@@ -91,8 +92,6 @@ const BEATS: Beat[] = [
 export default function ReviewOverlay() {
   const [on, setOn] = useState(false);
   const [cur, setCur] = useState("s1");
-  const [pos, setPos] = useState(1);
-  const [total, setTotal] = useState(0);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -109,15 +108,11 @@ export default function ReviewOverlay() {
   useEffect(() => {
     if (!on) return;
     const secs = Array.from(document.querySelectorAll("section[id^='s']"));
-    // Position is derived from the DOM, so the counter can never go stale
-    // against a re-cut deck the way a hardcoded BEATS.length did.
-    setTotal(secs.length);
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting && e.target.id) {
             setCur(e.target.id);
-            setPos(secs.findIndex((s) => s.id === e.target.id) + 1);
           }
         });
       },
@@ -164,7 +159,7 @@ export default function ReviewOverlay() {
             style={{ display: "block", flexShrink: 0, opacity: 0.92 }}
           />
           <div style={{ color: "#9C805C", letterSpacing: ".14em", fontSize: 11 }}>
-            SLIDE {pos} / {total} &nbsp;·&nbsp; click for full script
+            click for full script
           </div>
         </div>
         <div style={{ marginTop: 10, color: "#9C805C", fontSize: 10, letterSpacing: ".16em" }}>
@@ -209,7 +204,7 @@ export default function ReviewOverlay() {
             }}
           >
             <div style={{ color: "#9C805C", letterSpacing: ".14em", fontSize: 11 }}>
-              SLIDE {pos} &nbsp;·&nbsp; {b.onScreen}
+              {b.onScreen}
             </div>
             {[
               ["PURPOSE", b.purpose],
