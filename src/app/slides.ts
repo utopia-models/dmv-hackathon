@@ -27,25 +27,20 @@
 export type Slide = { id: string; label: string };
 
 export const SLIDES: Slide[] = [
-  // ── THE FIVE SHOWN ──────────────────────────────────────────────────────
+  // ── THE FIVE WE ARE EDITING ─────────────────────────────────────────────
+  // Plain 1..5. All the pitch work happens on these.
   { id: "s1", label: "1. Hero — This is RAW." },
-
   { id: "s2", label: "2. Problem — one device tries to be everything" },
-  // The problem's evidence (mms5377, research-backed): size it, then prove it
-  // is a design failure and not willpower.
-  { id: "s-scale", label: "2· evidence — the scale (8h39m · 237 pings)" },
-  { id: "s-willpower", label: "2· evidence — software fixes don't stick" },
-
   { id: "s-solution", label: "3. Solution — devices where brainrot isn't possible" },
-  // The solution's mechanism (mms5377) — answers each metric above by number.
-  { id: "s-fix", label: "3· mechanism — remove the vector, keep the tool" },
-  { id: "s-not-dumb", label: "3· mechanism — why this wins where the others died" },
-
   { id: "s7", label: "4. Market — every profession gets its own" },
   { id: "s5", label: "5. Founder — how it's built, the fleet, live" },
 
-  // ── PARKED (after the five; Tyler slots these in when he decides) ────────
-  { id: "s-causal", label: "6. Metrics — remove the device, everything moves" },
-  { id: "s-me", label: "7. The marketing is me — founder, fleet, the work" },
-  { id: "s-receipts", label: "8. Metrics — policy, law & revenue agree" },
+  // ── REFERENCE (everything after; material to pull INTO the five) ─────────
+  { id: "s-scale", label: "ref · Metrics — the scale (8h39m · 237 pings)" },
+  { id: "s-willpower", label: "ref · Metrics — software fixes don't stick" },
+  { id: "s-fix", label: "ref · Solution — remove the vector, keep the tool" },
+  { id: "s-not-dumb", label: "ref · Solution — why this wins where others died" },
+  { id: "s-causal", label: "ref · Metrics — remove the device, everything moves" },
+  { id: "s-me", label: "ref · The marketing is me — founder, fleet, the work" },
+  { id: "s-receipts", label: "ref · Metrics — policy, law & revenue agree" },
 ];

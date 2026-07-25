@@ -184,74 +184,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Metrics · the scale (mms5377 — research pack, all Solid-rated).
-            Placed AFTER the problem slide: name the failure, then size it.
-            Non-numeric id per the s-me pattern: no renumbering, no BEATS edit. */}
-        <section id="s-scale" className="slide" style={tint(TINT.umber)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">The scale</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              Nearly half their waking hours.
-            </p>
-            <div className="mrow">
-              <div className="mstat">
-                <div className="mnum">8<small>h</small> 39<small>m</small></div>
-                <p className="mlabel">a U.S. teen&rsquo;s daily screen time outside school — 43% of waking hours</p>
-                <span className="msrc">Common Sense Media census</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">237</div>
-                <p className="mlabel">median notifications received per day by an adolescent</p>
-                <span className="msrc">CSM · Univ. of Michigan, 2023</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">110</div>
-                <p className="mlabel">times a day the phone gets picked up and glanced at</p>
-                <span className="msrc">device telemetry, 2023</span>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* 3 · Product */}
-        {/* Metrics · willpower vs design (mms5377). Inside the PROBLEM block —
-            it answers "just delete the apps" with the software-fix failure data.
-            Same-unit bars only (long-term stick rate of software fixes). */}
-        <section id="s-willpower" className="slide" style={tint(TINT.rodeo)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">Why willpower loses</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              Software fixes don&rsquo;t stick.
-            </p>
-            <div className="mbars" role="img" aria-label="Long-term stick rates of software screen fixes: app blockers 17%, native screen-time tools 13%, grayscale mode 12%">
-              <div className="mbar-row">
-                <span className="mbar-name">App blockers</span>
-                <div className="mbar-track"><div className="mbar-fill" style={{ width: "17%" }} /></div>
-                <span className="mbar-val">17%</span>
-              </div>
-              <div className="mbar-row">
-                <span className="mbar-name">Built-in screen-time tools</span>
-                <div className="mbar-track"><div className="mbar-fill" style={{ width: "13%" }} /></div>
-                <span className="mbar-val">13%</span>
-              </div>
-              <div className="mbar-row">
-                <span className="mbar-name">Grayscale mode</span>
-                <div className="mbar-track"><div className="mbar-fill" style={{ width: "12%" }} /></div>
-                <span className="mbar-val">12%</span>
-              </div>
-            </div>
-            <p className="mlabel" style={{ marginTop: "0.9rem" }}>
-              share of users for whom each software fix works long-term
-              <br />
-              <span className="msrc">J. Medical Internet Research 2022 · grayscale adoption surveys</span>
-            </p>
-            <p className="mfoot">
-              The restriction lives on the same screen as the temptation.
-              <br />
-              <b>Deletion is a decision you remake every day. A separate device is a decision you make once.</b>
-            </p>
-          </div>
-        </section>
 
         {/* SOLUTION (Tyler, 2026-07-25) — slide 3 of the five shown. His words,
             placed verbatim, over the REAL launcher asset: the customer quote names
@@ -272,76 +205,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Solution · the mechanism (mms5377). AFTER the causal slide — schools
-            proved environment change works; this is that change, productized.
-            Mirrors the three problem stats one-for-one. Register: MANAGED. */}
-        <section id="s-fix" className="slide" style={tint(TINT.tan)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">The fix</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              Remove the vector. Keep the tool.
-            </p>
-            <div className="mrow">
-              <div className="mstat">
-                <div className="mnum">0</div>
-                <p className="mlabel">feeds, stores, or engagement pings on the device — if it buzzes, it&rsquo;s a human</p>
-                <span className="msrc">answers: 237 notifications/day</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">10</div>
-                <p className="mlabel">essential tools stay — banking, maps, 2FA, work chat. The phone still does its job</p>
-                <span className="msrc">answers: the one-essential-app trap</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">1&times;</div>
-                <p className="mlabel">decision, made at the device level — nothing to bypass at 1am, nothing to re-decide</p>
-                <span className="msrc">answers: 17% blocker stick rate</span>
-              </div>
-            </div>
-            <p className="mfoot">
-              Not an app fighting the phone. A <b>managed phone</b> — normal Android underneath,
-              the feed simply isn&rsquo;t there.
-            </p>
-          </div>
-        </section>
 
-        {/* Solution · the architecture kill-shot (mms5377). AFTER traction —
-            why THIS model succeeds where every previous attempt failed. The
-            four-architecture compare from the research pack, distilled. */}
-        <section id="s-not-dumb" className="slide" style={tint(TINT.rodeo)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">Why this wins where the others died</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              All the utility. None of the vectors.
-            </p>
-            <div className="solgrid">
-              <div className="solcard">
-                <h4>Dumbphone</h4>
-                <p>Kills the feeds — and banking, 2FA, and maps with them. One missing essential sends the SIM back to the smartphone.</p>
-                <span className="verdict">returned</span>
-              </div>
-              <div className="solcard">
-                <h4>Smartphone</h4>
-                <p>Every tool you need, shelved next to every feed engineered against you. The default that produced 8h39m.</p>
-                <span className="verdict">the problem</span>
-              </div>
-              <div className="solcard">
-                <h4>Blocker apps</h4>
-                <p>The restriction lives on the same screen as the temptation — two taps to bypass at the weakest moment.</p>
-                <span className="verdict">17% stick</span>
-              </div>
-              <div className="solcard solcard--raw">
-                <h4>RAW</h4>
-                <p>The essentials stay, the feeds structurally don&rsquo;t exist. A managed device — the boundary finally holds.</p>
-                <span className="verdict">● utility, zero vectors</span>
-              </div>
-            </div>
-            <p className="mfoot">
-              The &ldquo;one essential app&rdquo; problem killed the minimalist phone.
-              <b> RAW keeps the essentials — so the boundary survives real life.</b>
-            </p>
-          </div>
-        </section>
 
         {/* 7 · Market — the focused-phone lineup (typographic; the info IS the visual) */}
         <section id="s7" className="slide" style={tint(TINT.sand)}>
@@ -413,6 +277,146 @@ export default function Home() {
               <a href="https://www.utopiamodels.ai" target="_blank" rel="noreferrer">
                 utopiamodels.ai
               </a>
+            </p>
+          </div>
+        </section>
+
+        {/* Metrics · the scale (mms5377 — research pack, all Solid-rated).
+            Placed AFTER the problem slide: name the failure, then size it.
+            Non-numeric id per the s-me pattern: no renumbering, no BEATS edit. */}
+        <section id="s-scale" className="slide" style={tint(TINT.umber)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">The scale</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Nearly half their waking hours.
+            </p>
+            <div className="mrow">
+              <div className="mstat">
+                <div className="mnum">8<small>h</small> 39<small>m</small></div>
+                <p className="mlabel">a U.S. teen&rsquo;s daily screen time outside school — 43% of waking hours</p>
+                <span className="msrc">Common Sense Media census</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">237</div>
+                <p className="mlabel">median notifications received per day by an adolescent</p>
+                <span className="msrc">CSM · Univ. of Michigan, 2023</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">110</div>
+                <p className="mlabel">times a day the phone gets picked up and glanced at</p>
+                <span className="msrc">device telemetry, 2023</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 3 · Product */}
+        {/* Metrics · willpower vs design (mms5377). Inside the PROBLEM block —
+            it answers "just delete the apps" with the software-fix failure data.
+            Same-unit bars only (long-term stick rate of software fixes). */}
+        <section id="s-willpower" className="slide" style={tint(TINT.rodeo)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">Why willpower loses</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Software fixes don&rsquo;t stick.
+            </p>
+            <div className="mbars" role="img" aria-label="Long-term stick rates of software screen fixes: app blockers 17%, native screen-time tools 13%, grayscale mode 12%">
+              <div className="mbar-row">
+                <span className="mbar-name">App blockers</span>
+                <div className="mbar-track"><div className="mbar-fill" style={{ width: "17%" }} /></div>
+                <span className="mbar-val">17%</span>
+              </div>
+              <div className="mbar-row">
+                <span className="mbar-name">Built-in screen-time tools</span>
+                <div className="mbar-track"><div className="mbar-fill" style={{ width: "13%" }} /></div>
+                <span className="mbar-val">13%</span>
+              </div>
+              <div className="mbar-row">
+                <span className="mbar-name">Grayscale mode</span>
+                <div className="mbar-track"><div className="mbar-fill" style={{ width: "12%" }} /></div>
+                <span className="mbar-val">12%</span>
+              </div>
+            </div>
+            <p className="mlabel" style={{ marginTop: "0.9rem" }}>
+              share of users for whom each software fix works long-term
+              <br />
+              <span className="msrc">J. Medical Internet Research 2022 · grayscale adoption surveys</span>
+            </p>
+            <p className="mfoot">
+              The restriction lives on the same screen as the temptation.
+              <br />
+              <b>Deletion is a decision you remake every day. A separate device is a decision you make once.</b>
+            </p>
+          </div>
+        </section>
+
+        {/* Solution · the mechanism (mms5377). AFTER the causal slide — schools
+            proved environment change works; this is that change, productized.
+            Mirrors the three problem stats one-for-one. Register: MANAGED. */}
+        <section id="s-fix" className="slide" style={tint(TINT.tan)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">The fix</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Remove the vector. Keep the tool.
+            </p>
+            <div className="mrow">
+              <div className="mstat">
+                <div className="mnum">0</div>
+                <p className="mlabel">feeds, stores, or engagement pings on the device — if it buzzes, it&rsquo;s a human</p>
+                <span className="msrc">answers: 237 notifications/day</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">10</div>
+                <p className="mlabel">essential tools stay — banking, maps, 2FA, work chat. The phone still does its job</p>
+                <span className="msrc">answers: the one-essential-app trap</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">1&times;</div>
+                <p className="mlabel">decision, made at the device level — nothing to bypass at 1am, nothing to re-decide</p>
+                <span className="msrc">answers: 17% blocker stick rate</span>
+              </div>
+            </div>
+            <p className="mfoot">
+              Not an app fighting the phone. A <b>managed phone</b> — normal Android underneath,
+              the feed simply isn&rsquo;t there.
+            </p>
+          </div>
+        </section>
+
+        {/* Solution · the architecture kill-shot (mms5377). AFTER traction —
+            why THIS model succeeds where every previous attempt failed. The
+            four-architecture compare from the research pack, distilled. */}
+        <section id="s-not-dumb" className="slide" style={tint(TINT.rodeo)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">Why this wins where the others died</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              All the utility. None of the vectors.
+            </p>
+            <div className="solgrid">
+              <div className="solcard">
+                <h4>Dumbphone</h4>
+                <p>Kills the feeds — and banking, 2FA, and maps with them. One missing essential sends the SIM back to the smartphone.</p>
+                <span className="verdict">returned</span>
+              </div>
+              <div className="solcard">
+                <h4>Smartphone</h4>
+                <p>Every tool you need, shelved next to every feed engineered against you. The default that produced 8h39m.</p>
+                <span className="verdict">the problem</span>
+              </div>
+              <div className="solcard">
+                <h4>Blocker apps</h4>
+                <p>The restriction lives on the same screen as the temptation — two taps to bypass at the weakest moment.</p>
+                <span className="verdict">17% stick</span>
+              </div>
+              <div className="solcard solcard--raw">
+                <h4>RAW</h4>
+                <p>The essentials stay, the feeds structurally don&rsquo;t exist. A managed device — the boundary finally holds.</p>
+                <span className="verdict">● utility, zero vectors</span>
+              </div>
+            </div>
+            <p className="mfoot">
+              The &ldquo;one essential app&rdquo; problem killed the minimalist phone.
+              <b> RAW keeps the essentials — so the boundary survives real life.</b>
             </p>
           </div>
         </section>
