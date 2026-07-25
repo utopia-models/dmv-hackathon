@@ -35,10 +35,10 @@ export const SLIDES: Slide[] = [
   { id: "s-proof", label: "3b. Proof — three failures, one fix" },
   { id: "s7", label: "4. Market — every profession gets its own" },
   { id: "s5", label: "5. Founder — how it's built, the fleet, live" },
-  { id: "s-receipts", label: "5b. Metrics — the shift has receipts" },
 
   // ── REFERENCE (everything after; material to pull INTO the five) ─────────
   { id: "s-not-dumb", label: "ref · Solution — why this wins where others died" },
+  { id: "s-receipts", label: "ref · Metrics — the shift has receipts" },
   { id: "s-causal", label: "ref · Metrics — remove the device, everything moves" },
   // s-me was MERGED INTO s5 (the founder slide) 2026-07-25 — its creatives wall
 ];
