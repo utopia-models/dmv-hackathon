@@ -222,37 +222,37 @@ export default function Home() {
               <div className="ps-row">
                 <div className="ps-stat mstat">
                   <div className="mnum">8<small>h</small> 39<small>m</small></div>
-                  <p className="mlabel">a teen&rsquo;s day on screens — 43% of waking hours</p>
+                  <p className="mlabel">the average teen spends on screens every day — almost half the hours they&rsquo;re awake</p>
                   <span className="msrc">Common Sense Media census</span>
                 </div>
                 <span className="ps-arrow" aria-hidden>&rarr;</span>
                 <div className="ps-fix">
-                  <h4>The feed isn&rsquo;t there.</h4>
-                  <p>No infinite anything on the device. The phone ends when the task does — the hours come back by architecture, not discipline.</p>
+                  <h4>RAW has no feed to scroll.</h4>
+                  <p>Nothing on the phone goes on forever. When the task is done, the phone is done — and those hours come back.</p>
                 </div>
               </div>
               <div className="ps-row">
                 <div className="ps-stat mstat">
                   <div className="mnum">237</div>
-                  <p className="mlabel">notifications a day, median, per adolescent</p>
+                  <p className="mlabel">times a day a teenager&rsquo;s phone interrupts them with a notification</p>
                   <span className="msrc">CSM · Univ. of Michigan 2023</span>
                 </div>
                 <span className="ps-arrow" aria-hidden>&rarr;</span>
                 <div className="ps-fix">
-                  <h4>If it buzzes, it&rsquo;s a human.</h4>
-                  <p>Zero engagement pings — nothing on the device is engineered to interrupt. Calls, messages, and pages still land instantly.</p>
+                  <h4>On RAW, apps can&rsquo;t beg for attention.</h4>
+                  <p>The only thing that can buzz your phone is a person — a call, a text, a page. Those still land instantly.</p>
                 </div>
               </div>
               <div className="ps-row">
                 <div className="ps-stat mstat">
                   <div className="mnum">17%</div>
-                  <p className="mlabel">of software fixes stick long-term — blockers, screen-time tools, grayscale</p>
+                  <p className="mlabel">of people who try app blockers or screen-time limits say they actually work long-term</p>
                   <span className="msrc">J. Medical Internet Research 2022</span>
                 </div>
                 <span className="ps-arrow" aria-hidden>&rarr;</span>
                 <div className="ps-fix">
-                  <h4>One decision, made once.</h4>
-                  <p>The restriction doesn&rsquo;t live on the same screen as the temptation — it&rsquo;s a separate managed device. Nothing to bypass at 1am.</p>
+                  <h4>RAW is a decision you make once.</h4>
+                  <p>Blockers live on the same screen as the temptation — two taps and they&rsquo;re off. A separate phone has nothing to bypass at midnight.</p>
                 </div>
               </div>
             </div>
