@@ -125,7 +125,12 @@ export default function ReviewOverlay() {
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
     // ON by default — Tyler uses this all day. ?clean=1 hides it for the judge.
-    setOn(p.get("clean") !== "1");
+    const isOn = p.get("clean") !== "1";
+    setOn(isOn);
+    // Stamp review mode on <html> so slides can clear the fixed panel in CSS
+    // (slide 5's tall content block opts in via .slide-body--occ).
+    document.documentElement.classList.toggle("review-on", isOn);
+    return () => document.documentElement.classList.remove("review-on");
   }, []);
 
   useEffect(() => {

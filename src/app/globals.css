@@ -386,12 +386,12 @@ body {
 }
 
 /* slide 5 refinements (#2542) — review-overlay clearance + unbreakable embed */
-.slide-body--occ {
-  /* nudge content below the fixed review panel (review mode only concern;
-     ?clean=1 judge view is centered fine either way) */
-  padding-top: clamp(1rem, 12vh, 7rem);
-}
+/* Judge view (?clean=1): centered, full-size frame — no clearance needed. */
 .slide-body--occ .occ-frame { max-height: 52vh; }
+/* Review mode: the fixed panel is tall (script + warn) — push the headline fully
+   below it and trade frame height for the clearance. Judge view untouched. */
+html.review-on .slide-body--occ { padding-top: clamp(2rem, 40vh, 24rem); }
+html.review-on .slide-body--occ .occ-frame { max-height: 32vh; }
 @media (max-width: 900px) {
   /* the responsive OCC layout collapses to fragments in a small iframe —
      show the real-screenshot poster instead; the live embed is desktop-only */
