@@ -1,17 +1,128 @@
+import type { CSSProperties } from "react";
+import SlideMedia from "./SlideMedia";
+
+/*
+ * RAW — 8-slide scroll-snap pitch deck (DMV Hackathon Track 04).
+ * Full-bleed sections, one line of text per slide, warm-dark ground.
+ * Background media is optional: drop a file at /public/slides/<n>.{webp,mp4}
+ * and it swaps in; if absent, the panel + line still render (never breaks).
+ */
+
+const TINT = {
+  umber: "rgba(41,30,22,0.55)",
+  rodeo: "rgba(74,54,38,0.5)",
+  cactus: "rgba(107,82,54,0.42)",
+  tan: "rgba(156,128,92,0.34)",
+  sand: "rgba(196,170,130,0.28)",
+} as const;
+
+const tint = (c: string) => ({ "--tint": c } as CSSProperties);
+
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-6 bg-black px-6 text-center text-white">
-      <span className="rounded-full border border-white/15 px-4 py-1 text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">
-        DMV Hackathon · 2026-07-25
-      </span>
-      <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">
-        Something is being built here.
-      </h1>
-      <p className="max-w-md text-balance text-neutral-400">
-        Team Utopia Models — Tyler Youk &amp; Izzu Sulieman. GMU Fuse, Arlington VA.
-        The concept drops at the 9:00 track reveal; the build goes live here.
-      </p>
-      <p className="font-mono text-xs text-neutral-600">hack.utopiamodels.ai</p>
-    </main>
+    <>
+      <nav className="dots" aria-hidden>
+        {Array.from({ length: 8 }).map((_, i) => (
+          <a key={i} href={`#s${i + 1}`} />
+        ))}
+      </nav>
+
+      <main className="deck">
+        {/* 1 · Hero */}
+        <section id="s1" className="slide" style={tint(TINT.rodeo)}>
+          <SlideMedia src="/slides/1.webp" alt="RAW hero" />
+          <div className="slide-body">
+            <h1 className="wordmark wordmark--sand">RAW</h1>
+          </div>
+        </section>
+
+        {/* 2 · Problem */}
+        <section id="s2" className="slide" style={tint(TINT.umber)}>
+          <SlideMedia src="/slides/2.webp" alt="" />
+          <div className="slide-body">
+            <span className="kicker">The problem</span>
+            <p className="line">Phones stopped being designed.</p>
+          </div>
+        </section>
+
+        {/* 3 · Product */}
+        <section id="s3" className="slide" style={tint(TINT.cactus)}>
+          <SlideMedia src="/slides/3.webp" alt="The RAW phone" />
+          <div className="slide-body">
+            <span className="kicker">The product</span>
+            <p className="line">This is RAW.</p>
+          </div>
+        </section>
+
+        {/* 4 · Thesis */}
+        <section id="s4" className="slide" style={tint(TINT.tan)}>
+          <SlideMedia src="/slides/4.webp" alt="" />
+          <div className="slide-body">
+            <span className="kicker">The thesis</span>
+            <p className="line">Rip &rarr; repurpose.</p>
+          </div>
+        </section>
+
+        {/* 5 · How it's built — LIVE OCC embed (real proof, never a generated image) */}
+        <section id="s5" className="slide" style={tint(TINT.rodeo)}>
+          <div className="slide-body">
+            <span className="kicker">How it&rsquo;s built</span>
+            <p
+              className="line"
+              style={{ fontSize: "clamp(1.6rem,5vw,3.4rem)", marginBottom: "clamp(1rem,3vh,2rem)" }}
+            >
+              A founder and an AI fleet. In public.
+            </p>
+            <div className="occ-frame">
+              <iframe
+                src="https://www.utopiamodels.ai"
+                title="Utopia Models — the live fleet operations center"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                sandbox="allow-scripts allow-same-origin"
+              />
+            </div>
+            <p className="note">
+              live &middot;{" "}
+              <a href="https://www.utopiamodels.ai" target="_blank" rel="noreferrer">
+                utopiamodels.ai
+              </a>
+            </p>
+          </div>
+        </section>
+
+        {/* 6 · Traction */}
+        <section id="s6" className="slide" style={tint(TINT.cactus)}>
+          <SlideMedia src="/slides/6.webp" alt="" />
+          <div className="slide-body">
+            <span className="kicker">Traction</span>
+            <p className="line">Live at raw.utopiamodels.ai</p>
+            <p className="note">
+              <a href="https://raw.utopiamodels.ai" target="_blank" rel="noreferrer">
+                raw.utopiamodels.ai
+              </a>
+            </p>
+          </div>
+        </section>
+
+        {/* 7 · Market */}
+        <section id="s7" className="slide" style={tint(TINT.sand)}>
+          <SlideMedia src="/slides/7.webp" alt="" />
+          <div className="slide-body">
+            <span className="kicker">The market</span>
+            <p className="line">Design-first hardware.</p>
+          </div>
+        </section>
+
+        {/* 8 · Ask (closing) */}
+        <section id="s8" className="slide" style={tint(TINT.rodeo)}>
+          <SlideMedia src="/slides/8.webp" alt="" />
+          <div className="slide-body">
+            <h2 className="wordmark wordmark--sand">RAW</h2>
+            <p className="note">a rebrand of the Nothing phone &middot; rip &rarr; repurpose, in the open</p>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
