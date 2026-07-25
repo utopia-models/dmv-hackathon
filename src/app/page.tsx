@@ -19,40 +19,59 @@ const TINT = {
 
 const tint = (c: string) => ({ "--tint": c } as CSSProperties);
 
-/* Slide 7 — the focused-phone lineup. v0 is REAL/shipping today; the other three are the roadmap. */
+/* Slide 7 — the focused-phone lineup. v0 is REAL/shipping today; the other three are the
+   roadmap. Function-first bullets (judges scan, they don't parse vendor lists); v0 keeps
+   its household app names — that list being checkable IS its credibility. */
 const DEVICES: {
   name: string;
   for: string;
-  allowed: string;
+  allowed: string[];
   removed: string;
   real?: boolean;
 }[] = [
   {
     name: "v0 · Engineering",
     for: "Tyler",
-    allowed: "Phone · Messages · Gmail · Drive · Claude · WhatsApp · Telegram · Tailscale · Termux · GitHub",
+    allowed: [
+      "Phone · Messages · Gmail",
+      "Drive · GitHub · Termux · Tailscale",
+      "Claude · WhatsApp · Telegram",
+    ],
     removed: "browser · store · feeds",
     real: true,
   },
   {
     name: "Doctor",
     for: "clinicians",
-    allowed:
-      "Epic EHR · OpenEvidence clinical AI (HIPAA) · UpToDate · MDCalc · TigerConnect paging · Doximity dialer · on-call schedule",
+    allowed: [
+      "Patient records & charting",
+      "Clinical AI — HIPAA-safe, evidence-grounded",
+      "Drug & diagnosis reference",
+      "Secure paging & care-team chat",
+      "Patient calls from the clinic line",
+      "On-call schedule",
+    ],
     removed: "social · feeds · browser — if it buzzes, it's a page",
   },
   {
     name: "Lawyer",
     for: "litigators",
-    allowed:
-      "Westlaw · CoCounsel legal AI (research + document drafting) · Clio with AI scheduling · AI call screener that turns missed calls into consultation docs · practice-area law brief · ads & post autopilot (it posts — you never feed) · NetDocuments · DocuSign · Signal (privileged comms)",
-    removed: "social · feeds · browser — every minute on it is billable",
+    allowed: [
+      "Research & document-drafting AI",
+      "Client scheduling assistant",
+      "Missed calls screened → consult note drafted",
+      "Daily brief for your practice area",
+      "Marketing autopilot — it posts, you never scroll",
+      "Case files & e-signature",
+      "Privileged client comms",
+    ],
+    removed: "social · feeds · browser — every minute is billable",
   },
   {
     name: "Kid",
     for: "students",
-    allowed: "learning apps · calls to family · camera",
-    removed: "all feeds · store · browser",
+    allowed: ["Learning apps & homework", "Calls & messages home", "Camera"],
+    removed: "feeds · store · browser — nothing farms their attention",
   },
 ];
 
@@ -164,7 +183,11 @@ export default function Home() {
                   <h3 className="device-name">{d.name}</h3>
                   <span className="device-for">for {d.for}</span>
                   <span className="spec-k">Allowed</span>
-                  <p className="spec-v">{d.allowed}</p>
+                  <ul className="spec-list">
+                    {d.allowed.map((a) => (
+                      <li key={a}>{a}</li>
+                    ))}
+                  </ul>
                   <span className="spec-k">Removed</span>
                   <p className="spec-v spec-v--removed">{d.removed}</p>
                 </div>

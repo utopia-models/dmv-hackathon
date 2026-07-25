@@ -397,3 +397,25 @@ html.review-on .slide-body--occ .occ-frame { max-height: 32vh; }
      show the real-screenshot poster instead; the live embed is desktop-only */
   .occ-frame .occ-live { display: none; }
 }
+
+/* slide 7: function-first bullets on the device cards (compact — it's a slide) */
+.spec-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.spec-list li {
+  position: relative;
+  padding-left: 0.85rem;
+  color: var(--text);
+  font-size: clamp(0.78rem, 1.25vw, 0.92rem);
+  line-height: 1.4;
+  margin: 0.12rem 0;
+  text-wrap: pretty;
+}
+.spec-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--tan, rgba(196, 170, 130, 0.8));
+}
