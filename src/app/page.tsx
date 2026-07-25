@@ -90,9 +90,11 @@ const DEVICES: {
     ],
     removed: "browser · store · feeds",
     real: true,
-    // v0's REAL phone recording MOVED to slide 5 (the founder slide) 2026-07-25 —
-    // Tyler's call. This card stays TEXT-ONLY for now; the slide may be cut.
-    // The three concept slots below keep their reserved paths (knowledge#2553).
+    // REAL launcher footage back on the card (Izzu, 2026-07-25 evening) so the
+    // Market slide stands alone with all four cards carrying video — the same
+    // file slide 5 plays; no new asset. (Reverses Tyler's brief text-only call
+    // from when the footage was promoted to s5 — flagged in the commit.)
+    media: { src: "/slides/lineup-v0.mp4", kind: "video", frame: "phone", alt: "The RAW launcher on Tyler's real Pixel 10" },
   },
   {
     name: "Doctor",
