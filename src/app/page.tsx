@@ -160,10 +160,8 @@ export default function Home() {
             <span className="kicker">Problem</span>
             <p className="line">One device tries to be everything.</p>
             <p className="line line--sub">
-              It&rsquo;s not what you can do.<br />It&rsquo;s what you can&rsquo;t.
-            </p>
-            <p className="note note--merge">
-              The shift already started. Nobody built the device.
+              People are paying for focus on hardware built against it.<br />
+              Nobody sells them the device.
             </p>
           </div>
         </section>
