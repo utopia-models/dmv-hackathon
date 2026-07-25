@@ -139,6 +139,119 @@ const ANGLES: Angle[] = [
       a: "Today it's one committed user — me — carrying it daily, and a running system you can watch, not a slide deck. That's honest: RAW is pre-revenue. But 'founder is user #1, every day, in public' beats a vanity waitlist, and the software-only path means the next person can hold this within the week, not after a hardware cycle.",
     },
   },
+
+  // ── win · Angle C — the generational bet ─────────────────────────────────
+  {
+    key: "C",
+    tint: "rgba(156,128,92,0.34)",
+    eyebrow: "Angle C · win · the generational bet",
+    title: "The World Is Yours",
+    premise:
+      "The generational angle — hardware for productivity, growth, and a new life. We want kids to actually learn, not just be brain-rotted.",
+    image: "/ideas/angleA-hero.webp",
+    imageAlt:
+      "The RAW phone standing in a warm desert dawn, the sun rising behind its transparent glyph back — hardware for a new life.",
+    caption:
+      "Hardware for a new life — one focused device in a warm dawn. Generated from the real Glyph hero.",
+    script: [
+      {
+        t: "[00:00–00:15]",
+        text:
+          "Hand a kid a phone today and you've handed them everything at once — every game, every feed, every notification — and told them to focus. That's not a willpower problem. That's a design problem.",
+      },
+      {
+        t: "[00:15–00:35]",
+        text:
+          "One device tries to be everything, and being everything is what rots attention. We think the future isn't one phone that does it all. It's plural, focused devices — one device, one mode of being, each with its own curated store.",
+      },
+      {
+        t: "[00:35–00:55]",
+        text:
+          "This is RAW. It's a managed phone — not locked down, managed. Pick it up and it's normal Android underneath. But the launcher shows ten apps: the tools you build a life with, and nothing designed to steal an hour. It's a decision about attention, made once, in hardware.",
+      },
+      {
+        t: "[00:55–01:20]",
+        text:
+          "Here's why you should believe me: this already runs. There's a device-owner app on my own Pixel right now — the launcher, the ten apps, no Chrome, no store. I removed the browser from my phone five days ago and I carry it to my engineering job every day. I'm not projecting adoption. I'm employee number one.",
+      },
+      {
+        t: "[01:20–01:40]",
+        text:
+          "The value is focus you don't have to fight for. The benefit — for a student, for a kid, for anyone trying to grow — is a device built for productivity and learning instead of one built to keep you scrolling. We want kids to actually learn, not just be brain-rotted.",
+      },
+      {
+        t: "[01:40–02:00]",
+        text:
+          "And it's a business: we don't make the hardware, we rip and rebrand a premium phone — so hardware margin, plus a curated app store, plus managed-device subscriptions for schools and families. Deletion is a decision you remake every single day. A separate device is a decision you make once. The world is yours — we just want to hand kids a device worthy of it.",
+      },
+    ],
+    vbp: {
+      value:
+        "Focus you don't have to fight for — attention moved out of settings and into hardware, a decision made once instead of a battle lost every day.",
+      benefit:
+        "For a student or a kid: a device built for productivity and learning instead of one built to keep them scrolling. Kids who actually learn, not brain-rotted.",
+      profit:
+        "No manufacturing — rip and rebrand a premium phone: hardware margin per unit + a curated app-store cut + managed-device subscriptions sold to schools and families.",
+    },
+    weakest: {
+      q: "Why buy a second phone when a parent can just set screen-time limits on the one they already own?",
+      a: "Because those limits live on the device that's fighting you, and they get switched off the first moment they're inconvenient — deletion and limits are a decision remade every single day. A separate device moves that decision into hardware, made once. And it isn't only parents — it's the builder who keeps losing the hour and would pay to get it back.",
+    },
+  },
+
+  // ── win · Angle D — demo-flow: value → benefit → profit in three beats ───
+  {
+    key: "D",
+    tint: "rgba(196,170,130,0.28)",
+    eyebrow: "Angle D · win · value → benefit → profit",
+    title: "One Device, One Mode",
+    premise:
+      "Demo-flow — walk the judge through value, then benefit, then profitability in three tight beats, phone in hand.",
+    image: "/ideas/angleB-hero.webp",
+    imageAlt:
+      "The RAW phone as a warm studio product hero, its glyph dot-matrix glowing on a desert-rodeo ground.",
+    caption:
+      "The product, three beats: value, benefit, profit. Generated from the real glyph product shot.",
+    script: [
+      {
+        t: "[00:00–00:20]",
+        text:
+          "I'm going to walk you through RAW in three beats: what it's worth, who it helps, and how it makes money. Watch the phone in my hand while I do it. Beat one — the value.",
+      },
+      {
+        t: "[00:20–00:50]",
+        text:
+          "Your phone is the only tool you own that's designed to work against you. One device tries to be everything, and everything is exactly what breaks your focus. RAW is a managed phone — normal Android underneath, but the launcher shows ten curated apps and no infinite feeds. The value is simple: attention, back in hardware. A decision you make once instead of a battle you lose every day.",
+      },
+      {
+        t: "[00:50–01:20]",
+        text:
+          "Beat two — who benefits. Start with the people already asking for this: students, parents, builders, anyone trying to grow instead of scroll. And this isn't a concept. A device-owner app runs on my Pixel today: the launcher, ten apps, no Chrome, no store. I took the browser off my own phone five days ago and carry it to work daily. The benefit is proven on the toughest user I have — me.",
+      },
+      {
+        t: "[01:20–01:50]",
+        text:
+          "Beat three — the money. We don't manufacture anything; we rip and rebrand a premium phone that already exists. So three revenue lines stack: hardware margin on every unit, a curated app store that takes a cut of what's allowed on, and managed-device subscriptions we sell to schools and families who want this by the classroom. Low build cost, three ways to earn.",
+      },
+      {
+        t: "[01:50–02:00]",
+        text:
+          "Value: focus in hardware. Benefit: proven on real users. Profit: rebrand margin, a store, and subscriptions. One device, one mode. That's RAW.",
+      },
+    ],
+    vbp: {
+      value:
+        "Attention, back in hardware — the one tool designed to work against you replaced by a managed phone whose launcher shows ten curated apps and no infinite feeds.",
+      benefit:
+        "Proven on real users already asking for it — students, parents, builders. Not a concept: the device-owner app runs on a real Pixel today, tested on the toughest user there is.",
+      profit:
+        "Zero manufacturing — rebrand a phone that already exists. Three stacked lines: hardware margin, a curated app-store cut, and managed-device subscriptions sold by the classroom.",
+    },
+    weakest: {
+      q: "You're reselling someone else's phone — what stops Nothing, or Apple, from shipping a focus mode and killing you overnight?",
+      a: "A focus mode is a setting on the everything-device — it's the delete-the-apps problem again: remade every day and defaulted off. Our moat was never the silicon. It's the rip-and-rebrand method, the curated store, and the managed layer — the culture and the catalog, not the hardware. We own the rip out loud: it's the method, not a shortcut.",
+    },
+  },
 ];
 
 function ScriptBlock({ script }: { script: Beat[] }) {
@@ -207,9 +320,9 @@ export default function Ideas() {
     <main className="ideas">
       <header className="ideas-head">
         <span className="ideas-eyebrow">RAW · pitch ideation</span>
-        <h1 className="ideas-title">Two angles. Pick the winner.</h1>
+        <h1 className="ideas-title">Pick the winner.</h1>
         <p className="ideas-sub">
-          Two competing 2-minute shark-tank pitches for one judge. Same thesis — RAW is a
+          Competing 2-minute shark-tank pitches for one judge. Same thesis — RAW is a
           culture shift, not supercharged hardware; the future is plural, focused devices.
           The proof already exists: a managed launcher runs on a real phone today, and the
           founder is user&nbsp;#1.
