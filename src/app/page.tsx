@@ -19,6 +19,41 @@ const TINT = {
 
 const tint = (c: string) => ({ "--tint": c } as CSSProperties);
 
+/* Slide 7 — the focused-phone lineup. v0 is REAL/shipping today; the other three are the roadmap. */
+const DEVICES: {
+  name: string;
+  for: string;
+  allowed: string;
+  removed: string;
+  real?: boolean;
+}[] = [
+  {
+    name: "v0 · Engineering",
+    for: "Tyler",
+    allowed: "Phone · Messages · Gmail · Drive · Claude · WhatsApp · Telegram · Tailscale · Termux · GitHub",
+    removed: "browser · store · feeds",
+    real: true,
+  },
+  {
+    name: "Doctor",
+    for: "clinicians",
+    allowed: "EHR · reference · secure messaging · scheduling",
+    removed: "social · browser · games",
+  },
+  {
+    name: "Lawyer",
+    for: "litigators",
+    allowed: "docs · research · calendar · secure comms",
+    removed: "social · video · feeds",
+  },
+  {
+    name: "Kid",
+    for: "students",
+    allowed: "learning apps · calls to family · camera",
+    removed: "all feeds · store · browser",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -102,12 +137,26 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 7 · Market */}
+        {/* 7 · Market — the focused-phone lineup (typographic; the info IS the visual) */}
         <section id="s7" className="slide" style={tint(TINT.sand)}>
-          <SlideMedia src="/slides/7.mp4" kind="video" alt="" />
-          <div className="slide-body">
-            <span className="kicker">The market</span>
-            <p className="line">Every profession gets its own.</p>
+          <div className="slide-body slide-body--lineup">
+            <div className="lineup-head">
+              <span className="kicker">The market</span>
+              <p className="line">Every profession gets its own.</p>
+            </div>
+            <div className="lineup">
+              {DEVICES.map((d) => (
+                <div key={d.name} className={`device${d.real ? " device--real" : ""}`}>
+                  <span className="device-tag">{d.real ? "● Real — shipping today" : "Roadmap"}</span>
+                  <h3 className="device-name">{d.name}</h3>
+                  <span className="device-for">for {d.for}</span>
+                  <span className="spec-k">Allowed</span>
+                  <p className="spec-v">{d.allowed}</p>
+                  <span className="spec-k">Removed</span>
+                  <p className="spec-v spec-v--removed">{d.removed}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
