@@ -1,0 +1,25 @@
+{
+  "comment": "Precomputed LLM outputs for the Roost & Bean seed CSV. The demo path uses this fixture so the stage demo works with DeepInfra fully down; live CSV paste stays real. Label ids are t<row index> in file order. Prose obeys the same contract as the live model: {{figure:key}} placeholders only, zero raw numerals.",
+  "labels": {
+    "t0041": { "category": "expense.taxes", "confidence": 0.88, "counterparty": "Virginia SCC" },
+    "t0004": { "category": "expense.supplies", "confidence": 0.74, "counterparty": "Dominion Energy" },
+    "t0036": { "category": "expense.supplies", "confidence": 0.74, "counterparty": "Dominion Energy" },
+    "t0066": { "category": "expense.supplies", "confidence": 0.74, "counterparty": "Dominion Energy" },
+    "t0025": { "category": "revenue.sales", "confidence": 0.62, "counterparty": "cash sales" },
+    "t0056": { "category": "revenue.sales", "confidence": 0.62, "counterparty": "cash sales" },
+    "t0087": { "category": "revenue.sales", "confidence": 0.62, "counterparty": "cash sales" }
+  },
+  "summaries": {
+    "2026-04": "April's books close with {{figure:revenue}} in revenue against {{figure:expenses}} in operating costs, for a net of {{figure:net}}. Cash on hand at month end stands at {{figure:cash}}. Rent, payroll, and the quarterly sales-tax payment were the big outflows; retail orders carried the month, with one wholesale invoice adding to the top line. One purchase looked personal and is sitting in owner draws at {{figure:ownerDraw}} — worth confirming it belongs there. Every figure in this note is computed from your categorized transactions and clicks through to its source rows.",
+    "2026-05": "May's books close with {{figure:revenue}} in revenue against {{figure:expenses}} in operating costs, for a net of {{figure:net}}. Cash on hand at month end stands at {{figure:cash}}. The month carried a double rent hit — the regular first-of-month payment and an early payment for June on the final day — plus a supplier invoice settled well past its stated due date, both worth a glance in the integrity report. Adobe also appears charged twice on the same day. Every figure in this note is computed from your categorized transactions and clicks through to its source rows.",
+    "2026-06": "June's books close with {{figure:revenue}} in revenue against {{figure:expenses}} in operating costs, for a net of {{figure:net}}. Cash on hand at month end stands at {{figure:cash}}. Wholesale pricing reached its highest point of the quarter on the same item sold cheaper in earlier months, and owner draws at {{figure:ownerDraw}} include a beach-stay booking worth confirming as personal. Postage costs continued all quarter with no shipping income ever booked against them. Every figure in this note is computed from your categorized transactions and clicks through to its source rows."
+  },
+  "anomalyExplanations": {
+    "unrecorded-fulfillment-revenue": "Roost & Bean pays postage on shipped orders all quarter, yet shipping income never once appears in the books — even though a third of the order memos say the customer paid for shipping. That collected money is arriving bundled into product deposits and going unbooked, quietly understating revenue on every shipped order. Worth a look: book collected shipping as its own line so the books match what customers actually paid.",
+    "price-variance": "The same wholesale item sold to three different cafes at three materially different prices across the quarter. That can be intentional — volume discounts, long-standing relationships — but if it isn't, it's margin quietly leaking on every discounted invoice. Worth a look: set a written wholesale price list, and note any agreed discount on the invoice memo so the difference is documented.",
+    "commingling": "A game controller and a beach stay were paid from the business account. Mixing personal and business spending is the most common bookkeeping problem for small operators — it muddies real margins and creates tax-time pain. Worth a look: move personal spending to a personal account, or record it as an owner draw the moment it happens, which is where these are currently booked.",
+    "duplicate-charge": "Adobe charged the identical subscription amount twice on the same day. Sometimes that's legitimate — two seats, two products — but it's often a billing error or a double-submitted payment. Worth a look: check the Adobe invoice history, and dispute the second charge if it doesn't match.",
+    "vendor-aging": "A green-coffee supplier invoice was settled well past the due date printed on its memo. Late payments strain the supplier relationships a small roaster depends on, and some vendors add late fees. Worth a look: a reminder a few days before each due date keeps this from recurring — the operations page can draft one.",
+    "round-number-cash": "An identical round cash deposit lands once a month, every month. That may be perfectly normal for the farmers-market stall — the point is documentation. Worth a look: keep a simple daily cash log with the register total and deposit amount, so every deposit traces to recorded sales."
+  }
+}
