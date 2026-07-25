@@ -155,7 +155,12 @@ body {
    dead-centre — right where the headline lands. The default .slide-scrim is
    LIGHTEST at centre, so it does nothing here. This slide gets its own wash:
    dark through the middle band, clearing toward the edges so the device is
-   still unmistakably a phone. */
+   still unmistakably a phone.
+   RE-JUDGED for the video hero (knowledge#2582): the 16:9 video centres a BRIGHT
+   white device exactly where the headline + quote land — same failure mode as
+   the launcher grid. A/B'd against the default radial (screenshots on the
+   issue): radial lets the phone blast through the text; this wash keeps it a
+   silhouette. KEEP. Selects on #s-solution — do not rename that id. */
 #s-solution .slide-scrim {
   background:
     linear-gradient(

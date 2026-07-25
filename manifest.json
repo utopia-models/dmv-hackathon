@@ -7,29 +7,173 @@
     "note": "Deck source assets are renamed slide-N in DECK-ready so Drive reads at-a-glance which ones are shown. Drive ids were matched to the committed repo assets by byte-exact size + type. Candidate versions Tyler is still choosing among (slide4-antibrainrot-v2..v4, extra hero angles, extra hf_ videos) are intentionally left un-renamed. Slide 5's poster is Izzu's (knowledge#2542) and is not in this folder."
   },
   "slides": [
-    { "n": 1, "asset": "public/slides/1.mp4", "kind": "video", "content": "Hero — the RAW phone in use (\"This is RAW.\")", "drive": { "id": "16hMQ42uVsaue0goX-_0pMv4rg1Wb4mx2", "name": "slide-1.mp4", "was": "hf_20260725_145412_b7a31fbf-....mp4" } },
-    { "n": 2, "asset": "public/slides/2.mp4", "kind": "video", "content": "Problem — one device tries to be everything", "drive": { "id": "1RunauW3o3kQCNGZJdEDj7meiUCYHQlXZ", "name": "slide-2.mp4", "was": "hf_20260725_143910_12c51c58-....mp4" } },
-    { "n": 3, "asset": "public/slides/3.png", "kind": "image", "content": "Product — a RAW phone alone in negative space", "drive": { "id": "1KPFEgPmcMSL8GfRT28QeLF6MFCzTftTF", "name": "slide-3.png", "was": "angle-b-hero-v1.png" } },
-    { "n": 4, "asset": "public/slides/4.png", "kind": "image", "content": "Thesis — the shift already started, nobody built the device", "drive": { "id": "1Kaei6shiEgMY8yHXBlemOi0IJexVB_PF", "name": "slide-4.png", "was": "slide4-antibrainrot-v1.png" } },
-    { "n": 5, "asset": "public/slides/5-occ-poster.png", "kind": "poster", "content": "How it's built — real screenshot poster behind the LIVE OCC iframe (utopiamodels.ai). Izzu's slide (knowledge#2542); do not rename/move its poster without commenting there first.", "drive": null },
-    { "n": 6, "asset": "public/slides/6.png", "kind": "image", "content": "Traction — ten apps, built for one engineer", "drive": { "id": "10pA_1fzP-6Z8ilLyZ8WSZTdgdVMuM6mZ", "name": "slide-6.png", "was": "A-managed-launcher-v1.png" } },
-    { "n": 7, "kind": "lineup", "content": "Market — the focused-phone lineup (DEVICES.map in page.tsx). Per-card media via DeviceMedia: v0 is REAL/shipping (portrait phone frame); the three concepts are 16:9 landscape slots that render NOTHING until knowledge#2553's environment videos drop at the paths below — no code change needed.", "lineup": {
-      "v0": { "asset": "public/slides/lineup-v0.mp4", "kind": "video", "frame": "phone", "content": "REAL RAW-launcher footage from Tyler's Pixel 10 (adb 2026-07-25) — never a generated substitute", "drive": { "id": "1P0dTJw-URDVqhsAmngSsu-Tpk5mONCJm", "name": "raw-launcher-v0-engineering.mp4", "dims": "1080x2424", "dur": "30.8s" } },
-      "doctor": { "asset": "public/slides/lineup-doctor.mp4", "kind": "video", "frame": "wide", "content": "clinic environment, 16:9 — IN FLIGHT under knowledge#2553", "drive": null },
-      "lawyer": { "asset": "public/slides/lineup-lawyer.mp4", "kind": "video", "frame": "wide", "content": "law-firm environment, 16:9 — IN FLIGHT under knowledge#2553", "drive": null },
-      "kid": { "asset": "public/slides/lineup-kid.mp4", "kind": "video", "frame": "wide", "content": "classroom environment, 16:9 — IN FLIGHT under knowledge#2553", "drive": null }
-    } },
-    { "n": 8, "asset": "public/slides/8.png", "kind": "image", "content": "Ask — RAW, building is cool (closing)", "drive": { "id": "1of89jwcIS7xolrik6ZX47ZbxJeW4Zo9r", "name": "slide-8.png", "was": "angleA-desert-dawn-hero-v1.png" } }
+    {
+      "n": 1,
+      "asset": "public/slides/1.mp4",
+      "kind": "video",
+      "content": "Hero — the RAW phone in use (\"This is RAW.\")",
+      "drive": {
+        "id": "16hMQ42uVsaue0goX-_0pMv4rg1Wb4mx2",
+        "name": "slide-1.mp4",
+        "was": "hf_20260725_145412_b7a31fbf-....mp4"
+      }
+    },
+    {
+      "n": 2,
+      "asset": null,
+      "content": "Problem — TEXT-ONLY on the warm ground (Tyler, knowledge#2582). Its former background video was promoted to the Solution slide's hero (see n:3).",
+      "drive": null
+    },
+    {
+      "n": 3,
+      "asset": "public/slides/3-solution-hero.mp4",
+      "kind": "video",
+      "content": "Solution — hero video behind Tyler's customer quote (s-solution). Promoted from slide 2 per knowledge#2582.",
+      "drive": {
+        "id": "1Vmon2LwthTcqC1A3H_qV-Qzsoexp81zr",
+        "name": "slide-3-solution-hero.mp4",
+        "was": "slide-2-problem.mp4",
+        "note": "canonical copy = DECK-ready/slide-3-solution/. A byte-identical loose duplicate (slide-2.mp4, 1RunauW3o3kQCNGZJdEDj7meiUCYHQlXZ) still sits in DECK-ready — Tyler's call to clean up, per the addendum."
+      }
+    },
+    {
+      "n": 5,
+      "asset": "public/slides/5-occ-poster.png",
+      "kind": "poster",
+      "content": "How it's built — real screenshot poster behind the LIVE OCC iframe (utopiamodels.ai). Izzu's slide (knowledge#2542); do not rename/move its poster without commenting there first.",
+      "drive": null
+    },
+    {
+      "n": 7,
+      "kind": "lineup",
+      "content": "Market — the focused-phone lineup (DEVICES.map in page.tsx). Per-card media via DeviceMedia: v0 is REAL/shipping (portrait phone frame); the three concepts are 16:9 landscape slots that render NOTHING until knowledge#2553's environment videos drop at the paths below — no code change needed.",
+      "lineup": {
+        "v0": {
+          "asset": "public/slides/lineup-v0.mp4",
+          "kind": "video",
+          "frame": "phone",
+          "content": "REAL RAW-launcher footage from Tyler's Pixel 10 (adb 2026-07-25) — never a generated substitute",
+          "drive": {
+            "id": "1P0dTJw-URDVqhsAmngSsu-Tpk5mONCJm",
+            "name": "raw-launcher-v0-engineering.mp4",
+            "dims": "1080x2424",
+            "dur": "30.8s"
+          }
+        },
+        "doctor": {
+          "asset": "public/slides/lineup-doctor.mp4",
+          "kind": "video",
+          "frame": "wide",
+          "content": "clinic environment 16:9 — Tyler's finished render",
+          "drive": {
+            "id": "1eEOr35ywg13yDYeoEl351kaDC-SFHXp9",
+            "name": "slide7-doctor-hospital.mp4"
+          }
+        },
+        "lawyer": {
+          "asset": "public/slides/lineup-lawyer.mp4",
+          "kind": "video",
+          "frame": "wide",
+          "content": "law-firm environment 16:9 — Tyler's finished render",
+          "drive": {
+            "id": "1sSP5SiWAEccmRXseOC_PcG5F929KJ03b",
+            "name": "slide7-lawyer-lawfirm.mp4"
+          }
+        },
+        "kid": {
+          "asset": "public/slides/lineup-kid.mp4",
+          "kind": "video",
+          "frame": "wide",
+          "content": "classroom environment 16:9 — Tyler's finished render",
+          "drive": {
+            "id": "1zGjQuHTU_Wq__ikTDaiiuENF2vQsFRJX",
+            "name": "slide7-kid-classroom.mp4"
+          }
+        }
+      }
+    }
   ],
   "creatives": {
     "_note": "The 'The marketing is me' slide (id s-me, knowledge#2562) is a MONTAGE, not a single asset — so it is NOT in the `slides` array above. Its tiles are a BUILD-TIME GLOB of public/creatives/ (server component in page.tsx): adding a file there adds a tile, no manifest entry needed. Empty folder → honest empty state. The Drive `slide-x/` folder (sliderxFolder above) is the human curation surface; chosen files are placed in public/creatives/. See public/creatives/README.md.",
     "folder": "public/creatives",
-    "seeded": ["raw-phone-in-hand.png (real orphan 5.png)", "raw-motion-01.mp4 (real orphan 7.mp4)", "raw-motion-02.mp4 (real orphan 9.mp4)"]
+    "seeded": [
+      "raw-phone-in-hand.png (real orphan 5.png)",
+      "raw-motion-01.mp4 (real orphan 7.mp4)",
+      "raw-motion-02.mp4 (real orphan 9.mp4)"
+    ]
   },
   "unused": [
-    { "asset": "public/slides/1.png", "content": "orphan — byte-identical (md5) to 8.png's source; slide 1 uses 1.mp4", "drive": { "id": "1of89jwcIS7xolrik6ZX47ZbxJeW4Zo9r", "name": "slide-8.png", "note": "same Drive source as slide 8" } },
-    { "asset": "public/slides/5.png", "content": "orphan — a phone-in-hand still; slide 5 uses 5-occ-poster.png (the iframe poster), not this", "drive": { "id": "1mfHUSPC0u0RBZb4QFMPPKY4IPUYnhLJi", "name": "B-running-device-inhand-v1.png", "note": "NOT renamed — not in the deck" } },
-    { "asset": "public/slides/7.mp4", "content": "orphan — slide 7 is the typographic lineup; a video generated, never wired", "drive": { "id": "1ES8VaksjK1mz3ZFVyYj_uT7YGzSv_dht", "name": "hf_20260725_150832_2258dacf-....mp4", "note": "NOT renamed — not in the deck" } },
-    { "asset": "public/slides/9.mp4", "content": "orphan — a 9th video was generated but the deck is 8 slides; never wired", "drive": { "id": "17E5jYL5qj3jfuCyS7jJe1z4zpeG6SdWW", "name": "hf_20260725_154130_58f98a0f-....mp4", "note": "NOT renamed — not in the deck" } }
+    {
+      "asset": "public/slides/1.png",
+      "content": "orphan — byte-identical (md5) to 8.png's source; slide 1 uses 1.mp4",
+      "drive": {
+        "id": "1of89jwcIS7xolrik6ZX47ZbxJeW4Zo9r",
+        "name": "slide-8.png",
+        "note": "same Drive source as slide 8"
+      }
+    },
+    {
+      "asset": "public/slides/5.png",
+      "content": "orphan — a phone-in-hand still; slide 5 uses 5-occ-poster.png (the iframe poster), not this",
+      "drive": {
+        "id": "1mfHUSPC0u0RBZb4QFMPPKY4IPUYnhLJi",
+        "name": "B-running-device-inhand-v1.png",
+        "note": "NOT renamed — not in the deck"
+      }
+    },
+    {
+      "asset": "public/slides/7.mp4",
+      "content": "orphan — slide 7 is the typographic lineup; a video generated, never wired",
+      "drive": {
+        "id": "1ES8VaksjK1mz3ZFVyYj_uT7YGzSv_dht",
+        "name": "hf_20260725_150832_2258dacf-....mp4",
+        "note": "NOT renamed — not in the deck"
+      }
+    },
+    {
+      "asset": "public/slides/9.mp4",
+      "content": "orphan — a 9th video was generated but the deck is 8 slides; never wired",
+      "drive": {
+        "id": "17E5jYL5qj3jfuCyS7jJe1z4zpeG6SdWW",
+        "name": "hf_20260725_154130_58f98a0f-....mp4",
+        "note": "NOT renamed — not in the deck"
+      }
+    },
+    {
+      "asset": "public/slides/6.png",
+      "content": "launcher still — was s-solution's background until knowledge#2582 replaced it with the video hero; kept for reference/possible future slide",
+      "drive": {
+        "id": "10pA_1fzP-6Z8ilLyZ8WSZTdgdVMuM6mZ",
+        "name": "slide-6.png",
+        "was": "A-managed-launcher-v1.png"
+      }
+    },
+    {
+      "asset": "public/slides/3.png",
+      "content": "negative-space still — former Product slide bg; that slide merged into Problem (Tyler 2026-07-25), then n:3 became the Solution hero (knowledge#2582)",
+      "drive": {
+        "id": "1KPFEgPmcMSL8GfRT28QeLF6MFCzTftTF",
+        "name": "slide-3.png",
+        "was": "angle-b-hero-v1.png"
+      }
+    },
+    {
+      "asset": "public/slides/4.png",
+      "content": "thesis still — its slide merged into Problem (Tyler 2026-07-25)",
+      "drive": {
+        "id": "1Kaei6shiEgMY8yHXBlemOi0IJexVB_PF",
+        "name": "slide-4.png",
+        "was": "slide4-antibrainrot-v1.png"
+      }
+    },
+    {
+      "asset": "public/slides/8.png",
+      "content": "closing still — the Ask slide was cut in the 5-slide restructure",
+      "drive": {
+        "id": "1of89jwcIS7xolrik6ZX47ZbxJeW4Zo9r",
+        "name": "slide-8.png",
+        "was": "angleA-desert-dawn-hero-v1.png"
+      }
+    }
   ]
 }
