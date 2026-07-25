@@ -13,7 +13,12 @@
     { "n": 4, "asset": "public/slides/4.png", "kind": "image", "content": "Thesis — the shift already started, nobody built the device", "drive": { "id": "1Kaei6shiEgMY8yHXBlemOi0IJexVB_PF", "name": "slide-4.png", "was": "slide4-antibrainrot-v1.png" } },
     { "n": 5, "asset": "public/slides/5-occ-poster.png", "kind": "poster", "content": "How it's built — real screenshot poster behind the LIVE OCC iframe (utopiamodels.ai). Izzu's slide (knowledge#2542); do not rename/move its poster without commenting there first.", "drive": null },
     { "n": 6, "asset": "public/slides/6.png", "kind": "image", "content": "Traction — ten apps, built for one engineer", "drive": { "id": "10pA_1fzP-6Z8ilLyZ8WSZTdgdVMuM6mZ", "name": "slide-6.png", "was": "A-managed-launcher-v1.png" } },
-    { "n": 7, "asset": null, "kind": "typographic", "content": "Market — the focused-phone lineup (DEVICES.map in page.tsx); no media asset", "drive": null },
+    { "n": 7, "kind": "lineup", "content": "Market — the focused-phone lineup (DEVICES.map in page.tsx). Per-card media via DeviceMedia: v0 is REAL/shipping (portrait phone frame); the three concepts are 16:9 landscape slots that render NOTHING until knowledge#2553's environment videos drop at the paths below — no code change needed.", "lineup": {
+      "v0": { "asset": "public/slides/lineup-v0.mp4", "kind": "video", "frame": "phone", "content": "REAL RAW-launcher footage from Tyler's Pixel 10 (adb 2026-07-25) — never a generated substitute", "drive": { "id": "1P0dTJw-URDVqhsAmngSsu-Tpk5mONCJm", "name": "raw-launcher-v0-engineering.mp4", "dims": "1080x2424", "dur": "30.8s" } },
+      "doctor": { "asset": "public/slides/lineup-doctor.mp4", "kind": "video", "frame": "wide", "content": "clinic environment, 16:9 — IN FLIGHT under knowledge#2553", "drive": null },
+      "lawyer": { "asset": "public/slides/lineup-lawyer.mp4", "kind": "video", "frame": "wide", "content": "law-firm environment, 16:9 — IN FLIGHT under knowledge#2553", "drive": null },
+      "kid": { "asset": "public/slides/lineup-kid.mp4", "kind": "video", "frame": "wide", "content": "classroom environment, 16:9 — IN FLIGHT under knowledge#2553", "drive": null }
+    } },
     { "n": 8, "asset": "public/slides/8.png", "kind": "image", "content": "Ask — RAW, building is cool (closing)", "drive": { "id": "1of89jwcIS7xolrik6ZX47ZbxJeW4Zo9r", "name": "slide-8.png", "was": "angleA-desert-dawn-hero-v1.png" } }
   ],
   "creatives": {

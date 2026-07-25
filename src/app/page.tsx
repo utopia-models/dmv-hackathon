@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import ReviewOverlay from "./ReviewOverlay";
 import SlideMedia from "./SlideMedia";
+import DeviceMedia from "./DeviceMedia";
 import DeckControls from "./DeckControls";
 
 /* ── "The marketing is me" (knowledge#2562) ──────────────────────────────
@@ -67,12 +68,17 @@ const tint = (c: string) => ({ "--tint": c } as CSSProperties);
 /* Slide 7 — the focused-phone lineup. v0 is REAL/shipping today; the other three are the
    roadmap. Function-first bullets (judges scan, they don't parse vendor lists); v0 keeps
    its household app names — that list being checkable IS its credibility. */
+/* `media` is an OPTIONAL per-card slot rendered by DeviceMedia, which shows
+   NOTHING until the file exists — so v0 plays today and the three concept slots
+   stay invisibly reserved until knowledge#2553's environment videos land at
+   their paths (frame "wide", 16:9). Paths are mirrored in manifest.json. */
 const DEVICES: {
   name: string;
   for: string;
   allowed: string[];
   removed: string;
   real?: boolean;
+  media?: { src: string; kind: "image" | "video"; frame: "phone" | "wide"; alt: string };
 }[] = [
   {
     name: "v0 · Engineering",
@@ -84,6 +90,9 @@ const DEVICES: {
     ],
     removed: "browser · store · feeds",
     real: true,
+    // REAL footage from Tyler's Pixel 10 (adb capture 2026-07-25). Its
+    // authenticity is the slide's whole argument — never a generated substitute.
+    media: { src: "/slides/lineup-v0.mp4", kind: "video", frame: "phone", alt: "The RAW launcher on Tyler's real Pixel 10" },
   },
   {
     name: "Doctor",
@@ -97,6 +106,7 @@ const DEVICES: {
       "On-call schedule",
     ],
     removed: "social · feeds · browser — if it buzzes, it's a page",
+    media: { src: "/slides/lineup-doctor.mp4", kind: "video", frame: "wide", alt: "A clinic environment" },
   },
   {
     name: "Lawyer",
@@ -111,6 +121,7 @@ const DEVICES: {
       "Privileged client comms",
     ],
     removed: "social · feeds · browser — every minute is billable",
+    media: { src: "/slides/lineup-lawyer.mp4", kind: "video", frame: "wide", alt: "A law-firm environment" },
   },
   {
     name: "Kid",
@@ -128,6 +139,7 @@ const DEVICES: {
     ],
     removed:
       "feeds · store · browser · stranger DMs · unapproved photo apps — the only algorithm on it works for them",
+    media: { src: "/slides/lineup-kid.mp4", kind: "video", frame: "wide", alt: "A classroom environment" },
   },
 ];
 
@@ -425,6 +437,14 @@ export default function Home() {
             <div className="lineup">
               {DEVICES.map((d) => (
                 <div key={d.name} className={`device${d.real ? " device--real" : ""}`}>
+                  {d.media && (
+                    <DeviceMedia
+                      src={d.media.src}
+                      kind={d.media.kind}
+                      frame={d.media.frame}
+                      alt={d.media.alt}
+                    />
+                  )}
                   <span className="device-tag">{d.real ? "● Real — shipping today" : "Roadmap"}</span>
                   <h3 className="device-name">{d.name}</h3>
                   <span className="device-for">for {d.for}</span>
