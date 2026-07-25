@@ -195,9 +195,9 @@ body {
 }
 .slide-body--lineup::-webkit-scrollbar { display: none; }
 
-.lineup-head { margin-bottom: clamp(1.4rem, 4.5vh, 3rem); }
+.lineup-head { margin-bottom: clamp(1rem, 2.6vh, 2rem); }
 .lineup-head .kicker { margin-bottom: clamp(0.6rem, 2vh, 1.1rem); }
-.lineup-head .line { font-size: clamp(1.8rem, 5.6vw, 4rem); }
+.lineup-head .line { font-size: clamp(1.7rem, 5vw, 3.4rem); }
 
 .lineup {
   display: grid;
@@ -233,9 +233,11 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(0, 0, 0, 0.55);
 }
 .device-frame--wide {
-  /* concept environment — landscape card, full card width */
+  /* concept environment — a cinematic BANNER strip, not full 16:9: with all four
+     cards carrying media (2026-07-25 evening) the tall Kid card overflowed the
+     900px slide. object-fit:cover crops the height; the environment still reads. */
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: clamp(76px, 10vh, 132px);
 }
 .device-media {
   display: block;
@@ -586,9 +588,9 @@ html.review-on .proof-phone { max-height: 28vh; }
   position: relative;
   padding-left: 0.85rem;
   color: var(--text);
-  font-size: clamp(0.78rem, 1.25vw, 0.92rem);
-  line-height: 1.4;
-  margin: 0.12rem 0;
+  font-size: clamp(0.75rem, 1.18vw, 0.88rem);
+  line-height: 1.32;
+  margin: 0.1rem 0;
   text-wrap: pretty;
 }
 .spec-list li::before {
