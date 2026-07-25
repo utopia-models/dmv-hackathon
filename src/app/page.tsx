@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import ReviewOverlay from "./ReviewOverlay";
 import SlideMedia from "./SlideMedia";
+import DeckControls from "./DeckControls";
 
 /*
  * RAW — 8-slide scroll-snap pitch deck (DMV Hackathon Track 04).
@@ -59,11 +60,10 @@ const DEVICES: {
 export default function Home() {
   return (
     <>
-      <nav className="dots" aria-hidden>
-        {Array.from({ length: 8 }).map((_, i) => (
-          <a key={i} href={`#s${i + 1}`} />
-        ))}
-      </nav>
+      {/* Right-edge progress dots + the top-right review controls (#2547).
+          The dots now derive from the shared SLIDES registry so cutting a slide
+          keeps the dots in sync. */}
+      <DeckControls />
 
       <main className="deck">
         {/* 1 · Hero */}
