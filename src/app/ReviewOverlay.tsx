@@ -78,7 +78,7 @@ const BEATS: Beat[] = [
       "Answer 'how does one person build a phone company?' before the judge asks it. The iframe is LIVE — that's the actual operations center, not a screenshot.",
     say: "This is how it gets built. One founder and a fleet of AI agents, running in public — that's the live board, right now. It's how a phone brand ships at this size.",
     warn:
-      "The iframe is a REAL live embed of utopiamodels.ai. If the network is bad it may render slow or blank — say 'that's the live board' and keep moving; never wait on it or apologize for it.",
+      "The embed is LIVE with a real-screenshot poster behind it — if venue wifi dies the poster still reads, and on phones the poster replaces the embed. Either way: say 'that's the live board' and keep moving; never wait on it or apologize for it.",
     value: "The company itself is the proof that the operating model works.",
     benefit: "A judge sees the machine that makes plural devices economically possible.",
     weakest:

@@ -384,3 +384,16 @@ body {
   font-size: 0.74rem; letter-spacing: 0.03em; color: var(--tan); line-height: 1.6;
   max-width: 42rem; margin: 0 auto; opacity: 0.9;
 }
+
+/* slide 5 refinements (#2542) — review-overlay clearance + unbreakable embed */
+.slide-body--occ {
+  /* nudge content below the fixed review panel (review mode only concern;
+     ?clean=1 judge view is centered fine either way) */
+  padding-top: clamp(1rem, 12vh, 7rem);
+}
+.slide-body--occ .occ-frame { max-height: 52vh; }
+@media (max-width: 900px) {
+  /* the responsive OCC layout collapses to fragments in a small iframe —
+     show the real-screenshot poster instead; the live embed is desktop-only */
+  .occ-frame .occ-live { display: none; }
+}

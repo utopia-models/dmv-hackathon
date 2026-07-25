@@ -100,9 +100,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5 · How it's built — LIVE OCC embed (real proof, never a generated image) */}
+        {/* 5 · How it's built — LIVE OCC embed (real proof, never a generated image).
+            The poster behind the iframe is a REAL screenshot of the same page (rip-engine
+            doctrine: real images only) — it shows while the embed loads, if venue wifi
+            dies, and on small screens where the responsive iframe collapses to soup. */}
         <section id="s5" className="slide" style={tint(TINT.rodeo)}>
-          <div className="slide-body">
+          <div className="slide-body slide-body--occ">
             <span className="kicker">How it&rsquo;s built</span>
             <p
               className="line"
@@ -110,8 +113,16 @@ export default function Home() {
             >
               A founder and an AI fleet. In public.
             </p>
-            <div className="occ-frame">
+            <div
+              className="occ-frame"
+              style={{
+                backgroundImage: "url(/slides/5-occ-poster.png)",
+                backgroundSize: "cover",
+                backgroundPosition: "top center",
+              }}
+            >
               <iframe
+                className="occ-live"
                 src="https://www.utopiamodels.ai"
                 title="Utopia Models — the live fleet operations center"
                 loading="lazy"
