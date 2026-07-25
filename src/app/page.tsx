@@ -44,8 +44,9 @@ const DEVICES: {
   {
     name: "Lawyer",
     for: "litigators",
-    allowed: "docs · research · calendar · secure comms",
-    removed: "social · video · feeds",
+    allowed:
+      "Westlaw · CoCounsel legal AI · Clio matters & deadlines · NetDocuments · DocuSign · Signal (privileged comms)",
+    removed: "social · feeds · browser — every minute on it is billable",
   },
   {
     name: "Kid",
