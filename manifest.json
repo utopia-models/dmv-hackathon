@@ -113,6 +113,17 @@
         "name": "slide-3b-proof.mp4",
         "was": "hf_20260725_150832_2258dacf-....mp4"
       }
+    },
+    {
+      "n": "5-bg",
+      "asset": "public/slides/5-founder-hero.mp4",
+      "kind": "video",
+      "content": "Founder slide BACKGROUND hero (Tyler, 2026-07-25) — fill not fit, faded to 0.28 so the live OCC embed and the phone video read over it. Moved out of public/creatives/ because verify:manifest only scans /slides/* — a creatives path is invisible to the gate.",
+      "drive": {
+        "id": "11IiMA8Y2pDczR4fYH4mPK3L5cLruW3lB",
+        "dims": "1280x720",
+        "dur": "10.0s"
+      }
     }
   ],
   "creatives": {

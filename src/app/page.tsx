@@ -286,6 +286,9 @@ export default function Home() {
             beneath it. The argument: here is the person → here is the machine and
             the device that let him ship. */}
         <section id="s5" className="slide" style={tint(TINT.rodeo)}>
+          {/* Background hero (Tyler, 2026-07-25) — FILL, not fit, and faded back
+              so the OCC embed and the phone read over it. */}
+          <SlideMedia src="/slides/5-founder-hero.mp4" kind="video" alt="" />
           <div className="slide-body slide-body--founder">
             <div className="me-head">
               <span className="kicker">v0 &middot; Engineering</span>
@@ -328,19 +331,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Tyler, 2026-07-25: the one kept creative, below the two proof
-                pieces. The other two (raw-motion-01, raw-phone-in-hand) were cut. */}
-            <video
-              className="founder-reel"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label="RAW in motion"
-            >
-              <source src="/creatives/raw-motion-02.mp4" type="video/mp4" />
-            </video>
 
             <p className="note">
               live &middot;{" "}
