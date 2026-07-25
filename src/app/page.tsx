@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import ReviewOverlay from "./ReviewOverlay";
 import SlideMedia from "./SlideMedia";
 
 /*
@@ -29,6 +30,7 @@ export default function Home() {
 
       <main className="deck">
         {/* 1 · Hero */}
+        <ReviewOverlay />
         <section id="s1" className="slide" style={tint(TINT.rodeo)}>
           <SlideMedia src="/slides/1.mp4" kind="video" alt="The RAW phone in use" />
           <div className="slide-body">
