@@ -58,7 +58,7 @@ const BEATS: Beat[] = [
   },
   {
     sid: "s2",
-    onScreen: "One device tries to be everything.",
+    onScreen: "People are paying for focus on hardware built against it. Nobody sells them the device.",
     purpose: "Name the design failure. Not willpower — architecture.",
     say: "We stopped noticing that's weird. One device tries to be everything, and that generality is what rots your attention. It's not that phones got worse. It's that they got general.",
     value: "Reframes attention loss as a design failure, not a personal one.",
