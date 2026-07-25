@@ -1,6 +1,12 @@
 /* FairBooks — scoped styles (all rules nested under .fb; the deck at / is untouched).
    Chart series colors validated with the dataviz palette checker (light + dark). */
 
+/* The RAW deck's dark body background otherwise bleeds in below short pages. */
+body:has(.fb) { background: #f6f7f5; }
+@media (prefers-color-scheme: dark) {
+  body:has(.fb) { background: #121714; }
+}
+
 .fb {
   --bg: #f6f7f5;
   --surface: #ffffff;

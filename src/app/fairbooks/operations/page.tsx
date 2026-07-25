@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Business } from "@/lib/types";
 import { CATEGORY_LABELS } from "@/lib/types";
-import { fmtUsd } from "@/lib/engine/pnl";
+import { cashSeries, fmtUsd, monthOf } from "@/lib/engine/pnl";
 import { complianceFor } from "@/data/compliance-dates";
 import { useLedger } from "@/components/fairbooks/LedgerContext";
+import seedFixture from "@/data/seed-fixture.json";
 
 /** The prose can only reference figures by key — the UI interpolates real values,
  *  so the model cannot state a wrong number. Unknown keys render as "—". */
@@ -37,16 +38,19 @@ export default function OperationsPage() {
   const figuresFor = useMemo(
     () => (month: string) => {
       const m = months.find((x) => x.month === month);
+      const upto = cashSeries(transactions.filter((t) => monthOf(t) <= month));
+      const cash = upto.length ? upto[upto.length - 1].balanceCents : 0;
       return m
         ? {
             revenue: m.revenueCents,
             expenses: m.expenseCents,
             net: m.netCents,
             ownerDraw: m.ownerDrawCents,
+            cash,
           }
-        : { revenue: 0, expenses: 0, net: 0, ownerDraw: 0 };
+        : { revenue: 0, expenses: 0, net: 0, ownerDraw: 0, cash };
     },
-    [months]
+    [months, transactions]
   );
 
   if (!hasData) {
@@ -61,6 +65,15 @@ export default function OperationsPage() {
 
   const runClose = async (month: string) => {
     setCloseMonth(month);
+    // Demo path: precomputed fixture prose — instant, works with DeepInfra fully down.
+    const fixtureProse =
+      transactions[0]?.source === "demo"
+        ? (seedFixture.summaries as Record<string, string>)[month]
+        : undefined;
+    if (fixtureProse) {
+      setProse(fixtureProse);
+      return;
+    }
     setBusy(true);
     const figures = figuresFor(month);
     try {
