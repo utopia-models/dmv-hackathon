@@ -152,15 +152,58 @@ export default function Home() {
             shift already started" (Thesis). All three lines are KEPT so Tyler can
             see the argument whole and cut on screen — this is a reorder, not a
             rewrite. Kicker reads "Problem" per his instruction. */}
+        {/* PROBLEM = BRAINROT (Tyler, 2026-07-25 evening). Named on screen, and
+            named as a DESIGN DECISION made by identified companies — not a
+            personal failing and not a vague "someone". Tyler's correction:
+            "Not 'Someone' but 'The largest tech companies..'".
+            NO background yet — the brainrot hero videos are being generated into
+            DECK-ready (knowledge#2594 + flame). Tyler picks one, then it lands at
+            public/slides/ as the brainrot hero and a <SlideMedia kind="video"> slot
+            goes in HERE. It cannot be pre-wired: verify:manifest requires the file
+            to exist on disk, so an empty reserved slot fails the build gate. */}
         <section id="s2" className="slide" style={tint(TINT.umber)}>
-          {/* NO background — Tyler's call (knowledge#2582): three stacked lines on
-              the warm ground; the quiet Problem slide makes the rich Solution pop.
-              Its former video is now slide 3's hero. Do not substitute an asset. */}
           <div className="slide-body">
             <span className="kicker">Problem</span>
-            <p className="line">
-              People are paying for focus on hardware built against it.<br />
-              Nobody sells them the device.
+            <p className="line">Brainrot is a design decision.</p>
+            <p className="line line--sub">
+              The largest tech companies made it for you.
+            </p>
+            <p className="note note--merge">
+              The shift already started. Nobody built the device.
+            </p>
+          </div>
+        </section>
+
+        <section id="s-receipts" className="slide" style={tint(TINT.sand)}>
+          <div className="slide-body slide-body--metrics">
+            <span className="kicker">The shift has receipts</span>
+            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
+              Policy, law, and revenue agree.
+            </p>
+            <div className="mrow">
+              <div className="mstat">
+                <div className="mnum">45+</div>
+                <p className="mlabel">U.S. states restricting phones in schools by 2025</p>
+                <span className="msrc">incl. CA AB 3216 · VA EO 33</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">U-16</div>
+                <p className="mlabel">Australia&rsquo;s federal social-media ban for under-16s, 2025</p>
+                <span className="msrc">first national law of its kind</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">$10M</div>
+                <p className="mlabel">ARR for one app blocker — 11 employees, 10M users paying for focus</p>
+                <span className="msrc">Opal, 2025</span>
+              </div>
+              <div className="mstat">
+                <div className="mnum">69%</div>
+                <p className="mlabel">of U.S. adults 18&ndash;29 say they want less screen time</p>
+                <span className="msrc">Pew Research, 2024</span>
+              </div>
+            </div>
+            <p className="mfoot">
+              People are paying for focus on hardware built against it. <b>Nobody sells them the device.</b>
             </p>
           </div>
         </section>
@@ -446,39 +489,6 @@ export default function Home() {
         {/* Metrics · demand receipts (mms5377). BEFORE the market slide —
             proof the shift is policy, law, and revenue before we show the line. */}
 
-        <section id="s-receipts" className="slide" style={tint(TINT.sand)}>
-          <div className="slide-body slide-body--metrics">
-            <span className="kicker">The shift has receipts</span>
-            <p className="line mline" style={{ fontSize: "clamp(1.8rem,5.4vw,4rem)" }}>
-              Policy, law, and revenue agree.
-            </p>
-            <div className="mrow">
-              <div className="mstat">
-                <div className="mnum">45+</div>
-                <p className="mlabel">U.S. states restricting phones in schools by 2025</p>
-                <span className="msrc">incl. CA AB 3216 · VA EO 33</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">U-16</div>
-                <p className="mlabel">Australia&rsquo;s federal social-media ban for under-16s, 2025</p>
-                <span className="msrc">first national law of its kind</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">$10M</div>
-                <p className="mlabel">ARR for one app blocker — 11 employees, 10M users paying for focus</p>
-                <span className="msrc">Opal, 2025</span>
-              </div>
-              <div className="mstat">
-                <div className="mnum">69%</div>
-                <p className="mlabel">of U.S. adults 18&ndash;29 say they want less screen time</p>
-                <span className="msrc">Pew Research, 2024</span>
-              </div>
-            </div>
-            <p className="mfoot">
-              People are paying for focus on hardware built against it. <b>Nobody sells them the device.</b>
-            </p>
-          </div>
-        </section>
 
 
         {/* 8 · Ask (closing) */}

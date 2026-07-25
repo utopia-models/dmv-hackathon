@@ -30,7 +30,8 @@ export const SLIDES: Slide[] = [
   // ── THE FIVE WE ARE EDITING ─────────────────────────────────────────────
   // Plain 1..5. All the pitch work happens on these.
   { id: "s1", label: "1. Hero — This is RAW." },
-  { id: "s2", label: "2. Problem — one device tries to be everything" },
+  { id: "s2", label: "2. Problem — brainrot is a design decision" },
+  { id: "s-receipts", label: "2b. Metrics — policy, law & revenue agree" },
   { id: "s-solution", label: "3. Solution — devices where brainrot isn't possible" },
   { id: "s-proof", label: "3b. Proof — three failures, one fix" },
   { id: "s7", label: "4. Market — every profession gets its own" },
@@ -40,6 +41,4 @@ export const SLIDES: Slide[] = [
   { id: "s-not-dumb", label: "ref · Solution — why this wins where others died" },
   { id: "s-causal", label: "ref · Metrics — remove the device, everything moves" },
   // s-me was MERGED INTO s5 (the founder slide) 2026-07-25 — its creatives wall
-  // and Instagram CTA now live there, so the section no longer exists.
-  { id: "s-receipts", label: "ref · Metrics — policy, law & revenue agree" },
 ];
