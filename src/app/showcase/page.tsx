@@ -27,6 +27,24 @@ export const metadata: Metadata = {
 
 const MEDIA_RE = /\.(mp4|webm|mov|png|jpe?g|webp)$/i;
 
+/**
+ * PUBLISH TIME — the honest timestamp behind the tile badge.
+ *
+ * Captured once at module scope, so it is the moment THIS deploy was built — which
+ * is the moment these assets went live on creatives.utopiamodels.ai. That is a real
+ * event, not a creation date: the badge reports when the work was PUBLISHED here,
+ * and makes no claim about when it was made.
+ *
+ * Deliberately NOT statSync(mtime): git does not preserve mtimes, so on Vercel's
+ * clean checkout every file reports the clone time — the badge would read as
+ * authoritative while being meaningless.
+ */
+const PUBLISHED_LABEL = new Date().toLocaleTimeString("en-US", {
+  hour: "numeric",
+  minute: "2-digit",
+  timeZone: "America/Denver",
+});
+
 function loadItems(): Item[] {
   try {
     const dir = join(process.cwd(), "public", "creatives", "gallery");
@@ -37,6 +55,7 @@ function loadItems(): Item[] {
         id: f,
         src: `/creatives/gallery/${f}`,
         alt: f.replace(/\.[^.]+$/, ""),
+        published: PUBLISHED_LABEL,
       }));
   } catch {
     return [];
