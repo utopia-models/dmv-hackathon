@@ -1,0 +1,42 @@
+name: novaserver-heartbeat-ticker
+
+on:
+  schedule:
+    # Every 15 minutes
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  trigger-heartbeat:
+    name: Trigger novaserver-heartbeat in knowledge repo
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger workflow_dispatch
+        env:
+          GH_TOKEN: ${{ secrets.KNOWLEDGE_HEARTBEAT_PAT }}
+          REPO: utopia-models/knowledge
+          WORKFLOW: novaserver-heartbeat.yml
+        run: |
+          set -uo pipefail
+          echo "Triggering workflow_dispatch on $REPO..."
+          
+          response=$(curl -s -X POST \
+            "https://api.github.com/repos/$REPO/actions/workflows/$WORKFLOW/dispatches" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Content-Type: application/json" \
+            -d '{"ref":"main"}')
+          
+          if [ -z "$response" ]; then
+            echo "✅ Workflow dispatched successfully (empty response = success)"
+          elif echo "$response" | jq -e '.message' >/dev/null 2>&1; then
+            echo "❌ Failed to dispatch workflow:"
+            echo "$response" | jq -r '.message // .'
+            exit 1
+          else
+            echo "✅ Workflow dispatched successfully"
+          fi
